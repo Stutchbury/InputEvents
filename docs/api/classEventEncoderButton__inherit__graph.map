@@ -1,0 +1,4 @@
+<map id="EventEncoderButton" name="EventEncoderButton">
+<area shape="rect" id="node1" title="The EventEncoderButton class combines the EventEncoder class with the EventButton class and is used f..." alt="" coords="5,80,148,107"/>
+<area shape="rect" id="node2" href="$classEventInputBase.html" title="The common base for InputEvents input classes." alt="" coords="19,5,134,32"/>
+</map>

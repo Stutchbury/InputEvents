@@ -1,0 +1,9 @@
+<map id="EventInputBase" name="EventInputBase">
+<area shape="rect" id="node1" title="The common base for InputEvents input classes." alt="" coords="313,5,428,32"/>
+<area shape="rect" id="node2" href="$classEventAnalog.html" title="The EventAnalog class is for analog inputs &#45; slice an analog range into configurable number of increm..." alt="" coords="5,80,101,107"/>
+<area shape="rect" id="node3" href="$classEventButton.html" title="The EventButton class is for momentary inputs. The momentary switch (button) must be wired between th..." alt="" coords="126,80,221,107"/>
+<area shape="rect" id="node4" href="$classEventEncoder.html" title="The EventEncoder class is for quadrature encoder inputs providing the position &amp; encoder increment,..." alt="" coords="245,80,349,107"/>
+<area shape="rect" id="node5" href="$classEventEncoderButton.html" title="The EventEncoderButton class combines the EventEncoder class with the EventButton class and is used f..." alt="" coords="374,80,517,107"/>
+<area shape="rect" id="node6" href="$classEventJoystick.html" title="The EventJoystick class contains two EventAnalog inputs configured as a joystick." alt="" coords="541,80,646,107"/>
+<area shape="rect" id="node7" href="$classEventSwitch.html" title="The EventSwitch class is for standard on/off inputs. Like the EventButton the switch must be wired be..." alt="" coords="671,80,767,107"/>
+</map>

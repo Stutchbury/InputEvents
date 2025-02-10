@@ -1,0 +1,4 @@
+<map id="EventAnalog" name="EventAnalog">
+<area shape="rect" id="node1" title="The EventAnalog class is for analog inputs &#45; slice an analog range into configurable number of increm..." alt="" coords="15,80,111,107"/>
+<area shape="rect" id="node2" href="$classEventInputBase.html" title="The common base for InputEvents input classes." alt="" coords="5,5,120,32"/>
+</map>
