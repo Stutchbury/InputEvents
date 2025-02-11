@@ -48,7 +48,15 @@ $(function() {
   <div class="headertitle"><div class="title">EventJoystick.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> * GPLv2 Licence https://www.gnu.org/licenses/old-licenses/gpl-2.0.txt</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * </span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * Copyright (c) 2024 Philip Fletcher &lt;philip.fletcher@stutchbury.com&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> * </span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#ifndef EVENT_JOYSTICK_H</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#define EVENT_JOYSTICK_H</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
@@ -127,6 +135,7 @@ $(function() {
 <div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span> </div>
 <div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classEventJoystick.html#ad8083990829c5dfca8d9c35cdf609bd5">setNumPositiveIncrements</a>(uint8_t numIncr=10);</div>
 <div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span> </div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span> </div>
 <div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classEventJoystick.html#acb0c920a6c860e4042f96e0960722cb0">setStartValues</a>();</div>
 <div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span> </div>
 <div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classEventJoystick.html#ab668f5273753055ef56d2edefe4a14bf">setCentreBoundary</a>(uint16_t width=200);</div>
@@ -166,7 +175,7 @@ $(function() {
 <div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span> </div>
 <div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span> </div>
-<div class="ttc" id="aInputEvents_8h_html_acc94f246a54241db4187487d5c3f0c1f"><div class="ttname"><a href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1f">InputEventType</a></div><div class="ttdeci">InputEventType</div><div class="ttdoc">A list of all events that can be fired by InputEvents classes.</div><div class="ttdef"><b>Definition:</b> InputEvents.h:91</div></div>
+<div class="ttc" id="aInputEvents_8h_html_acc94f246a54241db4187487d5c3f0c1f"><div class="ttname"><a href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1f">InputEventType</a></div><div class="ttdeci">InputEventType</div><div class="ttdoc">A list of all events that can be fired by InputEvents classes.</div><div class="ttdef"><b>Definition:</b> InputEvents.h:55</div></div>
 <div class="ttc" id="aclassEventAnalog_html"><div class="ttname"><a href="classEventAnalog.html">EventAnalog</a></div><div class="ttdoc">The EventAnalog class is for analog inputs - slice an analog range into configurable number of increm...</div><div class="ttdef"><b>Definition:</b> EventAnalog.h:30</div></div>
 <div class="ttc" id="aclassEventInputBase_html"><div class="ttname"><a href="classEventInputBase.html">EventInputBase</a></div><div class="ttdoc">The common base for InputEvents input classes.</div><div class="ttdef"><b>Definition:</b> EventInputBase.h:26</div></div>
 <div class="ttc" id="aclassEventInputBase_html_a4c27051ea63c3fe9a4731d073af13397"><div class="ttname"><a href="classEventInputBase.html#a4c27051ea63c3fe9a4731d073af13397">EventInputBase::callbackIsSet</a></div><div class="ttdeci">bool callbackIsSet</div><div class="ttdoc">Required because in C/C++ callback has to be defined in derived classes... :-/.</div><div class="ttdef"><b>Definition:</b> EventInputBase.h:184</div></div>

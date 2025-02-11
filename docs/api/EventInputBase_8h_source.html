@@ -48,7 +48,14 @@ $(function() {
   <div class="headertitle"><div class="title">EventInputBase.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> * GPLv2 Licence https://www.gnu.org/licenses/old-licenses/gpl-2.0.txt</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * </span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * Copyright (c) 2024 Philip Fletcher &lt;philip.fletcher@stutchbury.com&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> * </span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#ifndef EVENT_INPUT_BASE_H</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#define EVENT_INPUT_BASE_H</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
@@ -150,7 +157,7 @@ $(function() {
 <div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span> </div>
 <div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aInputEvents_8h_html"><div class="ttname"><a href="InputEvents_8h.html">InputEvents.h</a></div><div class="ttdoc">Contains InputEventType enums and some defines.</div></div>
-<div class="ttc" id="aInputEvents_8h_html_acc94f246a54241db4187487d5c3f0c1f"><div class="ttname"><a href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1f">InputEventType</a></div><div class="ttdeci">InputEventType</div><div class="ttdoc">A list of all events that can be fired by InputEvents classes.</div><div class="ttdef"><b>Definition:</b> InputEvents.h:91</div></div>
+<div class="ttc" id="aInputEvents_8h_html_acc94f246a54241db4187487d5c3f0c1f"><div class="ttname"><a href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1f">InputEventType</a></div><div class="ttdeci">InputEventType</div><div class="ttdoc">A list of all events that can be fired by InputEvents classes.</div><div class="ttdef"><b>Definition:</b> InputEvents.h:55</div></div>
 <div class="ttc" id="aclassEventInputBase_html"><div class="ttname"><a href="classEventInputBase.html">EventInputBase</a></div><div class="ttdoc">The common base for InputEvents input classes.</div><div class="ttdef"><b>Definition:</b> EventInputBase.h:26</div></div>
 <div class="ttc" id="aclassEventInputBase_html_a046dd0c271dad9276dd173ed94950884"><div class="ttname"><a href="classEventInputBase.html#a046dd0c271dad9276dd173ed94950884">EventInputBase::getInputId</a></div><div class="ttdeci">uint8_t getInputId()</div><div class="ttdoc">Get the input ID (for use by user, not used internally). Not unique, default is 0.</div><div class="ttdef"><b>Definition:</b> EventInputBase.h:169</div></div>
 <div class="ttc" id="aclassEventInputBase_html_a051323ea164df82245879229604c3dda"><div class="ttname"><a href="classEventInputBase.html#a051323ea164df82245879229604c3dda">EventInputBase::resetIdleTimer</a></div><div class="ttdeci">void resetIdleTimer()</div><div class="ttdoc">Reset the idle timer. The IDLE event will fire setIdleTimeout ms after this is called.</div><div class="ttdef"><b>Definition:</b> EventInputBase.cpp:33</div></div>

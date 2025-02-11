@@ -44,19 +44,31 @@ $(function() {
   <div class="headertitle"><div class="title">InputEvents Library </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p ><a class="anchor" id="md_docs_apidocs"></a>An easy to use but comprehensive Arduino Event Library for both pysical and logical Buttons, Encoders, Encoder Buttons, Analog Inputs, Joysticks and Switches. Tested on Arduino, ESP and Teensy.</p>
-<p ><img src="images/all-inputs.png" alt="Picture of button, encoder, potentiometer, joystick and switch" class="inline"/></p>
+<div class="textblock"><p ><a class="anchor" id="md_docs_apidocs"></a>An easy to use but comprehensive Arduino Event Library for both physical and logical Buttons, Encoders, Encoder Buttons, Analog Inputs, Joysticks and Switches. Tested on Arduino, ESP and Teensy.</p>
+<p ><img src="https://raw.githubusercontent.com/Stutchbury/InputEvents/refs/heads/main/images/all-inputs.png" alt="Picture of button, encoder, potentiometer, joystick and switch" width="500" class="inline"/></p>
 <h1><a class="anchor" id="autotoc_md1"></a>
 Input Classes</h1>
 <p >There is one class for each type of physical input. All classes are derived from <a class="el" href="classEventInputBase.html" title="The common base for InputEvents input classes.">EventInputBase</a> so share common methods for handling enable/disable, event blocking, timeout and user ID/values.</p>
 <ul>
 <li><a class="el" href="classEventButton.html" title="The EventButton class is for momentary inputs. The momentary switch (button) must be wired between th...">EventButton</a> - used with monentary switches or inputs, usually refered to as 'buttons'.</li>
 <li><a class="el" href="classEventEncoder.html" title="The EventEncoder class is for quadrature encoder inputs providing the position &amp; encoder increment,...">EventEncoder</a> - used for plain encoders such as an MPG or motor encoder. If you use this with an encoder button, no button events will be fired!</li>
-<li><a class="el" href="classEventEncoderButton.html" title="The EventEncoderButton class combines the EventEncoder class with the EventButton class and is used f...">EventEncoderButton</a> - contains an <a class="el" href="classEventEncoder.html" title="The EventEncoder class is for quadrature encoder inputs providing the position &amp; encoder increment,...">EventEncoder</a> and an [<a class="el" href="classEventButton.html" title="The EventButton class is for momentary inputs. The momentary switch (button) must be wired between th...">EventButton</a>. Certain button events are changed is the encoder if pressed and turned.</li>
+<li><a class="el" href="classEventEncoderButton.html" title="The EventEncoderButton class combines the EventEncoder class with the EventButton class and is used f...">EventEncoderButton</a> - contains an <a class="el" href="classEventEncoder.html" title="The EventEncoder class is for quadrature encoder inputs providing the position &amp; encoder increment,...">EventEncoder</a> and an <a class="el" href="classEventButton.html" title="The EventButton class is for momentary inputs. The momentary switch (button) must be wired between th...">EventButton</a>. Certain button events are changed if the encoder is turned while pressed.</li>
 <li><a class="el" href="classEventAnalog.html" title="The EventAnalog class is for analog inputs - slice an analog range into configurable number of increm...">EventAnalog</a> - generally used for potentiometers but anything that normally connects to an analog pin will suffice. The analog input value is redefined as a limited number of increments or 'slices' so events are fired at specified thresholds rather than 1024 times over the range of the input.</li>
 <li><a class="el" href="classEventSwitch.html" title="The EventSwitch class is for standard on/off inputs. Like the EventButton the switch must be wired be...">EventSwitch</a> - used for plain on/off switches or inputs.</li>
-<li><a class="el" href="classEventJoystick.html" title="The EventJoystick class contains two EventAnalog inputs configured as a joystick.">EventJoystick</a> - contains two <a class="el" href="classEventAnalog.html" title="The EventAnalog class is for analog inputs - slice an analog range into configurable number of increm...">EventAnalog</a> inputs, enabling very easy use of joysticks with 'interesting' resistance values across their range. The joystick will automatically adjust the extent of the analog range, adjusting slices accordingly. Both X and Y axis can be accessed and configured directly if required. </li>
+<li><a class="el" href="classEventJoystick.html" title="The EventJoystick class contains two EventAnalog inputs configured as a joystick.">EventJoystick</a> - contains two <a class="el" href="classEventAnalog.html" title="The EventAnalog class is for analog inputs - slice an analog range into configurable number of increm...">EventAnalog</a> inputs, enabling very easy use of joysticks with 'interesting' resistance values across their range. The joystick will automatically adjust the extent of the analog range, adjusting slices accordingly. Both X and Y axis can be accessed and configured directly if required.</li>
 </ul>
+<h1><a class="anchor" id="autotoc_md2"></a>
+Source Code</h1>
+<p >The InputEvents Library is available via the <a href="https://docs.arduino.cc/software/ide/">Arduino</a> IDE or <a href="https://platformio.org/">PlatformIO</a> Library Managers by searching for 'InputEvwents'</p>
+<p >Further information, source code, examples, and guides are available in the <a href="https://github.com/Stutchbury/InputEvents">github repository</a>.</p>
+<h1><a class="anchor" id="autotoc_md3"></a>
+Dependencies</h1>
+<ol type="1">
+<li>Thomas Fredericks' <a href="https://github.com/thomasfredericks/Bounce2">Bounce2</a> library to debounce buttons and switches.</li>
+<li>The <a href="https://github.com/Stutchbury/EncoderAdapter">EncoderAdapter</a> library to allow the use of almost any underlying encoder class.</li>
+</ol>
+<p >Both should be installed automatically by the Library Manager(s).</p>
+<p >By default the <code>EncoderAdapter</code> supports Paul Stoffregen's <a href="https://github.com/paulstoffregen/Encoder">Encoder</a> library - this will need to be installed in order to use encoders or encoder buttons. </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->
