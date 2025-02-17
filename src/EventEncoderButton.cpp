@@ -8,7 +8,6 @@
  */
 
 #include "EventEncoderButton.h"
-
 #ifndef EXCLUDE_EVENT_ENCODER
 
 
@@ -68,26 +67,27 @@ void EventEncoderButton::onInputCallback(InputEventType et, EventInputBase & ie)
     //Only fire IDLE if both the encoder and button are idle
     if ( et == InputEventType::IDLE && !(encoder.isIdle() && button.isIdle()  ) ) return;
 
-    // Convert CHANGED to CHANGED_PRESSED if button is pressed
-    if ( et == InputEventType::CHANGED && button.isPressed() ) {
-        encodingPressed = true;
-        currentPressedPosition += encoder.increment();
-        //Reverse out the unpressed position
-        encoder.resetPosition((encoder.position() - encoder.increment()));
-        et = InputEventType::CHANGED_PRESSED;
-    }
+    if ( et == InputEventType::CHANGED ) {
+        if (!onEncoderChanged() ) return; 
+        // Convert CHANGED to CHANGED_PRESSED if button is pressed
+        if ( encodingPressed ) {
+            et = InputEventType::CHANGED_PRESSED;
+            encodingPressedCount++;
+        }
+    }    
     if ( encodingPressed ) {
         //Stop LONG_PRESS    
         if (et == InputEventType::LONG_PRESS) {
             return;
         }
         // Convert RELEASED to CHANGED_RELEASED
-        if ( et == InputEventType::RELEASED) {
+        if ( et == InputEventType::RELEASED && encodingPressedCount != 0 ) {
             et = InputEventType::CHANGED_RELEASED;
         }
         //Stop CLICKED and LONG_CLICKED (it will only be one of them)
         if (  et == InputEventType::CLICKED || et == InputEventType::LONG_CLICKED )  {
             encodingPressed = false;
+            encodingPressedCount = 0;
             return;
         }
     }
@@ -96,22 +96,83 @@ void EventEncoderButton::onInputCallback(InputEventType et, EventInputBase & ie)
     invoke(et);    
 }
 
+/*
+ * Set current/previous increment, check limits and return true only if increment != 0
+ * This will only be called if encoder has CHANGED (ie encoder.increment will never be zero )
+ */
+bool EventEncoderButton::onEncoderChanged() {
+    currentIncrement = encoder.increment();
+    if ( button.isPressed() ) {
+        previousPressedPosition = currentPressedPosition;
+        currentPressedPosition += currentIncrement;
+        encodingPressed = true;
+        // Do not check position limits unless both min/max are non-zero
+        if ( minPressedPos == 0 && maxPressedPos == 0 ) {
+            return true; //Increment will always be non-zero
+        }
+        if ( currentPressedPosition > maxPressedPos ) {
+            currentPressedPosition = (wrapMinMaxPressedPos ? minPressedPos : maxPressedPos);
+            currentIncrement = currentPressedPosition - previousPressedPosition;
+        } else if ( currentPressedPosition < minPressedPos ) {
+            currentPressedPosition = (wrapMinMaxPressedPos ? maxPressedPos : minPressedPos);
+            currentIncrement = currentPressedPosition - previousPressedPosition;
+        }
+    } else {
+        previousPosition = currentPosition;
+        currentPosition += currentIncrement;
+        // Do not check position limits unless both min/max are non-zero
+        if ( minPos == 0 && maxPos == 0 ) {
+            return true; //Increment will always be non-zero
+        }
+        if ( currentPosition > maxPos ) {
+            currentPosition = (wrapMinMaxPos ? minPos : maxPos);
+            currentIncrement = currentPosition - previousPosition;
+        } else if ( currentPosition < minPos ) {
+            currentPosition = (wrapMinMaxPos ? maxPos : minPos);
+            currentIncrement = currentPosition - previousPosition;
+        }
+    }
+    return (currentIncrement != 0);
+}
+
+
+void EventEncoderButton::setMinPosition(int32_t minPosition) { 
+    minPos = minPosition;
+    if ( currentPosition < minPos ) {
+        currentPosition = minPos;
+        previousPosition = currentPosition;
+    }
+}
+
+void EventEncoderButton::setMaxPosition(int32_t maxPosition) {
+    maxPos = maxPosition; 
+    if ( currentPosition > maxPos ) {
+        currentPosition = maxPos;
+        previousPosition = currentPosition;
+    }
+}
+
+void EventEncoderButton::setMinPressedPosition(int32_t minPressedPosition) { 
+    minPressedPos = minPressedPosition; 
+    if ( currentPressedPosition < minPressedPos ) {
+        currentPressedPosition = minPressedPos;
+        previousPressedPosition = currentPressedPosition;
+    }
+}
+
+void EventEncoderButton::setMaxPressedPosition(int32_t maxPressedPosition) { 
+    maxPressedPos = maxPressedPosition; 
+    if ( currentPressedPosition > maxPressedPos ) {
+        currentPressedPosition = maxPressedPos;
+        previousPressedPosition = currentPressedPosition;
+    }
+}
 
 void EventEncoderButton::setRateLimit(long ms) { encoder.setRateLimit(ms); }
 
 void EventEncoderButton::setPositionDivider(uint8_t divider /*=4*/) { encoder.setPositionDivider(divider); }
 
 uint8_t EventEncoderButton::getPositionDivider() {return encoder.getPositionDivider(); }
-
-void EventEncoderButton::resetPosition(long pos) { encoder.resetPosition(pos);}
-
-int16_t EventEncoderButton::increment() { return encoder.increment(); }
-
-long EventEncoderButton::position() { return encoder.position(); }
-
-void EventEncoderButton::resetPressedPosition(long pos) { currentPressedPosition = pos; }
-
-long EventEncoderButton::pressedPosition() { return currentPressedPosition; }
 
 bool EventEncoderButton::buttonState() { return  button.buttonState(); }
 
