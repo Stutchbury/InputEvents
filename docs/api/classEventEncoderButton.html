@@ -19,7 +19,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="fletch-logo64x64.png"/></td>
   <td id="projectalign">
-   <div id="projectname">InputEvents<span id="projectnumber">&#160;v1.2.0</span>
+   <div id="projectname">InputEvents<span id="projectnumber">&#160;v1.3.0</span>
    </div>
    <div id="projectbrief">An easy to use but comprehensive Event Library for Buttons, Encoders, Encoder Buttons, Analog Inputs, Joysticks and Switches.</div>
   </td>
@@ -63,13 +63,13 @@ $(function() {
 <li><a class="el" href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1faba3297c1875314aa423176f7f81aa62c" title="Fired by EventButton, EventEncoderButton and EventTouchScreen.">InputEventType::MULTI_CLICKED</a> - fired after <code>RELEASED</code> if not <code>LONG_CLICKED</code> and button is pressed and released more than twice (no limit!). The method <a class="el" href="classEventEncoderButton.html#af574dc521e876e14c9192110974e5876" title="The number of clicks that have been fired in the MULTI_CLICKED event.">clickCount()</a> returns the number of clicks.</li>
 <li><a class="el" href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1fa6cfd612b64bbe4bd62ea3eacec312f2a" title="Fired by EventButton, EventEncoderButton and EventTouchScreen.">InputEventType::LONG_PRESS</a> - fired <em>during</em> a long press (hence change of tense). Will repeat by default but this can be turned off.</li>
 <li><a class="el" href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1fa805b130a75064e557266025262a59d4a" title="Fired by EventButton, EventEncoderButton and EventTouchScreen.">InputEventType::LONG_CLICKED</a> - fired <em>after</em> a long press.</li>
-<li><a class="el" href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1fae6b94e58bfd13b21bc786578d9f8ba4a" title="Fired by EventEncoder and EventAnalog.">InputEventType::CHANGED</a> - fired on each change of position</li>
-<li><a class="el" href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1fad01c6af4e3617d563f337bc4f7248d58" title="Fired by EventEncoderButton.">InputEventType::CHANGED_PRESSED</a> - fired on each change of position <em>while</em> pressed</li>
-<li><a class="el" href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1fabbfbeab0868adf411f4c3c3451f6705c" title="Fired by EventEncoderButton.">InputEventType::CHANGED_RELEASED</a> - fired after a button is released if the encoder was turned while pressed</li>
+<li><a class="el" href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1fae6b94e58bfd13b21bc786578d9f8ba4a" title="Fired by EventEncoder and EventAnalog.">InputEventType::CHANGED</a> - fired on each change of position (if min/max limits are not exceeded and wrapping if false)</li>
+<li><a class="el" href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1fad01c6af4e3617d563f337bc4f7248d58" title="Fired by EventEncoderButton.">InputEventType::CHANGED_PRESSED</a> - fired on each change of position <em>while</em> pressed (if min/max limits are not exceeded and wrapping if false)</li>
+<li><a class="el" href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1fabbfbeab0868adf411f4c3c3451f6705c" title="Fired by EventEncoderButton.">InputEventType::CHANGED_RELEASED</a> - fired after a button is released if the encoder was turned while pressed <em>and</em> a PRESSED_CHANGED event has fired.</li>
 </ul>
 <blockquote class="doxtable">
-<p >&zwj;Note: When the encoder is not pressed and turned, its button behaves just like a regular <a class="el" href="classEventButton.html" title="The EventButton class is for momentary inputs. The momentary switch (button) must be wired between th...">EventButton</a> but if the encoder is turned <em>while</em> pressed the following changes to events occur:</p><ul>
-<li>on release, the button's <code>RELEASED</code> event is translated to a <code>CHANGED_RELEASED</code> event.</li>
+<p >&zwj;Note: When the encoder is not pressed and turned, its button behaves just like a regular <a class="el" href="classEventButton.html" title="The EventButton class is for momentary inputs. The momentary switch (button) must be wired between th...">EventButton</a> but if the encoder is turned <em>while</em> pressed, the following changes to events occur:</p><ul>
+<li>on release, the button's <code>RELEASED</code> event is translated to a <code>CHANGED_RELEASED</code> event if a <code>PRESSED_CHANGED</code> event has been fired</li>
 <li>the <code>LONG_PRESS</code>, <code>CLICKED</code> and <code>LONG_CLICKED</code> are not fired. </li>
 </ul>
 </blockquote>
@@ -117,14 +117,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:afca1253c6c9fb8505a186e76c28a8b87"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventEncoderButton.html#afca1253c6c9fb8505a186e76c28a8b87">increment</a> ()</td></tr>
 <tr class="memdesc:afca1253c6c9fb8505a186e76c28a8b87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a positive (CW) or negative (CCW) integer.  <a href="classEventEncoderButton.html#afca1253c6c9fb8505a186e76c28a8b87">More...</a><br /></td></tr>
 <tr class="separator:afca1253c6c9fb8505a186e76c28a8b87"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c1598346cec2be065bb196468b64456"><td class="memItemLeft" align="right" valign="top"><a id="a8c1598346cec2be065bb196468b64456" name="a8c1598346cec2be065bb196468b64456"></a>
-long&#160;</td><td class="memItemRight" valign="bottom"><b>position</b> ()</td></tr>
-<tr class="memdesc:a8c1598346cec2be065bb196468b64456"><td class="mdescLeft">&#160;</td><td class="mdescRight">The current position of the encoder. Can be reset with <a class="el" href="classEventEncoderButton.html#a20b8afa04d2fa874827b4ad71526f7fa" title="Reset the counted position of the encoder.">resetPosition()</a> <br /></td></tr>
-<tr class="separator:a8c1598346cec2be065bb196468b64456"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad949607d42194d029d46b42c2cda76d7"><td class="memItemLeft" align="right" valign="top"><a id="ad949607d42194d029d46b42c2cda76d7" name="ad949607d42194d029d46b42c2cda76d7"></a>
-long&#160;</td><td class="memItemRight" valign="bottom"><b>pressedPosition</b> ()</td></tr>
-<tr class="memdesc:ad949607d42194d029d46b42c2cda76d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">The current pressed position of the encoder. Can be reset with <a class="el" href="classEventEncoderButton.html#abacacfaa4ee8657bd821dacf5690219b" title="Reset the counted preessed position of the EventEncoder.">resetPressedPosition()</a> <br /></td></tr>
-<tr class="separator:ad949607d42194d029d46b42c2cda76d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a1af00524c3bb6dde583afd6cb3e805"><td class="memItemLeft" align="right" valign="top"><a id="a0a1af00524c3bb6dde583afd6cb3e805" name="a0a1af00524c3bb6dde583afd6cb3e805"></a>
+int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>position</b> ()</td></tr>
+<tr class="memdesc:a0a1af00524c3bb6dde583afd6cb3e805"><td class="mdescLeft">&#160;</td><td class="mdescRight">The current position of the encoder. Can be reset with <a class="el" href="classEventEncoderButton.html#ab5b05c056c14f3dfce8fbbe74d21aa43" title="Reset the counted position of the EventEncoderButton.">resetPosition()</a> <br /></td></tr>
+<tr class="separator:a0a1af00524c3bb6dde583afd6cb3e805"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae49e185814919c46afc4a9fc62da9339"><td class="memItemLeft" align="right" valign="top"><a id="ae49e185814919c46afc4a9fc62da9339" name="ae49e185814919c46afc4a9fc62da9339"></a>
+int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>pressedPosition</b> ()</td></tr>
+<tr class="memdesc:ae49e185814919c46afc4a9fc62da9339"><td class="mdescLeft">&#160;</td><td class="mdescRight">The current pressed position of the encoder. Can be reset with <a class="el" href="classEventEncoderButton.html#a0fb4ceb05477e1a8eedfe33aa3bee8da" title="Reset the counted pressed position of the EventEncoderButton.">resetPressedPosition()</a> <br /></td></tr>
+<tr class="separator:ae49e185814919c46afc4a9fc62da9339"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af574dc521e876e14c9192110974e5876"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventEncoderButton.html#af574dc521e876e14c9192110974e5876">clickCount</a> ()</td></tr>
 <tr class="memdesc:af574dc521e876e14c9192110974e5876"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of clicks that have been fired in the MULTI_CLICKED event.  <a href="classEventEncoderButton.html#af574dc521e876e14c9192110974e5876">More...</a><br /></td></tr>
 <tr class="separator:af574dc521e876e14c9192110974e5876"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -144,6 +144,32 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>isPressed</b> ()</td>
 <tr class="memitem:a7cf54d3e8413515328b7459c47aec911"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventEncoderButton.html#a7cf54d3e8413515328b7459c47aec911">buttonState</a> ()</td></tr>
 <tr class="memdesc:a7cf54d3e8413515328b7459c47aec911"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the button state as reported by Bounce2.  <a href="classEventEncoderButton.html#a7cf54d3e8413515328b7459c47aec911">More...</a><br /></td></tr>
 <tr class="separator:a7cf54d3e8413515328b7459c47aec911"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Setting limits for position() and pressedPosition().</div></td></tr>
+<tr><td colspan="2"><div class="groupText"><p >High and low limits can be set for both <a class="el" href="classEventEncoderButton.html#a0a1af00524c3bb6dde583afd6cb3e805" title="The current position of the encoder. Can be reset with resetPosition()">position()</a> and <a class="el" href="classEventEncoderButton.html#ae49e185814919c46afc4a9fc62da9339" title="The current pressed position of the encoder. Can be reset with resetPressedPosition()">pressedPosition()</a>.</p>
+<ul>
+<li>If either <a class="el" href="classEventEncoderButton.html#a38c4d50d938b4a768ba470ed30e52df9" title="Set a lower limit for the encoder position.">setMinPosition()</a> or <a class="el" href="classEventEncoderButton.html#adb29df264d5736f858d5bf5862d00466" title="Set an upper limit for the encoder position.">setMaxPosition()</a> are non zero, the limits will be applied to <a class="el" href="classEventEncoderButton.html#a0a1af00524c3bb6dde583afd6cb3e805" title="The current position of the encoder. Can be reset with resetPosition()">position()</a></li>
+<li>If either <a class="el" href="classEventEncoderButton.html#acce221d3b41142316c44e15495596b8b" title="Set a lower limit for the encoder pressed position.">setMinPressedPosition()</a> or <a class="el" href="classEventEncoderButton.html#abdd05ea27396c4a8e844628457e3add4" title="Set an upper limit for the encoder pressed position.">setMaxPressedPosition()</a> are non zero, the limits will be applied to <a class="el" href="classEventEncoderButton.html#ae49e185814919c46afc4a9fc62da9339" title="The current pressed position of the encoder. Can be reset with resetPressedPosition()">pressedPosition()</a></li>
+</ul>
+<p >There are two behaviours defined by <a class="el" href="classEventEncoderButton.html#ae0492ae3a6cd3f49c2feeb5416a03a52" title="Wrap the max -&gt; min -&gt; max ... (default is to not wrap)">wrapMinMaxPosition()</a> and <a class="el" href="classEventEncoderButton.html#a3ab3e1b42df3b96d93f82e282fe0b496" title="Wrap the max -&gt; min -&gt; max ... (default is to not wrap)">wrapMinMaxPressedPosition()</a>. The default (false) is to not wrap. </p>
+</div></td></tr>
+<tr class="memitem:a38c4d50d938b4a768ba470ed30e52df9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventEncoderButton.html#a38c4d50d938b4a768ba470ed30e52df9">setMinPosition</a> (int32_t minPosition=0)</td></tr>
+<tr class="memdesc:a38c4d50d938b4a768ba470ed30e52df9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a lower limit for the encoder position.  <a href="classEventEncoderButton.html#a38c4d50d938b4a768ba470ed30e52df9">More...</a><br /></td></tr>
+<tr class="separator:a38c4d50d938b4a768ba470ed30e52df9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb29df264d5736f858d5bf5862d00466"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventEncoderButton.html#adb29df264d5736f858d5bf5862d00466">setMaxPosition</a> (int32_t maxPosition=0)</td></tr>
+<tr class="memdesc:adb29df264d5736f858d5bf5862d00466"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set an upper limit for the encoder position.  <a href="classEventEncoderButton.html#adb29df264d5736f858d5bf5862d00466">More...</a><br /></td></tr>
+<tr class="separator:adb29df264d5736f858d5bf5862d00466"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0492ae3a6cd3f49c2feeb5416a03a52"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventEncoderButton.html#ae0492ae3a6cd3f49c2feeb5416a03a52">wrapMinMaxPosition</a> (bool wrap)</td></tr>
+<tr class="memdesc:ae0492ae3a6cd3f49c2feeb5416a03a52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrap the max -&gt; min -&gt; max ... (default is to not wrap)  <a href="classEventEncoderButton.html#ae0492ae3a6cd3f49c2feeb5416a03a52">More...</a><br /></td></tr>
+<tr class="separator:ae0492ae3a6cd3f49c2feeb5416a03a52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acce221d3b41142316c44e15495596b8b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventEncoderButton.html#acce221d3b41142316c44e15495596b8b">setMinPressedPosition</a> (int32_t minPressedPosition=0)</td></tr>
+<tr class="memdesc:acce221d3b41142316c44e15495596b8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a lower limit for the encoder pressed position.  <a href="classEventEncoderButton.html#acce221d3b41142316c44e15495596b8b">More...</a><br /></td></tr>
+<tr class="separator:acce221d3b41142316c44e15495596b8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdd05ea27396c4a8e844628457e3add4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventEncoderButton.html#abdd05ea27396c4a8e844628457e3add4">setMaxPressedPosition</a> (int32_t maxPressedPosition=0)</td></tr>
+<tr class="memdesc:abdd05ea27396c4a8e844628457e3add4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set an upper limit for the encoder pressed position.  <a href="classEventEncoderButton.html#abdd05ea27396c4a8e844628457e3add4">More...</a><br /></td></tr>
+<tr class="separator:abdd05ea27396c4a8e844628457e3add4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ab3e1b42df3b96d93f82e282fe0b496"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventEncoderButton.html#a3ab3e1b42df3b96d93f82e282fe0b496">wrapMinMaxPressedPosition</a> (bool wrap)</td></tr>
+<tr class="memdesc:a3ab3e1b42df3b96d93f82e282fe0b496"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrap the max -&gt; min -&gt; max ... (default is to not wrap)  <a href="classEventEncoderButton.html#a3ab3e1b42df3b96d93f82e282fe0b496">More...</a><br /></td></tr>
+<tr class="separator:a3ab3e1b42df3b96d93f82e282fe0b496"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">Other Configuration Settings</div></td></tr>
 <tr class="memitem:aabbde4c46664d2b18aff7d8f705a0155"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventEncoderButton.html#aabbde4c46664d2b18aff7d8f705a0155">setRateLimit</a> (long ms)</td></tr>
 <tr class="memdesc:aabbde4c46664d2b18aff7d8f705a0155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encoder callbacks are normally fired on every loop() but for MPG style encoders this can fire a huge number of events (that may swamp a serial connection).  <a href="classEventEncoderButton.html#aabbde4c46664d2b18aff7d8f705a0155">More...</a><br /></td></tr>
@@ -154,12 +180,12 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>isPressed</b> ()</td>
 <tr class="memitem:a5dba84480685287665e063f92c1d3e55"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventEncoderButton.html#a5dba84480685287665e063f92c1d3e55">getPositionDivider</a> ()</td></tr>
 <tr class="memdesc:a5dba84480685287665e063f92c1d3e55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the currently set position divider value.  <a href="classEventEncoderButton.html#a5dba84480685287665e063f92c1d3e55">More...</a><br /></td></tr>
 <tr class="separator:a5dba84480685287665e063f92c1d3e55"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a20b8afa04d2fa874827b4ad71526f7fa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventEncoderButton.html#a20b8afa04d2fa874827b4ad71526f7fa">resetPosition</a> (long pos=0)</td></tr>
-<tr class="memdesc:a20b8afa04d2fa874827b4ad71526f7fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the counted position of the encoder.  <a href="classEventEncoderButton.html#a20b8afa04d2fa874827b4ad71526f7fa">More...</a><br /></td></tr>
-<tr class="separator:a20b8afa04d2fa874827b4ad71526f7fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abacacfaa4ee8657bd821dacf5690219b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventEncoderButton.html#abacacfaa4ee8657bd821dacf5690219b">resetPressedPosition</a> (long pos)</td></tr>
-<tr class="memdesc:abacacfaa4ee8657bd821dacf5690219b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the counted preessed position of the <a class="el" href="classEventEncoder.html" title="The EventEncoder class is for quadrature encoder inputs providing the position &amp; encoder increment,...">EventEncoder</a>.  <a href="classEventEncoderButton.html#abacacfaa4ee8657bd821dacf5690219b">More...</a><br /></td></tr>
-<tr class="separator:abacacfaa4ee8657bd821dacf5690219b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5b05c056c14f3dfce8fbbe74d21aa43"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventEncoderButton.html#ab5b05c056c14f3dfce8fbbe74d21aa43">resetPosition</a> (int32_t pos=0)</td></tr>
+<tr class="memdesc:ab5b05c056c14f3dfce8fbbe74d21aa43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the counted position of the <a class="el" href="classEventEncoderButton.html" title="The EventEncoderButton class combines the EventEncoder class with the EventButton class and is used f...">EventEncoderButton</a>.  <a href="classEventEncoderButton.html#ab5b05c056c14f3dfce8fbbe74d21aa43">More...</a><br /></td></tr>
+<tr class="separator:ab5b05c056c14f3dfce8fbbe74d21aa43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fb4ceb05477e1a8eedfe33aa3bee8da"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventEncoderButton.html#a0fb4ceb05477e1a8eedfe33aa3bee8da">resetPressedPosition</a> (int32_t pos)</td></tr>
+<tr class="memdesc:a0fb4ceb05477e1a8eedfe33aa3bee8da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the counted pressed position of the <a class="el" href="classEventEncoderButton.html" title="The EventEncoderButton class combines the EventEncoder class with the EventButton class and is used f...">EventEncoderButton</a>.  <a href="classEventEncoderButton.html#a0fb4ceb05477e1a8eedfe33aa3bee8da">More...</a><br /></td></tr>
+<tr class="separator:a0fb4ceb05477e1a8eedfe33aa3bee8da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a55c50d1668450a04c81a308da3037466"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventEncoderButton.html#a55c50d1668450a04c81a308da3037466">enableLongPressRepeat</a> (bool repeat=true)</td></tr>
 <tr class="memdesc:a55c50d1668450a04c81a308da3037466"><td class="mdescLeft">&#160;</td><td class="mdescRight">Choose whether to repeat the long press callback. (true by default)  <a href="classEventEncoderButton.html#a55c50d1668450a04c81a308da3037466">More...</a><br /></td></tr>
 <tr class="separator:a55c50d1668450a04c81a308da3037466"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -511,6 +537,9 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>callbackIsSet</b> = f
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">int16_t EventEncoderButton::increment </td>
@@ -519,6 +548,11 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>callbackIsSet</b> = f
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Returns a positive (CW) or negative (CCW) integer. </p>
@@ -727,45 +761,63 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>callbackIsSet</b> = f
 
 </div>
 </div>
-<a id="a20b8afa04d2fa874827b4ad71526f7fa" name="a20b8afa04d2fa874827b4ad71526f7fa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a20b8afa04d2fa874827b4ad71526f7fa">&#9670;&nbsp;</a></span>resetPosition()</h2>
+<a id="ab5b05c056c14f3dfce8fbbe74d21aa43" name="ab5b05c056c14f3dfce8fbbe74d21aa43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5b05c056c14f3dfce8fbbe74d21aa43">&#9670;&nbsp;</a></span>resetPosition()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void EventEncoderButton::resetPosition </td>
           <td>(</td>
-          <td class="paramtype">long&#160;</td>
+          <td class="paramtype">int32_t&#160;</td>
           <td class="paramname"><em>pos</em> = <code>0</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Reset the counted position of the encoder. </p>
-<p >Note: Some underlying encoder libraries may only allow a 'reset' to 0, not the setting of a specific value. </p>
+<p>Reset the counted position of the <a class="el" href="classEventEncoderButton.html" title="The EventEncoderButton class combines the EventEncoder class with the EventButton class and is used f...">EventEncoderButton</a>. </p>
+<p >Note: This does not reset the position on the underlying encoder libraries may only allow a 'reset' to 0, not the setting of a specific value.</p>
+<p >It also does not check if the passed position is within any min/max limits you may have set. </p>
 
 </div>
 </div>
-<a id="abacacfaa4ee8657bd821dacf5690219b" name="abacacfaa4ee8657bd821dacf5690219b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abacacfaa4ee8657bd821dacf5690219b">&#9670;&nbsp;</a></span>resetPressedPosition()</h2>
+<a id="a0fb4ceb05477e1a8eedfe33aa3bee8da" name="a0fb4ceb05477e1a8eedfe33aa3bee8da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0fb4ceb05477e1a8eedfe33aa3bee8da">&#9670;&nbsp;</a></span>resetPressedPosition()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void EventEncoderButton::resetPressedPosition </td>
           <td>(</td>
-          <td class="paramtype">long&#160;</td>
+          <td class="paramtype">int32_t&#160;</td>
           <td class="paramname"><em>pos</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Reset the counted preessed position of the <a class="el" href="classEventEncoder.html" title="The EventEncoder class is for quadrature encoder inputs providing the position &amp; encoder increment,...">EventEncoder</a>. </p>
-<p >Note: This only resets the <a class="el" href="classEventEncoderButton.html" title="The EventEncoderButton class combines the EventEncoder class with the EventButton class and is used f...">EventEncoderButton</a> pressedPosition, it does not change the underlying encoder library position. </p>
+<p>Reset the counted pressed position of the <a class="el" href="classEventEncoderButton.html" title="The EventEncoderButton class combines the EventEncoder class with the EventButton class and is used f...">EventEncoderButton</a>. </p>
+<p >Note: This only resets the <a class="el" href="classEventEncoderButton.html" title="The EventEncoderButton class combines the EventEncoder class with the EventButton class and is used f...">EventEncoderButton</a> pressedPosition, it does not change the underlying encoder library position.</p>
+<p >It also does not check if the passed position is within any min/max limits you may have set. </p>
 
 </div>
 </div>
@@ -926,6 +978,115 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
+<a id="adb29df264d5736f858d5bf5862d00466" name="adb29df264d5736f858d5bf5862d00466"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb29df264d5736f858d5bf5862d00466">&#9670;&nbsp;</a></span>setMaxPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EventEncoderButton::setMaxPosition </td>
+          <td>(</td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>maxPosition</em> = <code>0</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set an upper limit for the encoder position. </p>
+<p >If <a class="el" href="classEventEncoderButton.html#a0a1af00524c3bb6dde583afd6cb3e805" title="The current position of the encoder. Can be reset with resetPosition()">position()</a> is higher than the passed value, then it will be set to maxPosition.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">maxPosition</td><td>The highest position required </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="abdd05ea27396c4a8e844628457e3add4" name="abdd05ea27396c4a8e844628457e3add4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abdd05ea27396c4a8e844628457e3add4">&#9670;&nbsp;</a></span>setMaxPressedPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EventEncoderButton::setMaxPressedPosition </td>
+          <td>(</td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>maxPressedPosition</em> = <code>0</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set an upper limit for the encoder pressed position. </p>
+<p >If either <a class="el" href="classEventEncoderButton.html#acce221d3b41142316c44e15495596b8b" title="Set a lower limit for the encoder pressed position.">setMinPressedPosition()</a> or <a class="el" href="classEventEncoderButton.html#abdd05ea27396c4a8e844628457e3add4" title="Set an upper limit for the encoder pressed position.">setMaxPressedPosition()</a> are non zero, the limits will be applied.</p>
+<p >If <a class="el" href="classEventEncoderButton.html#a3ab3e1b42df3b96d93f82e282fe0b496" title="Wrap the max -&gt; min -&gt; max ... (default is to not wrap)">wrapMinMaxPressedPosition()</a> is set to true, the <a class="el" href="classEventEncoderButton.html#ae49e185814919c46afc4a9fc62da9339" title="The current pressed position of the encoder. Can be reset with resetPressedPosition()">pressedPosition()</a> will be wrapped from max to min or min to max.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">maxPressedPosition</td><td>The highest pressed position required </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a38c4d50d938b4a768ba470ed30e52df9" name="a38c4d50d938b4a768ba470ed30e52df9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38c4d50d938b4a768ba470ed30e52df9">&#9670;&nbsp;</a></span>setMinPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EventEncoderButton::setMinPosition </td>
+          <td>(</td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>minPosition</em> = <code>0</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set a lower limit for the encoder position. </p>
+<p >If <a class="el" href="classEventEncoderButton.html#a0a1af00524c3bb6dde583afd6cb3e805" title="The current position of the encoder. Can be reset with resetPosition()">position()</a> is lower than the passed value, then it will be set to minPosition.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">minPosition</td><td>The lowest position required </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="acce221d3b41142316c44e15495596b8b" name="acce221d3b41142316c44e15495596b8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acce221d3b41142316c44e15495596b8b">&#9670;&nbsp;</a></span>setMinPressedPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EventEncoderButton::setMinPressedPosition </td>
+          <td>(</td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>minPressedPosition</em> = <code>0</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set a lower limit for the encoder pressed position. </p>
+<p >If <a class="el" href="classEventEncoderButton.html#ae49e185814919c46afc4a9fc62da9339" title="The current pressed position of the encoder. Can be reset with resetPressedPosition()">pressedPosition()</a> is higher than the passed value, then it will be set to maxPressedPosition.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">minPressedPosition</td><td>The lowest pressed position required </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="aa1dcb48acd6855db3b55b0ce5dd71b43" name="aa1dcb48acd6855db3b55b0ce5dd71b43"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa1dcb48acd6855db3b55b0ce5dd71b43">&#9670;&nbsp;</a></span>setMultiClickInterval()</h2>
 
@@ -990,7 +1151,13 @@ template&lt;typename T &gt; </div>
 </div><div class="memdoc">
 
 <p>Encoder callbacks are normally fired on every loop() but for MPG style encoders this can fire a huge number of events (that may swamp a serial connection). </p>
-<p >The encoder interupts will sitll be called but this will limit the call back firing to every set ms - read the EncoderButton.increment() for lossless counting of encoder. Set to zero (default) for no rate limit. </p>
+<p >The encoder interupts will sitll be called but this will limit the call back firing to every set ms - read the EncoderButton.increment() for lossless counting of encoder. Set to zero (default) for no rate limit.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ms</td><td>Number of milliseconds between each <a class="el" href="classEventEncoderButton.html#aea8ffee1c5313dace5f4fef6f8e50f7e" title="Update the state from the underlying encoder library and button pin.">update()</a> </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1041,6 +1208,77 @@ template&lt;typename T &gt; </div>
 
 <p>Update the state from the underlying encoder library and button pin. </p>
 <p ><em>Must</em> be called from within <code>loop()</code> </p>
+
+</div>
+</div>
+<a id="ae0492ae3a6cd3f49c2feeb5416a03a52" name="ae0492ae3a6cd3f49c2feeb5416a03a52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0492ae3a6cd3f49c2feeb5416a03a52">&#9670;&nbsp;</a></span>wrapMinMaxPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EventEncoderButton::wrapMinMaxPosition </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>wrap</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Wrap the max -&gt; min -&gt; max ... (default is to not wrap) </p>
+<p >If <a class="el" href="classEventEncoderButton.html#ae49e185814919c46afc4a9fc62da9339" title="The current pressed position of the encoder. Can be reset with resetPressedPosition()">pressedPosition()</a> is lower than the passed value, then it will be set to minPressedPosition.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">wrap</td><td>Pass true to wrap and false for default behaviour. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a3ab3e1b42df3b96d93f82e282fe0b496" name="a3ab3e1b42df3b96d93f82e282fe0b496"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ab3e1b42df3b96d93f82e282fe0b496">&#9670;&nbsp;</a></span>wrapMinMaxPressedPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EventEncoderButton::wrapMinMaxPressedPosition </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>wrap</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Wrap the max -&gt; min -&gt; max ... (default is to not wrap) </p>
+<p >If <a class="el" href="classEventEncoderButton.html#a3ab3e1b42df3b96d93f82e282fe0b496" title="Wrap the max -&gt; min -&gt; max ... (default is to not wrap)">wrapMinMaxPressedPosition()</a> is set to false (the default), the <a class="el" href="classEventEncoderButton.html#ae49e185814919c46afc4a9fc62da9339" title="The current pressed position of the encoder. Can be reset with resetPressedPosition()">pressedPosition()</a> will be stopped at the min or max limit.</p>
+<p >If <a class="el" href="classEventEncoderButton.html#a3ab3e1b42df3b96d93f82e282fe0b496" title="Wrap the max -&gt; min -&gt; max ... (default is to not wrap)">wrapMinMaxPressedPosition()</a> is set to true, the <a class="el" href="classEventEncoderButton.html#ae49e185814919c46afc4a9fc62da9339" title="The current pressed position of the encoder. Can be reset with resetPressedPosition()">pressedPosition()</a> will be wrapped from max -&gt; min -&gt; max ...</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">wrap</td><td>Pass true to wrap and false for default behaviour. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
