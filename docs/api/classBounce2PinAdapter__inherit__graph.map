@@ -1,0 +1,4 @@
+<map id="Bounce2PinAdapter" name="Bounce2PinAdapter">
+<area shape="rect" id="node1" title="A PinAdapter for the Bounce2 library. Note: this is not a DebounceAdapter as Bounce2 can only read th..." alt="" coords="5,80,143,107"/>
+<area shape="rect" id="node2" href="$classPinAdapter.html" title="The interface specification for button, encoder button and switch pins." alt="" coords="31,5,117,32"/>
+</map>

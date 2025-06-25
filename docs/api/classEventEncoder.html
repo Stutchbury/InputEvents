@@ -19,7 +19,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="fletch-logo64x64.png"/></td>
   <td id="projectalign">
-   <div id="projectname">InputEvents<span id="projectnumber">&#160;v1.3.0</span>
+   <div id="projectname">InputEvents<span id="projectnumber">&#160;v1.4.0</span>
    </div>
    <div id="projectbrief">An easy to use but comprehensive Event Library for Buttons, Encoders, Encoder Buttons, Analog Inputs, Joysticks and Switches.</div>
   </td>
@@ -53,10 +53,10 @@ $(function() {
 <div class="textblock"><p >The <a class="el" href="classEventEncoder.html" title="The EventEncoder class is for quadrature encoder inputs providing the position &amp; encoder increment,...">EventEncoder</a> class is for quadrature encoder inputs providing the position &amp; encoder increment, event rate limiting without losing steps (eg for easy acceleration or to reduce events sent over Serial). </p>
 <p >It is effectively an event wrapper around a low level encoder library. By default, Paul Stoffregen's <a href="https://www.pjrc.com/teensy/td_libs_Encoder.html">Encoder library</a> is used but adapters can easily be created for others (and more will be added).</p>
 <p >The following InputEventTypes are fired by <a class="el" href="classEventEncoder.html" title="The EventEncoder class is for quadrature encoder inputs providing the position &amp; encoder increment,...">EventEncoder</a>:</p><ul>
-<li><a class="el" href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1fac8cf6eea8f096ed51160b484d97c5bbd" title="Fired by all imputs.">InputEventType::ENABLED</a> - fired when the input is enabled.</li>
-<li><a class="el" href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1fa055c1a591abb0e8cd86dc969727bcc0b" title="Fired by all imputs.">InputEventType::DISABLED</a> - fired when the input is disabled.</li>
-<li><a class="el" href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1faa5daf7f2ebbba4975d61dab1c40188c7" title="Fired by all imputs.">InputEventType::IDLE</a> - fired after no other event (except <code>ENABLED</code> &amp; <code>DISABLED</code>) has been fired for a specified time. Each input can define its own idle timeout. Default is 10 seconds.</li>
-<li><a class="el" href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1fae6b94e58bfd13b21bc786578d9f8ba4a" title="Fired by EventEncoder and EventAnalog.">InputEventType::CHANGED</a> - fired on each change of position </li>
+<li><a class="el" href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1fac8cf6eea8f096ed51160b484d97c5bbd" title="1 Fired by all imputs">InputEventType::ENABLED</a> - fired when the input is enabled.</li>
+<li><a class="el" href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1fa055c1a591abb0e8cd86dc969727bcc0b" title="2 Fired by all imputs">InputEventType::DISABLED</a> - fired when the input is disabled.</li>
+<li><a class="el" href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1faa5daf7f2ebbba4975d61dab1c40188c7" title="3 Fired by all imputs">InputEventType::IDLE</a> - fired after no other event (except <code>ENABLED</code> &amp; <code>DISABLED</code>) has been fired for a specified time. Each input can define its own idle timeout. Default is 10 seconds.</li>
+<li><a class="el" href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1fae6b94e58bfd13b21bc786578d9f8ba4a" title="11 Fired by EventEncoder and EventAnalog">InputEventType::CHANGED</a> - fired on each change of position </li>
 </ul>
 </div>
 <p><code>#include &lt;<a class="el" href="EventEncoder_8h_source.html">EventEncoder.h</a>&gt;</code></p>

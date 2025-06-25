@@ -1,0 +1,9 @@
+<map id="PinAdapter" name="PinAdapter">
+<area shape="rect" id="node1" title="The interface specification for button, encoder button and switch pins." alt="" coords="331,5,417,32"/>
+<area shape="rect" id="node2" href="$classBounce2PinAdapter.html" title="A PinAdapter for the Bounce2 library. Note: this is not a DebounceAdapter as Bounce2 can only read th..." alt="" coords="5,80,143,107"/>
+<area shape="rect" id="node3" href="$classDebounceAdapter.html" title="This is the interface/base class for debounce adapters." alt="" coords="167,80,293,107"/>
+<area shape="rect" id="node5" href="$classGpioPinAdapter.html" title="This is the default PinAdapter for regular GPIO pins." alt="" coords="317,80,431,107"/>
+<area shape="rect" id="node6" href="$classPinMixerAdapter.html" title="This is the default PinAdapter for regular GPIO pins." alt="" coords="455,80,573,107"/>
+<area shape="rect" id="node7" href="$classVirtualPinAdapter.html" title="A PinAdapter that can set state programtically." alt="" coords="598,80,721,107"/>
+<area shape="rect" id="node4" href="$classFoltmanDebounceAdapter.html" title="This is the default InputEvents debouncer. Many thanks to @kfoltman." alt="" coords="143,155,317,181"/>
+</map>

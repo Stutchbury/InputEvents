@@ -19,7 +19,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="fletch-logo64x64.png"/></td>
   <td id="projectalign">
-   <div id="projectname">InputEvents<span id="projectnumber">&#160;v1.3.0</span>
+   <div id="projectname">InputEvents<span id="projectnumber">&#160;v1.4.0</span>
    </div>
    <div id="projectbrief">An easy to use but comprehensive Event Library for Buttons, Encoders, Encoder Buttons, Analog Inputs, Joysticks and Switches.</div>
   </td>
@@ -52,11 +52,11 @@ $(function() {
 <a name="details" id="details"></a><h2 class="groupheader">Description</h2>
 <div class="textblock"><p >The <a class="el" href="classEventJoystick.html" title="The EventJoystick class contains two EventAnalog inputs configured as a joystick.">EventJoystick</a> class contains two <a class="el" href="classEventAnalog.html" title="The EventAnalog class is for analog inputs - slice an analog range into configurable number of increm...">EventAnalog</a> inputs configured as a joystick. </p>
 <p >The following InputEventTypes are fired by <a class="el" href="classEventJoystick.html" title="The EventJoystick class contains two EventAnalog inputs configured as a joystick.">EventJoystick</a>:</p><ul>
-<li><a class="el" href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1fac8cf6eea8f096ed51160b484d97c5bbd" title="Fired by all imputs.">InputEventType::ENABLED</a> - fired when the input is enabled.</li>
-<li><a class="el" href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1fa055c1a591abb0e8cd86dc969727bcc0b" title="Fired by all imputs.">InputEventType::DISABLED</a> - fired when the input is disabled.</li>
-<li><a class="el" href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1faa5daf7f2ebbba4975d61dab1c40188c7" title="Fired by all imputs.">InputEventType::IDLE</a> - fired after no other event (except <code>ENABLED</code> &amp; <code>DISABLED</code>) has been fired for a specified time. Each input can define its own idle timeout. Default is 10 seconds.</li>
-<li><a class="el" href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1faa6c770629894561799ab0ce90da36c67" title="Fired Bby EventJoystick.">InputEventType::CHANGED_X</a> - fired on each change of increment on the X axis.</li>
-<li><a class="el" href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1fa6d94c912a9583c45eb3fef95949ed2b3" title="Fired Bby EventJoystick.">InputEventType::CHANGED_Y</a> - fired on each change of increment on the Y axis. </li>
+<li><a class="el" href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1fac8cf6eea8f096ed51160b484d97c5bbd" title="1 Fired by all imputs">InputEventType::ENABLED</a> - fired when the input is enabled.</li>
+<li><a class="el" href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1fa055c1a591abb0e8cd86dc969727bcc0b" title="2 Fired by all imputs">InputEventType::DISABLED</a> - fired when the input is disabled.</li>
+<li><a class="el" href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1faa5daf7f2ebbba4975d61dab1c40188c7" title="3 Fired by all imputs">InputEventType::IDLE</a> - fired after no other event (except <code>ENABLED</code> &amp; <code>DISABLED</code>) has been fired for a specified time. Each input can define its own idle timeout. Default is 10 seconds.</li>
+<li><a class="el" href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1faa6c770629894561799ab0ce90da36c67" title="14 Fired Bby EventJoystick">InputEventType::CHANGED_X</a> - fired on each change of increment on the X axis.</li>
+<li><a class="el" href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1fa6d94c912a9583c45eb3fef95949ed2b3" title="15 Fired Bby EventJoystick">InputEventType::CHANGED_Y</a> - fired on each change of increment on the Y axis. </li>
 </ul>
 </div>
 <p><code>#include &lt;<a class="el" href="EventJoystick_8h_source.html">EventJoystick.h</a>&gt;</code></p>
@@ -806,7 +806,7 @@ template&lt;typename T &gt; </div>
 
 <p>Split the analog range into this number of slices. The default is 10. </p>
 <p >Note: This library is intended to reduce the usual 0-1024 range of analogRead() to a much smaller, more manageable number of 'slices'. Much higher numbers may produce variable results as a slice width is the ADC resolution (1024) divided by the number of increments.</p>
-<p >An <a class="el" href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1faa6c770629894561799ab0ce90da36c67" title="Fired Bby EventJoystick.">InputEventType::CHANGED_X</a> or CHANGED_Y event will be fired each time the increment changes.</p>
+<p >An <a class="el" href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1faa6c770629894561799ab0ce90da36c67" title="14 Fired Bby EventJoystick">InputEventType::CHANGED_X</a> or CHANGED_Y event will be fired each time the increment changes.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">numIncr</td><td>The number of desired increments. Should not be more than 20% of the ADC max value. </td></tr>

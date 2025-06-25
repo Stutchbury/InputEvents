@@ -19,7 +19,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="fletch-logo64x64.png"/></td>
   <td id="projectalign">
-   <div id="projectname">InputEvents<span id="projectnumber">&#160;v1.3.0</span>
+   <div id="projectname">InputEvents<span id="projectnumber">&#160;v1.4.0</span>
    </div>
    <div id="projectbrief">An easy to use but comprehensive Event Library for Buttons, Encoders, Encoder Buttons, Analog Inputs, Joysticks and Switches.</div>
   </td>
@@ -53,16 +53,16 @@ $(function() {
 <div class="textblock"><p >The <a class="el" href="classEventButton.html" title="The EventButton class is for momentary inputs. The momentary switch (button) must be wired between th...">EventButton</a> class is for momentary inputs. The momentary switch (button) must be wired between the pin and GND. </p>
 <p ><a class="el" href="classEventButton.html" title="The EventButton class is for momentary inputs. The momentary switch (button) must be wired between th...">EventButton</a> is probably the easiest way to implement a button - a single function and four lines of code gives you information on all types of user inputs.</p>
 <p >The following InputEventTypes are fired by <a class="el" href="classEventButton.html" title="The EventButton class is for momentary inputs. The momentary switch (button) must be wired between th...">EventButton</a>:</p><ul>
-<li><a class="el" href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1fac8cf6eea8f096ed51160b484d97c5bbd" title="Fired by all imputs.">InputEventType::ENABLED</a> - fired when the input is enabled.</li>
-<li><a class="el" href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1fa055c1a591abb0e8cd86dc969727bcc0b" title="Fired by all imputs.">InputEventType::DISABLED</a> - fired when the input is disabled.</li>
-<li><a class="el" href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1faa5daf7f2ebbba4975d61dab1c40188c7" title="Fired by all imputs.">InputEventType::IDLE</a> - fired after no other event (except <code>ENABLED</code> &amp; <code>DISABLED</code>) has been fired for a specified time. Each input can define its own idle timeout. Default is 10 seconds.</li>
-<li><a class="el" href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1fa5381dc876ab002103a027265bc14ae52" title="Fired by EventButton, EventEncoderButton and EventTouchScreen.">InputEventType::PRESSED</a> - fired after (as) a button is pressed</li>
-<li><a class="el" href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1fa109d54efbb64d71f9a6ab18d0fb8add8" title="Fired by EventButton, EventEncoderButton and EventTouchScreen.">InputEventType::RELEASED</a> - fired after a button is released.</li>
-<li><a class="el" href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1fa39f050e632e5b0ca0c7ba110173cdea6" title="Fired by EventButton, EventEncoderButton and EventTouchScreen.">InputEventType::CLICKED</a> - fired after <code>RELEASED</code> if not <code>LONG_CLICKED</code> and button is pressed and released once.</li>
-<li><a class="el" href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1fa74e5994d6a36e91fd8386fc0ba74f951" title="Fired by EventButton, EventEncoderButton and EventTouchScreen.">InputEventType::DOUBLE_CLICKED</a> - fired after <code>RELEASED</code> if not <code>LONG_CLICKED</code> and button is pressed and released twice.</li>
-<li><a class="el" href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1faba3297c1875314aa423176f7f81aa62c" title="Fired by EventButton, EventEncoderButton and EventTouchScreen.">InputEventType::MULTI_CLICKED</a> - fired after <code>RELEASED</code> if not <code>LONG_CLICKED</code> and button is pressed and released more than twice (no limit!). The method <a class="el" href="classEventButton.html#a90c10d2e2967774325783d6bafefd9d3" title="The number of clicks that have been fired in the MULTI_CLICKED event.">clickCount()</a> returns the number of clicks.</li>
-<li><a class="el" href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1fa6cfd612b64bbe4bd62ea3eacec312f2a" title="Fired by EventButton, EventEncoderButton and EventTouchScreen.">InputEventType::LONG_PRESS</a> - fired <em>during</em> a long press (hence change of tense). Will repeat by default but this can be turned off.</li>
-<li><a class="el" href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1fa805b130a75064e557266025262a59d4a" title="Fired by EventButton, EventEncoderButton and EventTouchScreen.">InputEventType::LONG_CLICKED</a> - fired <em>after</em> a long press. </li>
+<li><a class="el" href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1fac8cf6eea8f096ed51160b484d97c5bbd" title="1 Fired by all imputs">InputEventType::ENABLED</a> - fired when the input is enabled.</li>
+<li><a class="el" href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1fa055c1a591abb0e8cd86dc969727bcc0b" title="2 Fired by all imputs">InputEventType::DISABLED</a> - fired when the input is disabled.</li>
+<li><a class="el" href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1faa5daf7f2ebbba4975d61dab1c40188c7" title="3 Fired by all imputs">InputEventType::IDLE</a> - fired after no other event (except <code>ENABLED</code> &amp; <code>DISABLED</code>) has been fired for a specified time. Each input can define its own idle timeout. Default is 10 seconds.</li>
+<li><a class="el" href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1fa5381dc876ab002103a027265bc14ae52" title="4 Fired by EventButton, EventEncoderButton and EventTouchScreen">InputEventType::PRESSED</a> - fired after (as) a button is pressed</li>
+<li><a class="el" href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1fa109d54efbb64d71f9a6ab18d0fb8add8" title="5 Fired by EventButton, EventEncoderButton and EventTouchScreen">InputEventType::RELEASED</a> - fired after a button is released.</li>
+<li><a class="el" href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1fa39f050e632e5b0ca0c7ba110173cdea6" title="6 Fired by EventButton, EventEncoderButton and EventTouchScreen">InputEventType::CLICKED</a> - fired after <code>RELEASED</code> if not <code>LONG_CLICKED</code> and button is pressed and released once.</li>
+<li><a class="el" href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1fa74e5994d6a36e91fd8386fc0ba74f951" title="7 Fired by EventButton, EventEncoderButton and EventTouchScreen">InputEventType::DOUBLE_CLICKED</a> - fired after <code>RELEASED</code> if not <code>LONG_CLICKED</code> and button is pressed and released twice.</li>
+<li><a class="el" href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1faba3297c1875314aa423176f7f81aa62c" title="8 Fired by EventButton, EventEncoderButton and EventTouchScreen">InputEventType::MULTI_CLICKED</a> - fired after <code>RELEASED</code> if not <code>LONG_CLICKED</code> and button is pressed and released more than twice (no limit!). The method <a class="el" href="classEventButton.html#a90c10d2e2967774325783d6bafefd9d3" title="The number of clicks that have been fired in the MULTI_CLICKED event.">clickCount()</a> returns the number of clicks.</li>
+<li><a class="el" href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1fa6cfd612b64bbe4bd62ea3eacec312f2a" title="10 Fired by EventButton, EventEncoderButton and EventTouchScreen">InputEventType::LONG_PRESS</a> - fired <em>during</em> a long press (hence change of tense). Will repeat by default but this can be turned off.</li>
+<li><a class="el" href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1fa805b130a75064e557266025262a59d4a" title="9 Fired by EventButton, EventEncoderButton and EventTouchScreen">InputEventType::LONG_CLICKED</a> - fired <em>after</em> a long press. </li>
 </ul>
 </div>
 <p><code>#include &lt;<a class="el" href="EventButton_8h_source.html">EventButton.h</a>&gt;</code></p>
@@ -78,10 +78,16 @@ Inheritance diagram for EventButton:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td colspan="2"><div class="groupHeader">Constructor</div></td></tr>
-<tr class="memitem:ae5b8df003363942df849867e46a23181"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventButton.html#ae5b8df003363942df849867e46a23181">EventButton</a> (byte buttonPin)</td></tr>
-<tr class="memdesc:ae5b8df003363942df849867e46a23181"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct an <a class="el" href="classEventButton.html" title="The EventButton class is for momentary inputs. The momentary switch (button) must be wired between th...">EventButton</a>.  <a href="classEventButton.html#ae5b8df003363942df849867e46a23181">More...</a><br /></td></tr>
-<tr class="separator:ae5b8df003363942df849867e46a23181"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Constructors</div></td></tr>
+<tr class="memitem:a42b2642626c42030b0561b967076014a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventButton.html#a42b2642626c42030b0561b967076014a">EventButton</a> (byte buttonPin, bool useDefaultDebouncer=true)</td></tr>
+<tr class="memdesc:a42b2642626c42030b0561b967076014a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct an <a class="el" href="classEventButton.html" title="The EventButton class is for momentary inputs. The momentary switch (button) must be wired between th...">EventButton</a> with a GPIO pin.  <a href="classEventButton.html#a42b2642626c42030b0561b967076014a">More...</a><br /></td></tr>
+<tr class="separator:a42b2642626c42030b0561b967076014a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a890fa9ceaac8db1384db3d8d6352207b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventButton.html#a890fa9ceaac8db1384db3d8d6352207b">EventButton</a> (<a class="el" href="classPinAdapter.html">PinAdapter</a> *_pinAdapter, bool useDefaultDebouncer=true)</td></tr>
+<tr class="memdesc:a890fa9ceaac8db1384db3d8d6352207b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classEventButton.html" title="The EventButton class is for momentary inputs. The momentary switch (button) must be wired between th...">EventButton</a> with a <a class="el" href="classPinAdapter.html" title="The interface specification for button, encoder button and switch pins.">PinAdapter</a> and optionally use the default debouncer.  <a href="classEventButton.html#a890fa9ceaac8db1384db3d8d6352207b">More...</a><br /></td></tr>
+<tr class="separator:a890fa9ceaac8db1384db3d8d6352207b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0eebd54ccdd49c5d96691493f70e2242"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventButton.html#a0eebd54ccdd49c5d96691493f70e2242">EventButton</a> (<a class="el" href="classPinAdapter.html">PinAdapter</a> *_pinAdapter, <a class="el" href="classDebounceAdapter.html">DebounceAdapter</a> *debounceAdapter)</td></tr>
+<tr class="memdesc:a0eebd54ccdd49c5d96691493f70e2242"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classEventButton.html" title="The EventButton class is for momentary inputs. The momentary switch (button) must be wired between th...">EventButton</a> with a <a class="el" href="classPinAdapter.html" title="The interface specification for button, encoder button and switch pins.">PinAdapter</a> and a <a class="el" href="classDebounceAdapter.html" title="This is the interface/base class for debounce adapters.">DebounceAdapter</a>.  <a href="classEventButton.html#a0eebd54ccdd49c5d96691493f70e2242">More...</a><br /></td></tr>
+<tr class="separator:a0eebd54ccdd49c5d96691493f70e2242"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">Common Methods</div></td></tr>
 <tr><td colspan="2"><div class="groupText"><p >These methods are common to all InputEvent classes.</p>
 <p >Additional methods for input enable, timeout, event blocking and user ID/value are also inherited from the <a class="el" href="classEventInputBase.html" title="The common base for InputEvents input classes.">EventInputBase</a> class. </p>
@@ -113,33 +119,36 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a0ee9684e1eaebc3537c44bba2c366543"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a109b63b0712343bcb5e60bf01601cec5"><td class="memItemLeft" align="right" valign="top"><a id="a109b63b0712343bcb5e60bf01601cec5" name="a109b63b0712343bcb5e60bf01601cec5"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>isPressed</b> ()</td></tr>
-<tr class="memdesc:a109b63b0712343bcb5e60bf01601cec5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if pressed. <br /></td></tr>
+<tr class="memdesc:a109b63b0712343bcb5e60bf01601cec5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if button is currently pressed. <br /></td></tr>
 <tr class="separator:a109b63b0712343bcb5e60bf01601cec5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed7a231f3342ac4c21b0e5fc1884d527"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventButton.html#aed7a231f3342ac4c21b0e5fc1884d527">currentDuration</a> ()</td></tr>
-<tr class="memdesc:aed7a231f3342ac4c21b0e5fc1884d527"><td class="mdescLeft">&#160;</td><td class="mdescRight">Directly get the duration of the button current state from Bounce2.  <a href="classEventButton.html#aed7a231f3342ac4c21b0e5fc1884d527">More...</a><br /></td></tr>
+<tr class="memdesc:aed7a231f3342ac4c21b0e5fc1884d527"><td class="mdescLeft">&#160;</td><td class="mdescRight">Duration in milliseconds of the current state.  <a href="classEventButton.html#aed7a231f3342ac4c21b0e5fc1884d527">More...</a><br /></td></tr>
 <tr class="separator:aed7a231f3342ac4c21b0e5fc1884d527"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a866a0f8c6c8850ef403927b73cb155ff"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventButton.html#a866a0f8c6c8850ef403927b73cb155ff">previousDuration</a> ()</td></tr>
-<tr class="memdesc:a866a0f8c6c8850ef403927b73cb155ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Directly get the duration of the button previous state from Bounce2.  <a href="classEventButton.html#a866a0f8c6c8850ef403927b73cb155ff">More...</a><br /></td></tr>
+<tr class="memdesc:a866a0f8c6c8850ef403927b73cb155ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Duration in milliseconds of the previous state.  <a href="classEventButton.html#a866a0f8c6c8850ef403927b73cb155ff">More...</a><br /></td></tr>
 <tr class="separator:a866a0f8c6c8850ef403927b73cb155ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad906c02ec282329d9603a163875c0dd0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventButton.html#ad906c02ec282329d9603a163875c0dd0">buttonState</a> ()</td></tr>
-<tr class="memdesc:ad906c02ec282329d9603a163875c0dd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the button state as reported by Bounce2.  <a href="classEventButton.html#ad906c02ec282329d9603a163875c0dd0">More...</a><br /></td></tr>
-<tr class="separator:ad906c02ec282329d9603a163875c0dd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">Other Configuration Settings</div></td></tr>
 <tr class="memitem:af1c4d2d889707a6a0c87671226d98a0c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventButton.html#af1c4d2d889707a6a0c87671226d98a0c">enableLongPressRepeat</a> (bool repeat=true)</td></tr>
 <tr class="memdesc:af1c4d2d889707a6a0c87671226d98a0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Choose whether to repeat the long press callback. (true by default)  <a href="classEventButton.html#af1c4d2d889707a6a0c87671226d98a0c">More...</a><br /></td></tr>
 <tr class="separator:af1c4d2d889707a6a0c87671226d98a0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab3f2ecf7226e02cefb68ebecdd0e0715"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventButton.html#ab3f2ecf7226e02cefb68ebecdd0e0715">setLongClickDuration</a> (unsigned int longDurationMs=750)</td></tr>
-<tr class="memdesc:ab3f2ecf7226e02cefb68ebecdd0e0715"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the number of milliseconds that define the <em>first</em> long click duration.  <a href="classEventButton.html#ab3f2ecf7226e02cefb68ebecdd0e0715">More...</a><br /></td></tr>
-<tr class="separator:ab3f2ecf7226e02cefb68ebecdd0e0715"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a369767c7842e627c7795066041f39f10"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventButton.html#a369767c7842e627c7795066041f39f10">setLongPressInterval</a> (unsigned int intervalMs=500)</td></tr>
-<tr class="memdesc:a369767c7842e627c7795066041f39f10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the number of milliseconds that define the <em>subbsequent</em> long click intervals.  <a href="classEventButton.html#a369767c7842e627c7795066041f39f10">More...</a><br /></td></tr>
-<tr class="separator:a369767c7842e627c7795066041f39f10"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a781a9a669b33d0e81458550d87c0d805"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventButton.html#a781a9a669b33d0e81458550d87c0d805">setMultiClickInterval</a> (unsigned int intervalMs=250)</td></tr>
-<tr class="memdesc:a781a9a669b33d0e81458550d87c0d805"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the multi click interval.  <a href="classEventButton.html#a781a9a669b33d0e81458550d87c0d805">More...</a><br /></td></tr>
-<tr class="separator:a781a9a669b33d0e81458550d87c0d805"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a074f7b479dea833d88f781a194116238"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventButton.html#a074f7b479dea833d88f781a194116238">setDebounceInterval</a> (unsigned int intervalMs=10)</td></tr>
-<tr class="memdesc:a074f7b479dea833d88f781a194116238"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the Bounce2 debounce interval.  <a href="classEventButton.html#a074f7b479dea833d88f781a194116238">More...</a><br /></td></tr>
-<tr class="separator:a074f7b479dea833d88f781a194116238"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3d6560936d15f4b80be72951b81f582"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventButton.html#af3d6560936d15f4b80be72951b81f582">setLongClickDuration</a> (uint16_t longDurationMs=750)</td></tr>
+<tr class="memdesc:af3d6560936d15f4b80be72951b81f582"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the number of milliseconds that define the <em>first</em> long click duration.  <a href="classEventButton.html#af3d6560936d15f4b80be72951b81f582">More...</a><br /></td></tr>
+<tr class="separator:af3d6560936d15f4b80be72951b81f582"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9534ea7974545aed66a3250f05d1b18"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventButton.html#ae9534ea7974545aed66a3250f05d1b18">setLongPressInterval</a> (uint16_t intervalMs=500)</td></tr>
+<tr class="memdesc:ae9534ea7974545aed66a3250f05d1b18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the number of milliseconds that define the <em>subbsequent</em> long click intervals.  <a href="classEventButton.html#ae9534ea7974545aed66a3250f05d1b18">More...</a><br /></td></tr>
+<tr class="separator:ae9534ea7974545aed66a3250f05d1b18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1b326e9ee9952a0c9dd3d12c1e8388c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventButton.html#ab1b326e9ee9952a0c9dd3d12c1e8388c">setMultiClickInterval</a> (uint16_t intervalMs=250)</td></tr>
+<tr class="memdesc:ab1b326e9ee9952a0c9dd3d12c1e8388c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the multi click interval.  <a href="classEventButton.html#ab1b326e9ee9952a0c9dd3d12c1e8388c">More...</a><br /></td></tr>
+<tr class="separator:ab1b326e9ee9952a0c9dd3d12c1e8388c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a209d92c31153e76b8c2792f47d2219c7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventButton.html#a209d92c31153e76b8c2792f47d2219c7">setDebouncer</a> (<a class="el" href="classDebounceAdapter.html">DebounceAdapter</a> *debounceAdapter)</td></tr>
+<tr class="memdesc:a209d92c31153e76b8c2792f47d2219c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the debouncer. <b>Note:</b> When planning to use <code><a class="el" href="classEventButton.html#a209d92c31153e76b8c2792f47d2219c7" title="Set the debouncer. Note: When planning to use setDebouncer() you must ensure useDefaultDebouncer is s...">setDebouncer()</a></code> you must ensure <code>useDefaultDebouncer</code> is set to <code>false</code> in the button or switch constructor. <em>Previously set debouncers are not deleted</em>.  <a href="classEventButton.html#a209d92c31153e76b8c2792f47d2219c7">More...</a><br /></td></tr>
+<tr class="separator:a209d92c31153e76b8c2792f47d2219c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ccdaf89d0089f822008498f0889ee77"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventButton.html#a3ccdaf89d0089f822008498f0889ee77">setDebounceInterval</a> (uint16_t intervalMs=10)</td></tr>
+<tr class="memdesc:a3ccdaf89d0089f822008498f0889ee77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the <a class="el" href="classDebounceAdapter.html" title="This is the interface/base class for debounce adapters.">DebounceAdapter</a> debounce interval. Default is 10ms.  <a href="classEventButton.html#a3ccdaf89d0089f822008498f0889ee77">More...</a><br /></td></tr>
+<tr class="separator:a3ccdaf89d0089f822008498f0889ee77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38c8940d81704a731ef9e4e8f87ecce2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventButton.html#a38c8940d81704a731ef9e4e8f87ecce2">setPressedState</a> (bool state=LOW)</td></tr>
+<tr class="memdesc:a38c8940d81704a731ef9e4e8f87ecce2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the pin state that represents 'pressed'. By default this is <code>LOW</code> (ie pulled down for pressed).  <a href="classEventButton.html#a38c8940d81704a731ef9e4e8f87ecce2">More...</a><br /></td></tr>
+<tr class="separator:a38c8940d81704a731ef9e4e8f87ecce2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classEventInputBase"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classEventInputBase')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classEventInputBase.html">EventInputBase</a></td></tr>
 <tr class="memitem:aa3643f5e28be4484efe8bc746cd48bdd inherit pub_methods_classEventInputBase"><td class="memItemLeft" align="right" valign="top"><a id="aa3643f5e28be4484efe8bc746cd48bdd" name="aa3643f5e28be4484efe8bc746cd48bdd"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>isCallbackSet</b> ()</td></tr>
@@ -221,6 +230,21 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:af512d264695b8b370c3caf495edece3f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventButton.html#af512d264695b8b370c3caf495edece3f">onDisabled</a> () override</td></tr>
 <tr class="memdesc:af512d264695b8b370c3caf495edece3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Override base method to reset click and pressed counts.  <a href="classEventButton.html#af512d264695b8b370c3caf495edece3f">More...</a><br /></td></tr>
 <tr class="separator:af512d264695b8b370c3caf495edece3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8042988f13b273dbefc387184eb0f5a4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventButton.html#a8042988f13b273dbefc387184eb0f5a4">changeState</a> (bool newState)</td></tr>
+<tr class="memdesc:a8042988f13b273dbefc387184eb0f5a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the button state and flag as changed.  <a href="classEventButton.html#a8042988f13b273dbefc387184eb0f5a4">More...</a><br /></td></tr>
+<tr class="separator:a8042988f13b273dbefc387184eb0f5a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a038d9ffcebeb288e4bf39bddbc4b3c45"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventButton.html#a038d9ffcebeb288e4bf39bddbc4b3c45">changedState</a> ()</td></tr>
+<tr class="memdesc:a038d9ffcebeb288e4bf39bddbc4b3c45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if either pinAdapter, press() or release() changed the button state.  <a href="classEventButton.html#a038d9ffcebeb288e4bf39bddbc4b3c45">More...</a><br /></td></tr>
+<tr class="separator:a038d9ffcebeb288e4bf39bddbc4b3c45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa86e13119f788dfb3dbbe1a07d99bde5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventButton.html#aa86e13119f788dfb3dbbe1a07d99bde5">changedPinState</a> ()</td></tr>
+<tr class="memdesc:aa86e13119f788dfb3dbbe1a07d99bde5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if pinAdapter read() has changed since last call.  <a href="classEventButton.html#aa86e13119f788dfb3dbbe1a07d99bde5">More...</a><br /></td></tr>
+<tr class="separator:aa86e13119f788dfb3dbbe1a07d99bde5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a0f34653d507c06844ff0a9d616a19e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventButton.html#a2a0f34653d507c06844ff0a9d616a19e">releasing</a> ()</td></tr>
+<tr class="memdesc:a2a0f34653d507c06844ff0a9d616a19e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if state has changed and previous state is pressedState.  <a href="classEventButton.html#a2a0f34653d507c06844ff0a9d616a19e">More...</a><br /></td></tr>
+<tr class="separator:a2a0f34653d507c06844ff0a9d616a19e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03a67e10e47ba535878668ffa24235c3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventButton.html#a03a67e10e47ba535878668ffa24235c3">pressing</a> ()</td></tr>
+<tr class="memdesc:a03a67e10e47ba535878668ffa24235c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if state has changed and previous state is not pressedState.  <a href="classEventButton.html#a03a67e10e47ba535878668ffa24235c3">More...</a><br /></td></tr>
+<tr class="separator:a03a67e10e47ba535878668ffa24235c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classEventInputBase"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classEventInputBase')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classEventInputBase.html">EventInputBase</a></td></tr>
 <tr class="memitem:a561a568d733b2ebe9897ba9f1d81851f inherit pro_methods_classEventInputBase"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventInputBase.html#a561a568d733b2ebe9897ba9f1d81851f">isInvokable</a> (<a class="el" href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1f">InputEventType</a> et)</td></tr>
 <tr class="separator:a561a568d733b2ebe9897ba9f1d81851f inherit pro_methods_classEventInputBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -274,8 +298,8 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>callbackIsSet</b> = f
 <tr class="separator:a4c27051ea63c3fe9a4731d073af13397 inherit pro_attribs_classEventInputBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ae5b8df003363942df849867e46a23181" name="ae5b8df003363942df849867e46a23181"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae5b8df003363942df849867e46a23181">&#9670;&nbsp;</a></span>EventButton()</h2>
+<a id="a42b2642626c42030b0561b967076014a" name="a42b2642626c42030b0561b967076014a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42b2642626c42030b0561b967076014a">&#9670;&nbsp;</a></span>EventButton() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -284,21 +308,104 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>callbackIsSet</b> = f
           <td class="memname">EventButton::EventButton </td>
           <td>(</td>
           <td class="paramtype">byte&#160;</td>
-          <td class="paramname"><em>pin</em></td><td>)</td>
+          <td class="paramname"><em>pin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>useDefaultDebouncer</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Construct an <a class="el" href="classEventButton.html" title="The EventButton class is for momentary inputs. The momentary switch (button) must be wired between th...">EventButton</a>. </p>
+<p>Construct an <a class="el" href="classEventButton.html" title="The EventButton class is for momentary inputs. The momentary switch (button) must be wired between th...">EventButton</a> with a GPIO pin. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">buttonPin</td><td>Any type of pin. Button contact must pull down to to GND when pressed.</td></tr>
+    <tr><td class="paramname">buttonPin</td><td>Any type of pin and optionally use the default debouncer (default true). By default button contact should pull down to to GND when pressed. This behaviour can be reversed with <a class="el" href="classEventButton.html#a38c8940d81704a731ef9e4e8f87ecce2" title="Set the pin state that represents &#39;pressed&#39;. By default this is LOW (ie pulled down for pressed).">setPressedState()</a></td></tr>
   </table>
   </dd>
 </dl>
 <p>GPLv2 Licence <a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.txt">https://www.gnu.org/licenses/old-licenses/gpl-2.0.txt</a></p>
 <p >Copyright (c) 2024 Philip Fletcher <a href="#" onclick="location.href='mai'+'lto:'+'phi'+'li'+'p.f'+'le'+'tch'+'er'+'@st'+'ut'+'chb'+'ur'+'y.c'+'om'; return false;">phili<span class="obfuscator">.nosp@m.</span>p.fl<span class="obfuscator">.nosp@m.</span>etche<span class="obfuscator">.nosp@m.</span>r@st<span class="obfuscator">.nosp@m.</span>utchb<span class="obfuscator">.nosp@m.</span>ury.<span class="obfuscator">.nosp@m.</span>com</a> </p>
+
+</div>
+</div>
+<a id="a890fa9ceaac8db1384db3d8d6352207b" name="a890fa9ceaac8db1384db3d8d6352207b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a890fa9ceaac8db1384db3d8d6352207b">&#9670;&nbsp;</a></span>EventButton() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">EventButton::EventButton </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classPinAdapter.html">PinAdapter</a> *&#160;</td>
+          <td class="paramname"><em>_pinAdapter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>useDefaultDebouncer</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construct a new <a class="el" href="classEventButton.html" title="The EventButton class is for momentary inputs. The momentary switch (button) must be wired between th...">EventButton</a> with a <a class="el" href="classPinAdapter.html" title="The interface specification for button, encoder button and switch pins.">PinAdapter</a> and optionally use the default debouncer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pinAdapter</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0eebd54ccdd49c5d96691493f70e2242" name="a0eebd54ccdd49c5d96691493f70e2242"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0eebd54ccdd49c5d96691493f70e2242">&#9670;&nbsp;</a></span>EventButton() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">EventButton::EventButton </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classPinAdapter.html">PinAdapter</a> *&#160;</td>
+          <td class="paramname"><em>_pinAdapter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classDebounceAdapter.html">DebounceAdapter</a> *&#160;</td>
+          <td class="paramname"><em>debounceAdapter</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construct a new <a class="el" href="classEventButton.html" title="The EventButton class is for momentary inputs. The momentary switch (button) must be wired between th...">EventButton</a> with a <a class="el" href="classPinAdapter.html" title="The interface specification for button, encoder button and switch pins.">PinAdapter</a> and a <a class="el" href="classDebounceAdapter.html" title="This is the interface/base class for debounce adapters.">DebounceAdapter</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pinAdapter</td><td></td></tr>
+    <tr><td class="paramname">debounceAdapter</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -333,23 +440,97 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>callbackIsSet</b> = f
 
 </div>
 </div>
-<a id="ad906c02ec282329d9603a163875c0dd0" name="ad906c02ec282329d9603a163875c0dd0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad906c02ec282329d9603a163875c0dd0">&#9670;&nbsp;</a></span>buttonState()</h2>
+<a id="aa86e13119f788dfb3dbbe1a07d99bde5" name="aa86e13119f788dfb3dbbe1a07d99bde5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa86e13119f788dfb3dbbe1a07d99bde5">&#9670;&nbsp;</a></span>changedPinState()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool EventButton::buttonState </td>
+          <td class="memname">bool EventButton::changedPinState </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Get the button state as reported by Bounce2. </p>
-<dl class="section return"><dt>Returns</dt><dd>HIGH or LOW </dd></dl>
+<p>Returns true if pinAdapter read() has changed since last call. </p>
+<dl class="section return"><dt>Returns</dt><dd>true </dd>
+<dd>
+false </dd></dl>
+
+</div>
+</div>
+<a id="a038d9ffcebeb288e4bf39bddbc4b3c45" name="a038d9ffcebeb288e4bf39bddbc4b3c45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a038d9ffcebeb288e4bf39bddbc4b3c45">&#9670;&nbsp;</a></span>changedState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool EventButton::changedState </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns true if either pinAdapter, press() or release() changed the button state. </p>
+<dl class="section return"><dt>Returns</dt><dd>true </dd>
+<dd>
+false </dd></dl>
+
+</div>
+</div>
+<a id="a8042988f13b273dbefc387184eb0f5a4" name="a8042988f13b273dbefc387184eb0f5a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8042988f13b273dbefc387184eb0f5a4">&#9670;&nbsp;</a></span>changeState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EventButton::changeState </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>newState</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Change the button state and flag as changed. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">newState</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -397,7 +578,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>callbackIsSet</b> = f
       </table>
 </div><div class="memdoc">
 
-<p>Directly get the duration of the button current state from Bounce2. </p>
+<p>Duration in milliseconds of the current state. </p>
 <dl class="section return"><dt>Returns</dt><dd>Current state duration in milliseconds </dd></dl>
 
 </div>
@@ -496,7 +677,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>callbackIsSet</b> = f
 </div><div class="memdoc">
 
 <p>The number of times the long press has occurred during a button press. </p>
-<p >This is oncremented even if the setLongPressRepeat is false, so can be read in the LONC_CLICKED event. This is reset to zero after <code>LONG_CLICKED</code> is fired.</p>
+<p >This is incremented even if the setLongPressRepeat is false, so can be read in the LONC_CLICKED event. This is reset to zero after <code>LONG_CLICKED</code> is fired.</p>
 <dl class="section return"><dt>Returns</dt><dd>uint8_t A count of long press occurences </dd></dl>
 
 </div>
@@ -530,11 +711,44 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>callbackIsSet</b> = f
 
 </div>
 </div>
+<a id="a03a67e10e47ba535878668ffa24235c3" name="a03a67e10e47ba535878668ffa24235c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03a67e10e47ba535878668ffa24235c3">&#9670;&nbsp;</a></span>pressing()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool EventButton::pressing </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns true if state has changed and previous state is not pressedState. </p>
+<dl class="section return"><dt>Returns</dt><dd>true </dd>
+<dd>
+false </dd></dl>
+
+</div>
+</div>
 <a id="a866a0f8c6c8850ef403927b73cb155ff" name="a866a0f8c6c8850ef403927b73cb155ff"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a866a0f8c6c8850ef403927b73cb155ff">&#9670;&nbsp;</a></span>previousDuration()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">uint32_t EventButton::previousDuration </td>
@@ -543,10 +757,45 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>callbackIsSet</b> = f
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Directly get the duration of the button previous state from Bounce2. </p>
+<p>Duration in milliseconds of the previous state. </p>
 <dl class="section return"><dt>Returns</dt><dd>Previous state duration in milliseconds </dd></dl>
+
+</div>
+</div>
+<a id="a2a0f34653d507c06844ff0a9d616a19e" name="a2a0f34653d507c06844ff0a9d616a19e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a0f34653d507c06844ff0a9d616a19e">&#9670;&nbsp;</a></span>releasing()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool EventButton::releasing </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns true if state has changed and previous state is pressedState. </p>
+<dl class="section return"><dt>Returns</dt><dd>true </dd>
+<dd>
+false </dd></dl>
 
 </div>
 </div>
@@ -632,29 +881,57 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a074f7b479dea833d88f781a194116238" name="a074f7b479dea833d88f781a194116238"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a074f7b479dea833d88f781a194116238">&#9670;&nbsp;</a></span>setDebounceInterval()</h2>
+<a id="a3ccdaf89d0089f822008498f0889ee77" name="a3ccdaf89d0089f822008498f0889ee77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ccdaf89d0089f822008498f0889ee77">&#9670;&nbsp;</a></span>setDebounceInterval()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void EventButton::setDebounceInterval </td>
+          <td class="memname">bool EventButton::setDebounceInterval </td>
           <td>(</td>
-          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramtype">uint16_t&#160;</td>
           <td class="paramname"><em>intervalMs</em> = <code>10</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Set the Bounce2 debounce interval. </p>
-<p >Default in the Bounce2 library is 10ms </p>
+<p>Set the <a class="el" href="classDebounceAdapter.html" title="This is the interface/base class for debounce adapters.">DebounceAdapter</a> debounce interval. Default is 10ms. </p>
+<dl class="section return"><dt>Returns</dt><dd>true If the debounce interval has been updated </dd>
+<dd>
+false If the debouncer interval has not been updated (ie no debouncer set) </dd></dl>
 
 </div>
 </div>
-<a id="ab3f2ecf7226e02cefb68ebecdd0e0715" name="ab3f2ecf7226e02cefb68ebecdd0e0715"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab3f2ecf7226e02cefb68ebecdd0e0715">&#9670;&nbsp;</a></span>setLongClickDuration()</h2>
+<a id="a209d92c31153e76b8c2792f47d2219c7" name="a209d92c31153e76b8c2792f47d2219c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a209d92c31153e76b8c2792f47d2219c7">&#9670;&nbsp;</a></span>setDebouncer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EventButton::setDebouncer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classDebounceAdapter.html">DebounceAdapter</a> *&#160;</td>
+          <td class="paramname"><em>debounceAdapter</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the debouncer. <b>Note:</b> When planning to use <code><a class="el" href="classEventButton.html#a209d92c31153e76b8c2792f47d2219c7" title="Set the debouncer. Note: When planning to use setDebouncer() you must ensure useDefaultDebouncer is s...">setDebouncer()</a></code> you must ensure <code>useDefaultDebouncer</code> is set to <code>false</code> in the button or switch constructor. <em>Previously set debouncers are not deleted</em>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">debounceAdapter</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af3d6560936d15f4b80be72951b81f582" name="af3d6560936d15f4b80be72951b81f582"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3d6560936d15f4b80be72951b81f582">&#9670;&nbsp;</a></span>setLongClickDuration()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -665,7 +942,7 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="memname">void EventButton::setLongClickDuration </td>
           <td>(</td>
-          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramtype">uint16_t&#160;</td>
           <td class="paramname"><em>longDurationMs</em> = <code>750</code></td><td>)</td>
           <td></td>
         </tr>
@@ -688,8 +965,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a369767c7842e627c7795066041f39f10" name="a369767c7842e627c7795066041f39f10"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a369767c7842e627c7795066041f39f10">&#9670;&nbsp;</a></span>setLongPressInterval()</h2>
+<a id="ae9534ea7974545aed66a3250f05d1b18" name="ae9534ea7974545aed66a3250f05d1b18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9534ea7974545aed66a3250f05d1b18">&#9670;&nbsp;</a></span>setLongPressInterval()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -700,7 +977,7 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="memname">void EventButton::setLongPressInterval </td>
           <td>(</td>
-          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramtype">uint16_t&#160;</td>
           <td class="paramname"><em>intervalMs</em> = <code>500</code></td><td>)</td>
           <td></td>
         </tr>
@@ -723,8 +1000,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a781a9a669b33d0e81458550d87c0d805" name="a781a9a669b33d0e81458550d87c0d805"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a781a9a669b33d0e81458550d87c0d805">&#9670;&nbsp;</a></span>setMultiClickInterval()</h2>
+<a id="ab1b326e9ee9952a0c9dd3d12c1e8388c" name="ab1b326e9ee9952a0c9dd3d12c1e8388c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1b326e9ee9952a0c9dd3d12c1e8388c">&#9670;&nbsp;</a></span>setMultiClickInterval()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -735,7 +1012,7 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="memname">void EventButton::setMultiClickInterval </td>
           <td>(</td>
-          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramtype">uint16_t&#160;</td>
           <td class="paramname"><em>intervalMs</em> = <code>250</code></td><td>)</td>
           <td></td>
         </tr>
@@ -751,6 +1028,42 @@ template&lt;typename T &gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">intervalMs</td><td>The interval in milliseconds between double, triple or multi clicks </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a38c8940d81704a731ef9e4e8f87ecce2" name="a38c8940d81704a731ef9e4e8f87ecce2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38c8940d81704a731ef9e4e8f87ecce2">&#9670;&nbsp;</a></span>setPressedState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EventButton::setPressedState </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>state</em> = <code>LOW</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the pin state that represents 'pressed'. By default this is <code>LOW</code> (ie pulled down for pressed). </p>
+<p >If you set this value to <code>HIGH</code>, you must also pass <code>INPUT_PULLDOWN</code> to the <a class="el" href="classGpioPinAdapter.html" title="This is the default PinAdapter for regular GPIO pins.">GpioPinAdapter</a> constructor.</p>
+<p >If your board does not support <code>INPUT_PULLDOWN</code>, pass <code>INPUT</code> and use an external resistor.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">state</td><td>Either LOW (default) or HIGH </td></tr>
   </table>
   </dd>
 </dl>

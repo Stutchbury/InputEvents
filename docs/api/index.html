@@ -19,7 +19,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="fletch-logo64x64.png"/></td>
   <td id="projectalign">
-   <div id="projectname">InputEvents<span id="projectnumber">&#160;v1.3.0</span>
+   <div id="projectname">InputEvents<span id="projectnumber">&#160;v1.4.0</span>
    </div>
    <div id="projectbrief">An easy to use but comprehensive Event Library for Buttons, Encoders, Encoder Buttons, Analog Inputs, Joysticks and Switches.</div>
   </td>
@@ -45,6 +45,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p ><a class="anchor" id="md_docs_apidocs"></a>An easy to use but comprehensive Arduino Event Library for both physical and logical Buttons, Encoders, Encoder Buttons, Analog Inputs, Joysticks and Switches. Tested on Arduino, ESP and Teensy.</p>
+<p >Since v1.4.0 can be used with virtual pins (eg for GPIO extenders) as well as regular GPIO pins.</p>
 <p ><img src="https://raw.githubusercontent.com/Stutchbury/InputEvents/refs/heads/main/images/all-inputs.png" alt="Picture of button, encoder, potentiometer, joystick and switch" width="500" class="inline"/></p>
 <h1><a class="anchor" id="autotoc_md1"></a>
 Input Classes</h1>
@@ -64,10 +65,10 @@ Source Code</h1>
 <h1><a class="anchor" id="autotoc_md3"></a>
 Dependencies</h1>
 <ol type="1">
-<li>Thomas Fredericks' <a href="https://github.com/thomasfredericks/Bounce2">Bounce2</a> library to debounce buttons and switches.</li>
+<li><strike>Thomas Fredericks' <a href="https://github.com/thomasfredericks/Bounce2">Bounce2</a> library to debounce buttons and switches.</strike> Since v1.4.0, debouncing is now built in but you can use your own debouncer via the <code>setDebouncer()</code> method on <code><a class="el" href="classEventButton.html" title="The EventButton class is for momentary inputs. The momentary switch (button) must be wired between th...">EventButton</a></code>,</li>
 <li>The <a href="https://github.com/Stutchbury/EncoderAdapter">EncoderAdapter</a> library to allow the use of almost any underlying encoder class.</li>
 </ol>
-<p >Both should be installed automatically by the Library Manager(s).</p>
+<p ><code>EncoderAdapter</code> should be installed automatically by the Library Manager(s).</p>
 <p >By default the <code>EncoderAdapter</code> supports Paul Stoffregen's <a href="https://github.com/paulstoffregen/Encoder">Encoder</a> library - this will need to be installed in order to use encoders or encoder buttons. </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->

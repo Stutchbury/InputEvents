@@ -1,0 +1,5 @@
+<map id="DebounceAdapter" name="DebounceAdapter">
+<area shape="rect" id="node1" title="This is the interface/base class for debounce adapters." alt="" coords="29,80,155,107"/>
+<area shape="rect" id="node3" href="$classFoltmanDebounceAdapter.html" title="This is the default InputEvents debouncer. Many thanks to @kfoltman." alt="" coords="5,155,179,181"/>
+<area shape="rect" id="node2" href="$classPinAdapter.html" title="The interface specification for button, encoder button and switch pins." alt="" coords="49,5,135,32"/>
+</map>
