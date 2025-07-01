@@ -45,7 +45,10 @@ void onButtonEvent(InputEventType et, EventButton &eb) {
 
 void setup() {
     Serial.begin(115200);
+    delay(1000);
 
+    e.begin();
+    
     // connect buttons to events
     for (int i = 0; i < NUM_BUTTONS; i++) {
         buttons[i].begin();
