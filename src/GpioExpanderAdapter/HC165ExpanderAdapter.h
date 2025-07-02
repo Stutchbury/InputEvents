@@ -6,12 +6,13 @@
 #include "PinAdapter/PinAdapter.h"
 
 /**
- * @brief Implementation of pin expander using 74HC165 shift register(s)
+ * @brief An implementation of the GpioExpanderAdapter using 74HC165 shift register(s)
  *
  * Datasheet:
  * https://www.ti.com/lit/ds/symlink/sn74hc165.pdf
  *
- * Supports up to 4 cascaded 74HC165 shift registers, returning 32 pin states.
+ * Supports up to 4 cascaded 74HC165 shift registers, returning 32 pin states (read only)
+ * 
  * pin 0 is pin A on first 74HC165, pin 8 is pin A on second 74HC165, etc.
  */
 class HC165ExpanderAdapter : public GpioExpanderAdapter {
@@ -19,6 +20,15 @@ class HC165ExpanderAdapter : public GpioExpanderAdapter {
     static const int cascadeMaxLength = 4;     // max number of 74HC164 supported by this implementation
     static const int piPinCount = 8;           // number of parallel input pins
   public:
+
+    /**
+     * @brief Construct a new HC165ExpanderAdapter 
+     * 
+     * @param dataPin Serial data
+     * @param clockPin Used to shift to next bit
+     * @param shldPin Shift/Load input
+     * @param cascadeLength The number of 74HC165s chained together (1-4, default is 1)
+     */
     HC165ExpanderAdapter(byte dataPin, byte clockPin, byte shldPin, byte cascadeLength = cascadeDefaultLength)
         : dataPin(dataPin), 
           clockPin(clockPin), 
