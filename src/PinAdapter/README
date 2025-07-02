@@ -1,0 +1,7 @@
+This directory is for the `PinAdapter` and `DebounceAdapter` base/interfaces and concrete implementations.
+
+There are currently implementations for regular GPIO pins, virtual pins (for programatically setting an apapter oin state) and GPIO Expander pins.
+
+`PinAdapter`s can be debounced with an implementation of a `DebounceAdapter` and mixed with `PinMixerAdapter`.
+
+The debouncer `FoltmanDebounceAdapter` is created and used by default (but optional) when InputEvents buttons, encoder buttons and switches are created, so a debouncer does not have to be explicitly created.
