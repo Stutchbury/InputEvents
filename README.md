@@ -6,6 +6,8 @@ An easy to use but comprehensive Arduino Event Library for both physical and log
 
 Although this library is primarily for physical inputs, all it really cares about is the pin(s). So if you have a digital input, use an [`EventSwitch`](docs/EventSwitch.md) or [`EventButton`](docs/EventButton.md) and for an analog input, use an [`EventAnalog`](docs/EventAnalog.md). The [`EventEncoder`](docs/EventEncoder.md) could be connected to any encoder but I have not (yet) attached it to a motor...
 
+Since v1.5.0, buttons and switches can be attached to GPIO Expanders can be used with `EventButton` and `EventSwitch`. The button of the `EventEncoderButton` can also be connected via the GPIO Expander but the encoder itself will continue to rely on the underlying encoder library pin connections. Many thanks to [@leon-gh](https://github.com/leon-gh) for his contributon to this - much appreciated.
+
 Since v1.4.0 InputEvents uses a default (but optional) built in debouncer. If you really want to, this can be substituted with a Debouncer of your choice via a DebounceAdapter. Continued thanks to Thomas Fredericks and his [Bounce2](https://github.com/thomasfredericks/Bounce2) library which inspired the original EventButton library!
 
 Paul Stoffregen's [Encoder](https://github.com/paulstoffregen/Encoder) library is the default for [`EventEncoder`](docs/EventEncoder.md) and [`EventButtonEncoder`](docs/EventEncoderButton.md) classes, so many, many thanks for releasing the code.
@@ -39,7 +41,7 @@ Add the following to your `platformio.ini` file:
 ```
 lib_deps = 
 	paulstoffregen/Encoder@^1.4.4
-	stutchbury/InputEvents@^1.4.0
+	stutchbury/InputEvents@^1.5.0
 ```
 
 `EncoderAdapter` should automatically install as a dependency of `InputEvents`.
