@@ -13,7 +13,7 @@
  *
  * Supports up to 4 cascaded 74HC165 shift registers, returning 32 pin states (read only)
  * 
- * pin 0 is pin A on first 74HC165, pin 8 is pin A on second 74HC165, etc.
+ * pin 0 is pin H (pin 7 is pin A) on the first 74HC165, pin 8 is a pin H on the second 74HC165, etc
  */
 class HC165ExpanderAdapter : public GpioExpanderAdapter {
     static const int cascadeDefaultLength = 1; // single 74HC164 is default
