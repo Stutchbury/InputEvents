@@ -209,5 +209,11 @@ uint32_t EventEncoderButton::previousDuration() { return button.previousDuration
 
 uint8_t EventEncoderButton::longPressCount() { return button.longPressCount(); }
 
+void EventEncoderButton::resetState() {
+    button.resetState();
+    encoder.resetState();
+}
+
+
 
 #endif

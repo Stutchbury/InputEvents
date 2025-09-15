@@ -31,7 +31,7 @@ class EventInputBase {
     uint8_t input_id = 0; ///< Input ID, not used internally
     uint8_t input_value = 0; ///< Input value, not used internally
     bool _enabled = true; ///< Input enabled flag
-    bool idleFlagged = true; ///< True if input is idle
+    bool idleFired = true; ///< True if input IDLE event has fired
     unsigned long lastEventMs = millis(); ///< number of milliseconds since the last event
     unsigned long idleTimeout = 10000; ///< The idle timeout in milliseconds
 
@@ -80,6 +80,15 @@ class EventInputBase {
      * @param e Pass false to disable (default is true)
      */
     void enable(bool e = true);
+
+    /**
+     * @brief Resets the 'user' state of the input: silently enables if disabled, clears any blocked events, sets inputId & inputValue back to 0 and prevents IDLE event firing.
+     * 
+     * @details Does not reset configuration or encoder position.
+     * 
+     */
+    void resetState();
+
     ///@}
 
     ///@{
@@ -216,8 +225,8 @@ protected:
 
 
 private:
-    uint8_t excludedEvents[2] = {0};
-
+    //uint8_t excludedEvents[4] = {0};
+    uint8_t excludedEvents[(static_cast<uint8_t>(InputEventType::COUNT) + 7) / 8] = {0};
 
 /// \cond DO_NOT_DOCUMENT
 #ifndef FUNCTIONAL_SUPPORTED

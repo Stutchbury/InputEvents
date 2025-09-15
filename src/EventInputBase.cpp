@@ -17,8 +17,8 @@ void EventInputBase::unsetCallback() {
 
 void EventInputBase::update() {
     //fire idle timeout callback
-    if ( _enabled && !idleFlagged && msSinceLastEvent() > idleTimeout) {
-        idleFlagged = true;
+    if ( _enabled && !idleFired && msSinceLastEvent() > idleTimeout) {
+        idleFired = true;
         onIdle();
     }
 }
@@ -32,9 +32,16 @@ void EventInputBase::onIdle() { invoke(InputEventType::IDLE); }
 
 void EventInputBase::resetIdleTimer() { 
     lastEventMs = millis(); 
-    idleFlagged = false;
+    idleFired = false;
 }
 
+void EventInputBase::resetState() {
+    _enabled = true;
+    input_id = 0;
+    input_value = 0;
+    allowAllEvents();
+    idleFired = true;
+}
 
 void EventInputBase::blockEvent(InputEventType et) {
     uint8_t index = static_cast<uint8_t>(et) >> 3;    // Find the index of the array (byte position)
@@ -49,7 +56,8 @@ void EventInputBase::allowEvent(InputEventType et) {
 }
 
 void EventInputBase::blockAllEvents() {
-    for (uint8_t i = 0; i < NUM_EVENT_TYPE_ENUMS; ++i) {  
+    //for (uint8_t i = 0; i < NUM_EVENT_TYPE_ENUMS; ++i) {  
+    for (uint8_t i = 0; i < static_cast<uint8_t>(InputEventType::COUNT); ++i) {  
         blockEvent(static_cast<InputEventType>(i));
     }
 }
@@ -73,7 +81,7 @@ bool EventInputBase::isInvokable(InputEventType et) {
 void EventInputBase::enable(bool e ) {
     _enabled = e;
     if ( e ) {
-        idleFlagged = true;
+        idleFired = true;
         onEnabled();
     } else {
         onDisabled();

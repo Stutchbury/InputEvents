@@ -161,6 +161,14 @@ public:
      */
     void update();
 
+    /**
+     * @brief Resets the state of the input: silently enables if disabled, clears any blocked events, sets inputId & inputValue back to 0 and prevents IDLE event firing.
+     * 
+     * @details Does not reset configuration or encoder position.
+     * 
+     */
+    void resetState();
+
     ///@}
 
     ///@{

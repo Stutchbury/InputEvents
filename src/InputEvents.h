@@ -47,7 +47,7 @@ constexpr auto DISABLED=ACTUAL_DISABLED_VALUE;
  * @brief The size of the InputEventType enum
  * 
  */
-constexpr size_t NUM_EVENT_TYPE_ENUMS = 20;
+//constexpr size_t NUM_EVENT_TYPE_ENUMS = 20;
 
 /**
  * @brief A list of all events that can be fired by InputEvents classes.
@@ -72,7 +72,8 @@ enum class InputEventType : uint8_t {
     ON,                 ///< 16 Fired by EventSwitch
     OFF,                ///< 17 Fired by EventSwitch
     DRAGGED,            ///< 18 Fired by [EventTouchScreen]() (experimental)
-    DRAGGED_RELEASED    ///< 19 Fired by EventTouchScreen (experimental)
+    DRAGGED_RELEASED,   ///< 19 Fired by EventTouchScreen (experimental)
+    COUNT               ///< Not used - replaces NUM_EVENT_TYPE_ENUMS 
 };
 
 #endif

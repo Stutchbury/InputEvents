@@ -141,4 +141,7 @@ void EventJoystick::onDisabled() {
     invoke(InputEventType::DISABLED);
 }
 
-
+void EventJoystick::resetState() {
+    x.resetState();
+    y.resetState();
+}
