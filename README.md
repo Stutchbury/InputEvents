@@ -72,6 +72,8 @@ void loop() {
 
 That's it! A function and four lines of code and you have a button connected and ready to process events.
 
+>Note: By default, buttons and switches are wired between the GPIO pin & GND using the MCU's internal `INPUT_PULLUP` resistors. Please see [`EventButton`](docs/EventButton.md)/[`EventSwitch`](docs/EventSwitch.md)/[`PinAdapter`](https://stutchbury.github.io/InputEvents/api/classGpioPinAdapter.html) docs if you need to use pull down resistors.
+
 
 ## Input Classes
 There is one class for each type of physical input. All classes have some common methods for handling enable/disable and idle timeout (detailed below).

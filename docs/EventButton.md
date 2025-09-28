@@ -31,6 +31,8 @@ void loop() {
 ```
 See [example Button.ino](../examples/Button/Button.ino) for a slightly more detailed sketch.
 
+By default the button for EventButton is wired between the GPIO pin and GND,  using the `INPUT_PULLUP` mode of the pin. It is possible to use a pull down resistor with an EventButton by specifying the pin mode in the [GPIOAdapter constructor](https://stutchbury.github.io/InputEvents/api/classGpioPinAdapter.html).
+
 Since v1.4.0, the `EventButton` can use 'virtual pins' via the `PinAdapter`. You don't need to worry about these unless you're using a GPIO expander, doing testing or something else that doesn't involve regular GPIO pins!.
 
 ## API Docs
