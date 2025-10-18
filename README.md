@@ -41,7 +41,7 @@ Add the following to your `platformio.ini` file:
 ```
 lib_deps = 
 	paulstoffregen/Encoder@^1.4.4
-	stutchbury/InputEvents@^1.5.0
+	stutchbury/InputEvents@^1.5.1
 ```
 
 `EncoderAdapter` should automatically install as a dependency of `InputEvents`.
