@@ -93,6 +93,10 @@ A custom 'hat' For Arduino UNO, ESP8266 and ESP32:
 
 ![Test Rig](../images/test-rig.jpg)
 
-and a [Manualmatic Pendant](https://github.com/Stutchbury/Manualmatic-Pendant) for the Teensy 4.1:
+A slightly more formal PCB test rig for testing multiple boards (Adafruit Feathers of any flavour, Teensy 4.0 and STM32 Black Pill) - also useful for testing GPIO Expanders and a couple of different touch displays (for the [InputEventsTouchUI library](https://github.com/Stutchbury/InputEventsTouchUI)):
+
+![PCB Test Rig](../images/new-test-rig.jpg)
+
+and, of course, a [Manualmatic Pendant](https://github.com/Stutchbury/Manualmatic-Pendant) for the Teensy 4.1:
 
 ![Manualmatic Pendant](../images/manualmatic.jpg)
