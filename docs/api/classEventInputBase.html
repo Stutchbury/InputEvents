@@ -19,7 +19,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="fletch-logo64x64.png"/></td>
   <td id="projectalign">
-   <div id="projectname">InputEvents<span id="projectnumber">&#160;v1.4.0</span>
+   <div id="projectname">InputEvents<span id="projectnumber">&#160;v1.5.2</span>
    </div>
    <div id="projectbrief">An easy to use but comprehensive Event Library for Buttons, Encoders, Encoder Buttons, Analog Inputs, Joysticks and Switches.</div>
   </td>
@@ -90,6 +90,9 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>isCallbackSet</b> ()<
 <tr class="memitem:a860c4785471a5d0a52bbf9602861fcec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventInputBase.html#a860c4785471a5d0a52bbf9602861fcec">enable</a> (bool e=true)</td></tr>
 <tr class="memdesc:a860c4785471a5d0a52bbf9602861fcec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable or disable an input.  <a href="classEventInputBase.html#a860c4785471a5d0a52bbf9602861fcec">More...</a><br /></td></tr>
 <tr class="separator:a860c4785471a5d0a52bbf9602861fcec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e58587e8a37804ce93720b738b80d46"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventInputBase.html#a3e58587e8a37804ce93720b738b80d46">resetState</a> ()</td></tr>
+<tr class="memdesc:a3e58587e8a37804ce93720b738b80d46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the 'user' state of the input: silently enables if disabled, clears any blocked events, sets inputId &amp; inputValue back to 0 and prevents IDLE event firing.  <a href="classEventInputBase.html#a3e58587e8a37804ce93720b738b80d46">More...</a><br /></td></tr>
+<tr class="separator:a3e58587e8a37804ce93720b738b80d46"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">Idle methods</div></td></tr>
 <tr><td colspan="2"><div class="groupText"><p >These methods allow you to set and get the state of the idle timer </p>
 </div></td></tr>
@@ -178,10 +181,10 @@ uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>input_value</b> = 
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>_enabled</b> = true</td></tr>
 <tr class="memdesc:ab93aa5aee3bbe46d9742afb2ba7844ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Input enabled flag. <br /></td></tr>
 <tr class="separator:ab93aa5aee3bbe46d9742afb2ba7844ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad742bc93a8b874a8dd28252ca8664b04"><td class="memItemLeft" align="right" valign="top"><a id="ad742bc93a8b874a8dd28252ca8664b04" name="ad742bc93a8b874a8dd28252ca8664b04"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>idleFlagged</b> = true</td></tr>
-<tr class="memdesc:ad742bc93a8b874a8dd28252ca8664b04"><td class="mdescLeft">&#160;</td><td class="mdescRight">True if input is idle. <br /></td></tr>
-<tr class="separator:ad742bc93a8b874a8dd28252ca8664b04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdeeb67ac20279392c54591e68ba6090"><td class="memItemLeft" align="right" valign="top"><a id="afdeeb67ac20279392c54591e68ba6090" name="afdeeb67ac20279392c54591e68ba6090"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>idleFired</b> = true</td></tr>
+<tr class="memdesc:afdeeb67ac20279392c54591e68ba6090"><td class="mdescLeft">&#160;</td><td class="mdescRight">True if input IDLE event has fired. <br /></td></tr>
+<tr class="separator:afdeeb67ac20279392c54591e68ba6090"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ca23aab2869b5fab722ac1fcff1fb91"><td class="memItemLeft" align="right" valign="top"><a id="a0ca23aab2869b5fab722ac1fcff1fb91" name="a0ca23aab2869b5fab722ac1fcff1fb91"></a>
 unsigned long&#160;</td><td class="memItemRight" valign="bottom"><b>lastEventMs</b> = millis()</td></tr>
 <tr class="memdesc:a0ca23aab2869b5fab722ac1fcff1fb91"><td class="mdescLeft">&#160;</td><td class="mdescRight">number of milliseconds since the last event <br /></td></tr>
@@ -530,6 +533,26 @@ false Not idle </dd></dl>
 
 <p>Reset the idle timer. The IDLE event will fire setIdleTimeout ms after this is called. </p>
 <p >This is normally done automatically every time an event is fired but can be called to further delay and idle event </p>
+
+</div>
+</div>
+<a id="a3e58587e8a37804ce93720b738b80d46" name="a3e58587e8a37804ce93720b738b80d46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e58587e8a37804ce93720b738b80d46">&#9670;&nbsp;</a></span>resetState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EventInputBase::resetState </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Resets the 'user' state of the input: silently enables if disabled, clears any blocked events, sets inputId &amp; inputValue back to 0 and prevents IDLE event firing. </p>
+<p >Does not reset configuration or encoder position. </p>
 
 </div>
 </div>

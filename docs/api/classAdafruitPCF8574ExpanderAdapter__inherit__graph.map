@@ -1,0 +1,4 @@
+<map id="AdafruitPCF8574ExpanderAdapter" name="AdafruitPCF8574ExpanderAdapter">
+<area shape="rect" id="node1" title="An implementation of the GpioExpanderAdapter For Adafruit&#39;s PCF8574 library." alt="" coords="5,80,228,107"/>
+<area shape="rect" id="node2" href="$classGpioExpanderAdapter.html" title="The base class/interface specification for GPIO expanders." alt="" coords="42,5,191,32"/>
+</map>

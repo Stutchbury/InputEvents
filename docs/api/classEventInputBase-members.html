@@ -19,7 +19,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="fletch-logo64x64.png"/></td>
   <td id="projectalign">
-   <div id="projectname">InputEvents<span id="projectnumber">&#160;v1.4.0</span>
+   <div id="projectname">InputEvents<span id="projectnumber">&#160;v1.5.2</span>
    </div>
    <div id="projectbrief">An easy to use but comprehensive Event Library for Buttons, Encoders, Encoder Buttons, Analog Inputs, Joysticks and Switches.</div>
   </td>
@@ -57,7 +57,7 @@ $(function() {
   <tr class="odd"><td class="entry"><a class="el" href="classEventInputBase.html#a860c4785471a5d0a52bbf9602861fcec">enable</a>(bool e=true)</td><td class="entry"><a class="el" href="classEventInputBase.html">EventInputBase</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classEventInputBase.html#a046dd0c271dad9276dd173ed94950884">getInputId</a>()</td><td class="entry"><a class="el" href="classEventInputBase.html">EventInputBase</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="classEventInputBase.html#abdb8981d5a239067df67928895cef908">getInputValue</a>()</td><td class="entry"><a class="el" href="classEventInputBase.html">EventInputBase</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classEventInputBase.html#ad742bc93a8b874a8dd28252ca8664b04">idleFlagged</a></td><td class="entry"><a class="el" href="classEventInputBase.html">EventInputBase</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classEventInputBase.html#afdeeb67ac20279392c54591e68ba6090">idleFired</a></td><td class="entry"><a class="el" href="classEventInputBase.html">EventInputBase</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="classEventInputBase.html#ae065d5061ab1759bca437377621c53c2">idleTimeout</a></td><td class="entry"><a class="el" href="classEventInputBase.html">EventInputBase</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classEventInputBase.html#a3e31eb2b743d38aa20940348f9e4e022">input_id</a></td><td class="entry"><a class="el" href="classEventInputBase.html">EventInputBase</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="classEventInputBase.html#af766c81cea4aae49bc9f8bf5fe9f92cb">input_value</a></td><td class="entry"><a class="el" href="classEventInputBase.html">EventInputBase</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
@@ -73,11 +73,12 @@ $(function() {
   <tr class="odd"><td class="entry"><a class="el" href="classEventInputBase.html#aad7ed6e768fd6397290491684ad4e1f5">onEnabled</a>()</td><td class="entry"><a class="el" href="classEventInputBase.html">EventInputBase</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">virtual</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classEventInputBase.html#acb29842995a3dd62ccac6d1d842662e7">onIdle</a>()</td><td class="entry"><a class="el" href="classEventInputBase.html">EventInputBase</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">virtual</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="classEventInputBase.html#a051323ea164df82245879229604c3dda">resetIdleTimer</a>()</td><td class="entry"><a class="el" href="classEventInputBase.html">EventInputBase</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classEventInputBase.html#ae47d3379901f66e8c557225510d36aa0">setIdleTimeout</a>(unsigned int timeoutMs=10000)</td><td class="entry"><a class="el" href="classEventInputBase.html">EventInputBase</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classEventInputBase.html#ab35b626afeb1125d2db6ef570daa7384">setInputId</a>(uint8_t id)</td><td class="entry"><a class="el" href="classEventInputBase.html">EventInputBase</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classEventInputBase.html#abdfcc1a8088b57cc216cf5a5c01a4c70">setInputValue</a>(uint8_t val)</td><td class="entry"><a class="el" href="classEventInputBase.html">EventInputBase</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classEventInputBase.html#a64c8971a21ba0119bcfa5119d470f4da">unsetCallback</a>()</td><td class="entry"><a class="el" href="classEventInputBase.html">EventInputBase</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classEventInputBase.html#ad236f8e73b1ffee11fb98f965d123f56">update</a>()</td><td class="entry"><a class="el" href="classEventInputBase.html">EventInputBase</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classEventInputBase.html#a3e58587e8a37804ce93720b738b80d46">resetState</a>()</td><td class="entry"><a class="el" href="classEventInputBase.html">EventInputBase</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classEventInputBase.html#ae47d3379901f66e8c557225510d36aa0">setIdleTimeout</a>(unsigned int timeoutMs=10000)</td><td class="entry"><a class="el" href="classEventInputBase.html">EventInputBase</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classEventInputBase.html#ab35b626afeb1125d2db6ef570daa7384">setInputId</a>(uint8_t id)</td><td class="entry"><a class="el" href="classEventInputBase.html">EventInputBase</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classEventInputBase.html#abdfcc1a8088b57cc216cf5a5c01a4c70">setInputValue</a>(uint8_t val)</td><td class="entry"><a class="el" href="classEventInputBase.html">EventInputBase</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classEventInputBase.html#a64c8971a21ba0119bcfa5119d470f4da">unsetCallback</a>()</td><td class="entry"><a class="el" href="classEventInputBase.html">EventInputBase</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classEventInputBase.html#ad236f8e73b1ffee11fb98f965d123f56">update</a>()</td><td class="entry"><a class="el" href="classEventInputBase.html">EventInputBase</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

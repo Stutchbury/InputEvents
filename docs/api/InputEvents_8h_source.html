@@ -19,7 +19,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="fletch-logo64x64.png"/></td>
   <td id="projectalign">
-   <div id="projectname">InputEvents<span id="projectnumber">&#160;v1.4.0</span>
+   <div id="projectname">InputEvents<span id="projectnumber">&#160;v1.5.2</span>
    </div>
    <div id="projectbrief">An easy to use but comprehensive Event Library for Buttons, Encoders, Encoder Buttons, Analog Inputs, Joysticks and Switches.</div>
   </td>
@@ -82,7 +82,7 @@ $(function() {
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="InputEvents_8h.html#a38696daa88a9dcb6bf7edcec78ef0495">   50</a></span><span class="keyword">constexpr</span> <span class="keywordtype">size_t</span> <a class="code hl_variable" href="InputEvents_8h.html#a38696daa88a9dcb6bf7edcec78ef0495">NUM_EVENT_TYPE_ENUMS</a> = 19;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment">//constexpr size_t NUM_EVENT_TYPE_ENUMS = 20;</span></div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1f">   55</a></span><span class="keyword">enum class</span> <a class="code hl_enumeration" href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1f">InputEventType</a> : uint8_t {</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <a class="code hl_enumvalue" href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1fab50339a10e1de285ac99d4c3990b8693">NONE</a>,               </div>
@@ -104,16 +104,17 @@ $(function() {
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <a class="code hl_enumvalue" href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1fa90651ebea9a35ec4e018c8157492e17c">ON</a>,                 </div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <a class="code hl_enumvalue" href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1fa88559a0cfd8250c9d65970cc145c92d4">OFF</a>,                </div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <a class="code hl_enumvalue" href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1fa4d02951446ff9f7473b98050ed021fd7">DRAGGED</a>,            </div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <a class="code hl_enumvalue" href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1fa0a3286cb2f3e647a7df2ce40722dc125">DRAGGED_RELEASED</a>    </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>};</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aInputEvents_8h_html_a38696daa88a9dcb6bf7edcec78ef0495"><div class="ttname"><a href="InputEvents_8h.html#a38696daa88a9dcb6bf7edcec78ef0495">NUM_EVENT_TYPE_ENUMS</a></div><div class="ttdeci">constexpr size_t NUM_EVENT_TYPE_ENUMS</div><div class="ttdoc">The size of the InputEventType enum.</div><div class="ttdef"><b>Definition:</b> InputEvents.h:50</div></div>
-<div class="ttc" id="aInputEvents_8h_html_acc94f246a54241db4187487d5c3f0c1f"><div class="ttname"><a href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1f">InputEventType</a></div><div class="ttdeci">InputEventType</div><div class="ttdoc">A list of all events that can be fired by InputEvents classes.</div><div class="ttdef"><b>Definition:</b> InputEvents.h:55</div></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <a class="code hl_enumvalue" href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1fa0a3286cb2f3e647a7df2ce40722dc125">DRAGGED_RELEASED</a>,   </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <a class="code hl_enumvalue" href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1fa4905ac9d6a22bdfc1ae096094ce6248d">COUNT</a>               </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>};</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aInputEvents_8h_html_acc94f246a54241db4187487d5c3f0c1f"><div class="ttname"><a href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1f">InputEventType</a></div><div class="ttdeci">InputEventType</div><div class="ttdoc">The size of the InputEventType enum.</div><div class="ttdef"><b>Definition:</b> InputEvents.h:55</div></div>
 <div class="ttc" id="aInputEvents_8h_html_acc94f246a54241db4187487d5c3f0c1fa055c1a591abb0e8cd86dc969727bcc0b"><div class="ttname"><a href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1fa055c1a591abb0e8cd86dc969727bcc0b">InputEventType::DISABLED</a></div><div class="ttdeci">@ DISABLED</div><div class="ttdoc">2 Fired by all imputs</div></div>
 <div class="ttc" id="aInputEvents_8h_html_acc94f246a54241db4187487d5c3f0c1fa0a3286cb2f3e647a7df2ce40722dc125"><div class="ttname"><a href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1fa0a3286cb2f3e647a7df2ce40722dc125">InputEventType::DRAGGED_RELEASED</a></div><div class="ttdeci">@ DRAGGED_RELEASED</div><div class="ttdoc">19 Fired by EventTouchScreen (experimental)</div></div>
 <div class="ttc" id="aInputEvents_8h_html_acc94f246a54241db4187487d5c3f0c1fa109d54efbb64d71f9a6ab18d0fb8add8"><div class="ttname"><a href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1fa109d54efbb64d71f9a6ab18d0fb8add8">InputEventType::RELEASED</a></div><div class="ttdeci">@ RELEASED</div><div class="ttdoc">5 Fired by EventButton, EventEncoderButton and EventTouchScreen</div></div>
 <div class="ttc" id="aInputEvents_8h_html_acc94f246a54241db4187487d5c3f0c1fa39f050e632e5b0ca0c7ba110173cdea6"><div class="ttname"><a href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1fa39f050e632e5b0ca0c7ba110173cdea6">InputEventType::CLICKED</a></div><div class="ttdeci">@ CLICKED</div><div class="ttdoc">6 Fired by EventButton, EventEncoderButton and EventTouchScreen</div></div>
+<div class="ttc" id="aInputEvents_8h_html_acc94f246a54241db4187487d5c3f0c1fa4905ac9d6a22bdfc1ae096094ce6248d"><div class="ttname"><a href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1fa4905ac9d6a22bdfc1ae096094ce6248d">InputEventType::COUNT</a></div><div class="ttdeci">@ COUNT</div><div class="ttdoc">Not used - replaces NUM_EVENT_TYPE_ENUMS.</div></div>
 <div class="ttc" id="aInputEvents_8h_html_acc94f246a54241db4187487d5c3f0c1fa4d02951446ff9f7473b98050ed021fd7"><div class="ttname"><a href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1fa4d02951446ff9f7473b98050ed021fd7">InputEventType::DRAGGED</a></div><div class="ttdeci">@ DRAGGED</div><div class="ttdoc">18 Fired by [EventTouchScreen]() (experimental)</div></div>
 <div class="ttc" id="aInputEvents_8h_html_acc94f246a54241db4187487d5c3f0c1fa5381dc876ab002103a027265bc14ae52"><div class="ttname"><a href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1fa5381dc876ab002103a027265bc14ae52">InputEventType::PRESSED</a></div><div class="ttdeci">@ PRESSED</div><div class="ttdoc">4 Fired by EventButton, EventEncoderButton and EventTouchScreen</div></div>
 <div class="ttc" id="aInputEvents_8h_html_acc94f246a54241db4187487d5c3f0c1fa6cfd612b64bbe4bd62ea3eacec312f2a"><div class="ttname"><a href="InputEvents_8h.html#acc94f246a54241db4187487d5c3f0c1fa6cfd612b64bbe4bd62ea3eacec312f2a">InputEventType::LONG_PRESS</a></div><div class="ttdeci">@ LONG_PRESS</div><div class="ttdoc">10 Fired by EventButton, EventEncoderButton and EventTouchScreen</div></div>

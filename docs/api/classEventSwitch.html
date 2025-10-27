@@ -19,7 +19,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="fletch-logo64x64.png"/></td>
   <td id="projectalign">
-   <div id="projectname">InputEvents<span id="projectnumber">&#160;v1.4.0</span>
+   <div id="projectname">InputEvents<span id="projectnumber">&#160;v1.5.2</span>
    </div>
    <div id="projectbrief">An easy to use but comprehensive Event Library for Buttons, Encoders, Encoder Buttons, Analog Inputs, Joysticks and Switches.</div>
   </td>
@@ -114,13 +114,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:af95745a0cd5daecf8b36fcdb12c60cc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true if switch is off.  <a href="classEventSwitch.html#af95745a0cd5daecf8b36fcdb12c60cc5">More...</a><br /></td></tr>
 <tr class="separator:af95745a0cd5daecf8b36fcdb12c60cc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c03de118879f7623f4016cbdf9c0587"><td class="memItemLeft" align="right" valign="top"><a id="a0c03de118879f7623f4016cbdf9c0587" name="a0c03de118879f7623f4016cbdf9c0587"></a>
-unsigned long&#160;</td><td class="memItemRight" valign="bottom"><b>currentDuration</b> ()</td></tr>
+uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>currentDuration</b> ()</td></tr>
 <tr class="memdesc:a0c03de118879f7623f4016cbdf9c0587"><td class="mdescLeft">&#160;</td><td class="mdescRight">Duration in milliseconds of the current state. <br /></td></tr>
 <tr class="separator:a0c03de118879f7623f4016cbdf9c0587"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a9bac1f2bd4be3eb64800acb75ef136"><td class="memItemLeft" align="right" valign="top"><a id="a3a9bac1f2bd4be3eb64800acb75ef136" name="a3a9bac1f2bd4be3eb64800acb75ef136"></a>
-unsigned long&#160;</td><td class="memItemRight" valign="bottom"><b>previousDuration</b> ()</td></tr>
-<tr class="memdesc:a3a9bac1f2bd4be3eb64800acb75ef136"><td class="mdescLeft">&#160;</td><td class="mdescRight">Duration in milliseconds of the previous state. <br /></td></tr>
-<tr class="separator:a3a9bac1f2bd4be3eb64800acb75ef136"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2767bad82ac200294f5a86a1310e09c7"><td class="memItemLeft" align="right" valign="top"><a id="a2767bad82ac200294f5a86a1310e09c7" name="a2767bad82ac200294f5a86a1310e09c7"></a>
+uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>previousDuration</b> ()</td></tr>
+<tr class="memdesc:a2767bad82ac200294f5a86a1310e09c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Duration in milliseconds of the previous state. <br /></td></tr>
+<tr class="separator:a2767bad82ac200294f5a86a1310e09c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">Other Configuration Settings</div></td></tr>
 <tr class="memitem:aa7324840c36ad1f95b7e922a03a8fa28"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventSwitch.html#aa7324840c36ad1f95b7e922a03a8fa28">setDebouncer</a> (<a class="el" href="classDebounceAdapter.html">DebounceAdapter</a> *debounceAdapter)</td></tr>
 <tr class="memdesc:aa7324840c36ad1f95b7e922a03a8fa28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the debouncer. <b>Note:</b> When planning to use <code><a class="el" href="classEventSwitch.html#aa7324840c36ad1f95b7e922a03a8fa28" title="Set the debouncer. Note: When planning to use setDebouncer() you must ensure useDefaultDebouncer is s...">setDebouncer()</a></code> you must ensure <code>useDefaultDebouncer</code> is set to <code>false</code> in the button or switch constructor. <em>Previously set debouncers are not deleted</em>.  <a href="classEventSwitch.html#aa7324840c36ad1f95b7e922a03a8fa28">More...</a><br /></td></tr>
@@ -145,6 +145,9 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>isCallbackSet</b> ()<
 <tr class="memitem:a860c4785471a5d0a52bbf9602861fcec inherit pub_methods_classEventInputBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventInputBase.html#a860c4785471a5d0a52bbf9602861fcec">enable</a> (bool e=true)</td></tr>
 <tr class="memdesc:a860c4785471a5d0a52bbf9602861fcec inherit pub_methods_classEventInputBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable or disable an input.  <a href="classEventInputBase.html#a860c4785471a5d0a52bbf9602861fcec">More...</a><br /></td></tr>
 <tr class="separator:a860c4785471a5d0a52bbf9602861fcec inherit pub_methods_classEventInputBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e58587e8a37804ce93720b738b80d46 inherit pub_methods_classEventInputBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventInputBase.html#a3e58587e8a37804ce93720b738b80d46">resetState</a> ()</td></tr>
+<tr class="memdesc:a3e58587e8a37804ce93720b738b80d46 inherit pub_methods_classEventInputBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the 'user' state of the input: silently enables if disabled, clears any blocked events, sets inputId &amp; inputValue back to 0 and prevents IDLE event firing.  <a href="classEventInputBase.html#a3e58587e8a37804ce93720b738b80d46">More...</a><br /></td></tr>
+<tr class="separator:a3e58587e8a37804ce93720b738b80d46 inherit pub_methods_classEventInputBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae47d3379901f66e8c557225510d36aa0 inherit pub_methods_classEventInputBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventInputBase.html#ae47d3379901f66e8c557225510d36aa0">setIdleTimeout</a> (unsigned int timeoutMs=10000)</td></tr>
 <tr class="memdesc:ae47d3379901f66e8c557225510d36aa0 inherit pub_methods_classEventInputBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the idle timeout in milliseconds (default 10000, 10 seconds)  <a href="classEventInputBase.html#ae47d3379901f66e8c557225510d36aa0">More...</a><br /></td></tr>
 <tr class="separator:ae47d3379901f66e8c557225510d36aa0 inherit pub_methods_classEventInputBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -259,10 +262,10 @@ uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>input_value</b> = 
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>_enabled</b> = true</td></tr>
 <tr class="memdesc:ab93aa5aee3bbe46d9742afb2ba7844ac inherit pro_attribs_classEventInputBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Input enabled flag. <br /></td></tr>
 <tr class="separator:ab93aa5aee3bbe46d9742afb2ba7844ac inherit pro_attribs_classEventInputBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad742bc93a8b874a8dd28252ca8664b04 inherit pro_attribs_classEventInputBase"><td class="memItemLeft" align="right" valign="top"><a id="ad742bc93a8b874a8dd28252ca8664b04" name="ad742bc93a8b874a8dd28252ca8664b04"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>idleFlagged</b> = true</td></tr>
-<tr class="memdesc:ad742bc93a8b874a8dd28252ca8664b04 inherit pro_attribs_classEventInputBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">True if input is idle. <br /></td></tr>
-<tr class="separator:ad742bc93a8b874a8dd28252ca8664b04 inherit pro_attribs_classEventInputBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdeeb67ac20279392c54591e68ba6090 inherit pro_attribs_classEventInputBase"><td class="memItemLeft" align="right" valign="top"><a id="afdeeb67ac20279392c54591e68ba6090" name="afdeeb67ac20279392c54591e68ba6090"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>idleFired</b> = true</td></tr>
+<tr class="memdesc:afdeeb67ac20279392c54591e68ba6090 inherit pro_attribs_classEventInputBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">True if input IDLE event has fired. <br /></td></tr>
+<tr class="separator:afdeeb67ac20279392c54591e68ba6090 inherit pro_attribs_classEventInputBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ca23aab2869b5fab722ac1fcff1fb91 inherit pro_attribs_classEventInputBase"><td class="memItemLeft" align="right" valign="top"><a id="a0ca23aab2869b5fab722ac1fcff1fb91" name="a0ca23aab2869b5fab722ac1fcff1fb91"></a>
 unsigned long&#160;</td><td class="memItemRight" valign="bottom"><b>lastEventMs</b> = millis()</td></tr>
 <tr class="memdesc:a0ca23aab2869b5fab722ac1fcff1fb91 inherit pro_attribs_classEventInputBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">number of milliseconds since the last event <br /></td></tr>

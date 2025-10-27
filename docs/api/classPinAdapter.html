@@ -19,7 +19,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="fletch-logo64x64.png"/></td>
   <td id="projectalign">
-   <div id="projectname">InputEvents<span id="projectnumber">&#160;v1.4.0</span>
+   <div id="projectname">InputEvents<span id="projectnumber">&#160;v1.5.2</span>
    </div>
    <div id="projectbrief">An easy to use but comprehensive Event Library for Buttons, Encoders, Encoder Buttons, Analog Inputs, Joysticks and Switches.</div>
   </td>
@@ -56,13 +56,14 @@ Inheritance diagram for PinAdapter:</div>
 <div class="dyncontent">
 <div class="center"><img src="classPinAdapter__inherit__graph.png" border="0" usemap="#aPinAdapter_inherit__map" alt="Inheritance graph"/></div>
 <map name="aPinAdapter_inherit__map" id="aPinAdapter_inherit__map">
-<area shape="rect" title="The interface specification for button, encoder button and switch pins." alt="" coords="331,5,417,32"/>
-<area shape="rect" href="classBounce2PinAdapter.html" title="A PinAdapter for the Bounce2 library. Note: this is not a DebounceAdapter as Bounce2 can only read th..." alt="" coords="5,80,143,107"/>
-<area shape="rect" href="classDebounceAdapter.html" title="This is the interface/base class for debounce adapters." alt="" coords="167,80,293,107"/>
-<area shape="rect" href="classGpioPinAdapter.html" title="This is the default PinAdapter for regular GPIO pins." alt="" coords="317,80,431,107"/>
-<area shape="rect" href="classPinMixerAdapter.html" title="This is the default PinAdapter for regular GPIO pins." alt="" coords="455,80,573,107"/>
-<area shape="rect" href="classVirtualPinAdapter.html" title="A PinAdapter that can set state programtically." alt="" coords="598,80,721,107"/>
-<area shape="rect" href="classFoltmanDebounceAdapter.html" title="This is the default InputEvents debouncer. Many thanks to @kfoltman." alt="" coords="143,155,317,181"/>
+<area shape="rect" title="The interface specification for button, encoder button and switch pins." alt="" coords="5,132,92,159"/>
+<area shape="rect" href="classBounce2PinAdapter.html" title="A PinAdapter for the Bounce2 library. Note: this is not a DebounceAdapter as Bounce2 can only read th..." alt="" coords="142,5,279,32"/>
+<area shape="rect" href="classDebounceAdapter.html" title="This is the interface/base class for debounce adapters." alt="" coords="147,56,274,83"/>
+<area shape="rect" href="classExpanderPinAdapter.html" title="Implementation of a PinAdapter that reads from a GpioExpanderAdapter." alt="" coords="140,107,281,133"/>
+<area shape="rect" href="classGpioPinAdapter.html" title="This is the default PinAdapter for regular GPIO pins." alt="" coords="154,157,267,184"/>
+<area shape="rect" href="classPinMixerAdapter.html" title="This is the default PinAdapter for regular GPIO pins." alt="" coords="151,208,270,235"/>
+<area shape="rect" href="classVirtualPinAdapter.html" title="A PinAdapter that can set state programtically." alt="" coords="149,259,272,285"/>
+<area shape="rect" href="classFoltmanDebounceAdapter.html" title="This is the default InputEvents debouncer. Many thanks to @kfoltman." alt="" coords="329,56,503,83"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -101,7 +102,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Initialise the pin adapter. Must be safe for repeated calls (Idempotent) </p>
 
-<p>Implemented in <a class="el" href="classBounce2PinAdapter.html#a9afdf9530df202c59f64f7f4bf38a6e9">Bounce2PinAdapter</a>, <a class="el" href="classDebounceAdapter.html#a995d057e20d224e851a07489965f5188">DebounceAdapter</a>, <a class="el" href="classFoltmanDebounceAdapter.html#ab0400483e790e69a65b894e8b0f65e03">FoltmanDebounceAdapter</a>, <a class="el" href="classGpioPinAdapter.html#a30fc1c5277a8d182c17cdbb2a8c04332">GpioPinAdapter</a>, <a class="el" href="classPinMixerAdapter.html#a8e5eea38855c8f1cddc826f5c20cb271">PinMixerAdapter</a>, and <a class="el" href="classVirtualPinAdapter.html#a01f6cbd4ac090c3cace3bd5a86865b8f">VirtualPinAdapter</a>.</p>
+<p>Implemented in <a class="el" href="classBounce2PinAdapter.html#a9afdf9530df202c59f64f7f4bf38a6e9">Bounce2PinAdapter</a>, <a class="el" href="classDebounceAdapter.html#a995d057e20d224e851a07489965f5188">DebounceAdapter</a>, <a class="el" href="classFoltmanDebounceAdapter.html#ab0400483e790e69a65b894e8b0f65e03">FoltmanDebounceAdapter</a>, <a class="el" href="classGpioPinAdapter.html#a30fc1c5277a8d182c17cdbb2a8c04332">GpioPinAdapter</a>, <a class="el" href="classPinMixerAdapter.html#a8e5eea38855c8f1cddc826f5c20cb271">PinMixerAdapter</a>, <a class="el" href="classVirtualPinAdapter.html#a01f6cbd4ac090c3cace3bd5a86865b8f">VirtualPinAdapter</a>, and <a class="el" href="classExpanderPinAdapter.html#a48a47d1d59c2c9a2cc2d48e11d52b3d6">ExpanderPinAdapter</a>.</p>
 
 </div>
 </div>
@@ -133,7 +134,7 @@ Public Member Functions</h2></td></tr>
 <dd>
 false/LOW </dd></dl>
 
-<p>Implemented in <a class="el" href="classBounce2PinAdapter.html#ab766cbf8193e864da45b5ceec05ebfa7">Bounce2PinAdapter</a>, <a class="el" href="classGpioPinAdapter.html#a197943479fb4ae208a5cc1d5d03a46e1">GpioPinAdapter</a>, <a class="el" href="classPinMixerAdapter.html#a8f004063a7afd9bd17da66dee24ccb12">PinMixerAdapter</a>, <a class="el" href="classVirtualPinAdapter.html#a7481f8754b25d4c9025179c4f0f30553">VirtualPinAdapter</a>, <a class="el" href="classFoltmanDebounceAdapter.html#a51e877fa85c79bead6572443df0aeb9b">FoltmanDebounceAdapter</a>, and <a class="el" href="classDebounceAdapter.html#a3b64a1c255d5e40af6ae0b6505555953">DebounceAdapter</a>.</p>
+<p>Implemented in <a class="el" href="classBounce2PinAdapter.html#ab766cbf8193e864da45b5ceec05ebfa7">Bounce2PinAdapter</a>, <a class="el" href="classGpioPinAdapter.html#a197943479fb4ae208a5cc1d5d03a46e1">GpioPinAdapter</a>, <a class="el" href="classPinMixerAdapter.html#a8f004063a7afd9bd17da66dee24ccb12">PinMixerAdapter</a>, <a class="el" href="classVirtualPinAdapter.html#a7481f8754b25d4c9025179c4f0f30553">VirtualPinAdapter</a>, <a class="el" href="classExpanderPinAdapter.html#aa4f2ccca2079e142e89bf5e9de2487fa">ExpanderPinAdapter</a>, <a class="el" href="classFoltmanDebounceAdapter.html#a51e877fa85c79bead6572443df0aeb9b">FoltmanDebounceAdapter</a>, and <a class="el" href="classDebounceAdapter.html#a3b64a1c255d5e40af6ae0b6505555953">DebounceAdapter</a>.</p>
 
 </div>
 </div>
