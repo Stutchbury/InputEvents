@@ -1,10 +1,11 @@
 This directory is for the `GpioExpanderAdapter` base/interface and concrete implementations.
 
-Implementations should try not to rely on external libraries and if the GPIO expander supports writing to pins, 
-should implement/override `write()` and `canWrite()`.
+Implementations can rely on external libraries but do not have to.
 
-The `update()` method is normally called from `loop()` and used to scan the expander and update the state of the pins. 
+When using the ExapanderPinAdapter, the expander adapter's `update()` method is normally called from `loop()` to scan the expander and update the state of the pins. 
 
-An alternative approach might be to call `update()` on `read()` but this should be done with care to ensure the update is not performed on *every* read (use timers etc)
+An `updateAndRead()` may be provided but this will not be used by InputEvents as it incurs a slow I2C or SPI read for each button or switch update().
 
-For writes, the implementor needs to decide if an `update()` is required on every `write()`
+If the GPIO expander supports writing to pins, should implement/override `write()` and `canWrite()` - this is for convinience as InputEvents will only use the inputs. (the clue's in the name ;-) 
+
+For writes, the implementor needs to decide & document if an `update()` is required on every `write()`

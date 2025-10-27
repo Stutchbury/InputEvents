@@ -18,9 +18,13 @@ If you're new to the concept of event programming, [here is a short primer](Even
 
 ----
 
-## Encoder Adapter Notes
+## Adapters
 
-Since v1.2.1, you can use almost any encoder library via an [EncoderAdapter](https://github.com/Stutchbury/EncoderAdapter). 
+Adapters are a very thin layer of abstraction used by InputEvents to provide a common API for third party libraries and boards.
+
+### Encoder Adapters
+
+Since v1.2.1, you can use almost any encoder library via an [EncoderAdapter](https://github.com/Stutchbury/EncoderAdapter). At some point this library will merged into InputEvents.
 
 Currently an adapter is provided for PJRC's Encoder but more will be added or you can write your own.
 
@@ -44,7 +48,7 @@ EventEncoder myEncoder(&encoderAdapter);
 
 ----
 
-## Notes on using Paul Stoffregen's Encoder Library
+#### Notes on using Paul Stoffregen's Encoder Library
 
 > Since v1.2.1, Paul's Encoder Library remains the default but you can now use different encoder libraries with `InputEvents`. See Encoder Adapter Notes above.
 
@@ -61,8 +65,23 @@ I have tested with:
 
 Encoder supports far more boards than I have available for testing but if your board is not supported, the [`EventEncoder`](EventEncoder.md) and [`EventEncoderButton`](EventEncoderButton.md) classes will be excluded if you do not have PJRC's Encoder library installed in your project.
 
+> The latest formal release of the Encoder library is 1.4.4 from 11th Dec 2023. There have been a number of updates to the git repo since then without a formal release. If your borad does not work with the 1.4.4, it may work if you manually install the github source.
+
 ----
 
+### GPIO Expander Adapters
+
+Since v1.5.0
+
+Using a GPIO Expander Adapter and the `ExpanderPinAdapter`, you can connect `EventButton`, `EventSwitch` and the button part of `EventEncoderButton` to GPIO Expander boards.
+
+Most GPIO Expander Adapters use an underlying library so this will need to be installed but the `#include` is done by the adapter.
+
+These boards usually connect via SPI or I2C. The adapters are `update()`d in your `loop()` before any button or switch `update()` calls otherwise a slow I2C or SPI call would have to be made for every button/switch.
+
+> The `RobTillartPCF8575ExpanderAdapter` will likely require a `Wire.begin()` in your sketch as this is not done in the underlying library.
+
+> Some I2C boards require external pullup resistors on the SDA and SCL pins: https://support.arduino.cc/hc/en-us/articles/11153357842588-I2C-and-pull-up-resistors
 
 ## Testing
 
@@ -74,6 +93,6 @@ A custom 'hat' For Arduino UNO, ESP8266 and ESP32:
 
 ![Test Rig](../images/test-rig.jpg)
 
-and a [Manaualmatic Pendant](https://github.com/Stutchbury/Manualmatic-Pendant) for the Teensy 4.1:
+and a [Manualmatic Pendant](https://github.com/Stutchbury/Manualmatic-Pendant) for the Teensy 4.1:
 
 ![Manualmatic Pendant](../images/manualmatic.jpg)
