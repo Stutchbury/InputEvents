@@ -56,8 +56,8 @@ void EventEncoder::update() {
     // @TODO Do we store the current position when disabled and update if re-enabled?
     if ( _enabled ) {
         //encoder udate (fires encoder rotation callbacks)
-        if ( millis() > (rateLimitCounter + rateLimit) ) { 
-            readIncrement();
+        if ( (millis() - rateLimitCounter) >= rateLimit ) { 
+                readIncrement();
             if ( encoderIncrement !=0 ) {
                 currentPosition += encoderIncrement;
                 invoke(InputEventType::CHANGED);
