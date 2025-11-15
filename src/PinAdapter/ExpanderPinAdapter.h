@@ -1,5 +1,5 @@
-#ifndef ExpanderPinAdapter_h
-#define ExpanderPinAdapter_h
+#ifndef INPUT_EVENTS_EXPANDER_PIN_ADAPTER_H
+#define INPUT_EVENTS_EXPANDER_PIN_ADAPTER_H
 
 #include "Arduino.h"
 #include "PinAdapter.h"
@@ -19,10 +19,10 @@ class ExpanderPinAdapter : public PinAdapter {
      * @param expander A reference to a GpioExpanderAdapter
      * @param mode The pin mode. Not all GpioExpanderAdapters support setting pinMode but should be set to reflect the physical wiring on the pin.
      */
-    ExpanderPinAdapter(byte pin, GpioExpanderAdapter *expander, int mode = INPUT_PULLUP)
+    ExpanderPinAdapter(byte pin, GpioExpanderAdapter& expander, int mode = INPUT_PULLUP)
         : pin(pin),
           mode(mode),
-          expanderAdapter(expander)
+          expanderAdapter(&expander)
         {}
 
     /**
@@ -49,7 +49,7 @@ class ExpanderPinAdapter : public PinAdapter {
     private:
     byte pin;
     int mode;
-    GpioExpanderAdapter *expanderAdapter;
+    GpioExpanderAdapter* expanderAdapter;
 };
 
 #endif

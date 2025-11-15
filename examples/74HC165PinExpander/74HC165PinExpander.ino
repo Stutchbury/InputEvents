@@ -31,8 +31,8 @@ HC165ExpanderAdapter expanderAdapter(DATA_PIN, CLOCK_PIN, SHLD_PIN);
 
 //Create the pins and link them to the expanderAdapter
 EventButton buttons[NUM_BUTTONS] = {
-    new ExpanderPinAdapter(0, &expanderAdapter),
-    new ExpanderPinAdapter(7, &expanderAdapter),
+    new ExpanderPinAdapter(0, expanderAdapter),
+    new ExpanderPinAdapter(7, expanderAdapter),
 };
 
 /**

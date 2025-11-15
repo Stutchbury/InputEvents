@@ -39,10 +39,10 @@ AdafruitPCF8575ExpanderAdapter expanderAdapter;
 // Change the pin numbers to suit your set up.
 // These are just the ones I have picked for testing
 EventButton buttons[NUM_BUTTONS] = {
-    new ExpanderPinAdapter(1, &expanderAdapter), //Change the pin number to suit your board
-    new ExpanderPinAdapter(3, &expanderAdapter), //Change the pin number to suit your board
-    new ExpanderPinAdapter(9, &expanderAdapter), //Change the pin number to suit your board
-    new ExpanderPinAdapter(15, &expanderAdapter) //Change the pin number to suit your board
+    new ExpanderPinAdapter(1, expanderAdapter), //Change the pin number to suit your board
+    new ExpanderPinAdapter(3, expanderAdapter), //Change the pin number to suit your board
+    new ExpanderPinAdapter(9, expanderAdapter), //Change the pin number to suit your board
+    new ExpanderPinAdapter(15, expanderAdapter) //Change the pin number to suit your board
 };
 
 /**
