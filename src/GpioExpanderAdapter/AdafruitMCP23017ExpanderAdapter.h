@@ -1,10 +1,11 @@
 // #ifdef __ADAFRUIT_MCP23XXX_H__
 
-#ifndef AdafruitMCP23017ExpanderAdapter_h
-#define AdafruitMCP23017ExpanderAdapter_h
+#ifndef INPUT_EVENTS_ADAFRUIT_MCP23017_EXPANDER_ADAPTERCP_H
+#define INPUT_EVENTS_ADAFRUIT_MCP23017_EXPANDER_ADAPTERCP_H
 
+#include <Arduino.h>
+#include <new>
 #include <Adafruit_MCP23X17.h>
-#include "Arduino.h"
 #include "GpioExpanderAdapter/GpioExpanderAdapter.h"
 #include "PinAdapter/PinAdapter.h"
 
@@ -21,8 +22,16 @@ public:
     /**
      * @brief Construct a AdafruitMCP23017ExpanderAdapter. An Adafruit_MCP23X17 instance will be created for you.
      * 
+     * @details This will create and Adafruit_MCP23017 on the stack - creating one on the heap causes a crash as 
+     * the Adafruit lib tries to delete an object that doesn't yet exist for ESP32 in `begin()`. 
+     * 
      */
-    AdafruitMCP23017ExpanderAdapter() {}
+    AdafruitMCP23017ExpanderAdapter() {
+        // We have to create the instance on the stack because Adafruit does interesting stuff with Wire and
+        // tries to delete an instance that doesn't yet exist...
+        //NOLINTNEXTLINE(cppcoreguidelines-owning-memory)
+        mcp = new (&mcpStorage) Adafruit_MCP23X17();
+    }
 
     /**
      * @brief Construct a AdafruitMCP23017ExpanderAdapter with an already created Adafruit_MCP23X17 instance.
@@ -30,7 +39,7 @@ public:
      * @param _mcp 
      */
     AdafruitMCP23017ExpanderAdapter(Adafruit_MCP23X17& _mcp)
-        : mcp(_mcp) 
+        : mcp(&_mcp)
         {}
 
     /**
@@ -38,9 +47,9 @@ public:
      * 
      */
     void begin() override {
-        mcp.begin_I2C(); //The default
+        mcp->begin_I2C(); //The default
         delayMicroseconds(400);
-        pinStates = mcp.readGPIOAB();
+        pinStates = mcp->readGPIOAB();
     }
     
     /**
@@ -52,9 +61,9 @@ public:
      * @return false 
      */
     bool begin(uint8_t i2c_addr, TwoWire *wire = &Wire) {
-        bool ret = mcp.begin_I2C(i2c_addr, wire);
+        bool ret = mcp->begin_I2C(i2c_addr, wire);
         delayMicroseconds(400);
-        pinStates = mcp.readGPIOAB();
+        pinStates = mcp->readGPIOAB();
         return ret;
     }
     
@@ -64,7 +73,7 @@ public:
      * 
      */
     void update() override {
-        pinStates = mcp.readGPIOAB();
+        pinStates = mcp->readGPIOAB();
     }
 
     /**
@@ -74,7 +83,7 @@ public:
      * @param mode Default INPUT_PULLUP
      */
     void attachPin(byte pin, int mode = INPUT_PULLUP) override {
-          mcp.pinMode(pin, mode);
+          mcp->pinMode(pin, mode);
     }
 
     /**
@@ -97,7 +106,7 @@ public:
      * @return false/LOW
      */
     bool updateAndRead(byte pin) {
-        return mcp.digitalRead(pin);
+        return mcp->digitalRead(pin);
     }
 
     /**
@@ -109,7 +118,7 @@ public:
      * @param state true/false or HIGH/LOW
      */
     void write(byte pin, bool state) {
-        mcp.digitalWrite(pin, state);
+        mcp->digitalWrite(pin, state);
     }
 
     /**
@@ -121,9 +130,10 @@ public:
 
     virtual ~AdafruitMCP23017ExpanderAdapter() = default;
 
-private:
+    private:
 
-    Adafruit_MCP23X17 mcp;
+    alignas(Adafruit_MCP23X17) uint8_t mcpStorage[sizeof(Adafruit_MCP23X17)]; ///< Used with placement new to avoid heap allocation.
+    Adafruit_MCP23X17* mcp;
     uint16_t pinStates = 0;
 };
 

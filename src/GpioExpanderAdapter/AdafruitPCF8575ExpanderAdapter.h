@@ -1,8 +1,9 @@
-#ifndef AdafruitPCF8575ExpanderAdapter_h
-#define AdafruitPCF8575ExpanderAdapter_h
+#ifndef INPUT_EVENTS_ADAFRUIT_PCF8575_EXPANDER_ADAPTER_H
+#define INPUT_EVENTS_ADAFRUIT_PCF8575_EXPANDER_ADAPTER_H
 
+#include <Arduino.h>
+#include <new>  // required for placement new on AVR
 #include <Adafruit_PCF8575.h>
-#include "Arduino.h"
 #include "GpioExpanderAdapter/GpioExpanderAdapter.h"
 #include "PinAdapter/PinAdapter.h"
 
@@ -19,8 +20,17 @@ public:
     /**
      * @brief Construct a AdafruitPCF8575ExpanderAdapter. An Adafruit_PCF8575 instance will be created for you.
      * 
+     * @details This will create and Adafruit_PCF8575 on the stack - creating one on the heap causes a crash as 
+     * the Adafruit lib tries to delete an object that doesn't yet exist for ESP32 in the begin(). 
+     * 
      */
-    AdafruitPCF8575ExpanderAdapter() {}
+    AdafruitPCF8575ExpanderAdapter() {
+        // We have to create the instance on the stack because Adafruit does 'clever' stuff with Wire and
+        // tries to delete an instance that doesn't yet exist...
+        //NOLINTNEXTLINE(cppcoreguidelines-owning-memory)
+        pcf = new (&pcfStorage) Adafruit_PCF8575();
+        ownsPcf = true;
+    }
 
     /**
      * @brief Construct a AdafruitPCF8575ExpanderAdapter with an already created Adafruit_PCF8575 instance.
@@ -28,7 +38,7 @@ public:
      * @param _pcf 
      */
     AdafruitPCF8575ExpanderAdapter(Adafruit_PCF8575& _pcf)
-        : pcf(_pcf) 
+        : pcf(&_pcf) 
         {}
 
     /**
@@ -36,9 +46,9 @@ public:
      * 
      */
     void begin() override {
-        pcf.begin(); //Use defaults
+        pcf->begin(); //Use defaults
         delayMicroseconds(400);
-        pinStates = pcf.digitalReadWord();
+        pinStates = pcf->digitalReadWord();
     }
     
     /**
@@ -50,9 +60,9 @@ public:
      * @return false 
      */
     bool begin(uint8_t i2c_addr, TwoWire *wire = &Wire) {
-        bool ret = pcf.begin(i2c_addr, wire);
+        bool ret = pcf->begin(i2c_addr, wire);
         delayMicroseconds(400);
-        pinStates = pcf.digitalReadWord();
+        pinStates = pcf->digitalReadWord();
         return ret;
     }
     
@@ -62,7 +72,7 @@ public:
      * 
      */
     void update() override {
-        pinStates = pcf.digitalReadWord();
+        pinStates = pcf->digitalReadWord();
     }
 
     /**
@@ -72,7 +82,7 @@ public:
      * @param mode Default INPUT_PULLUP
      */
     void attachPin(byte pin, int mode = INPUT_PULLUP) override {
-          pcf.pinMode(pin, mode);
+          pcf->pinMode(pin, mode);
     }
 
     /**
@@ -95,7 +105,7 @@ public:
      * @return false/LOW
      */
     bool updateAndRead(byte pin) {
-        return pcf.digitalRead(pin);
+        return pcf->digitalRead(pin);
     }
 
     /**
@@ -107,7 +117,7 @@ public:
      * @param state true/false or HIGH/LOW
      */
     void write(byte pin, bool state) {
-        pcf.digitalWrite(pin, state);
+        pcf->digitalWrite(pin, state);
     }
 
     /**
@@ -120,8 +130,10 @@ public:
     virtual ~AdafruitPCF8575ExpanderAdapter() = default;
 
 private:
-
-    Adafruit_PCF8575 pcf;
+    
+    alignas(Adafruit_PCF8575) uint8_t pcfStorage[sizeof(Adafruit_PCF8575)]; ///< Used with placement new to avoid heap allocation.
+    Adafruit_PCF8575* pcf = nullptr;
+    bool ownsPcf = false;
     uint16_t pinStates = 0;
 };
 

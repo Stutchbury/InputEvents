@@ -25,7 +25,7 @@ public:
      * 
      */
     RobTillaartPCF8575ExpanderAdapter() 
-        : pcf(0x20) 
+        : pcf(new PCF8575(0x20)) 
         {}
 
     /**
@@ -35,7 +35,7 @@ public:
      * @param wire 
      */
     RobTillaartPCF8575ExpanderAdapter(const uint8_t deviceAddress, TwoWire *wire = &Wire) 
-        : pcf(deviceAddress, wire) 
+        : pcf(new PCF8575(deviceAddress, wire)) 
         {}
 
     /**
@@ -44,7 +44,7 @@ public:
      * @param _pcf 
      */
     RobTillaartPCF8575ExpanderAdapter(PCF8575& _pcf)
-        : pcf(_pcf)
+        : pcf(&_pcf)
         {}
 
     /**
@@ -52,9 +52,9 @@ public:
      * 
      */
     void begin() override {
-        pcf.begin();
+        pcf->begin();
         delayMicroseconds(400);
-        pinStates = pcf.read16();
+        pinStates = pcf->read16();
     }
 
     /**
@@ -62,7 +62,7 @@ public:
      * 
      */
     void update() override {
-        pinStates = pcf.read16();
+        pinStates = pcf->read16();
     }
 
     /**
@@ -84,7 +84,6 @@ public:
      */
     bool read(byte pin) override {
         return bitRead(pinStates, pin);
-        //return pcf.read(pin);
     }
 
     /**
@@ -95,7 +94,7 @@ public:
      * @return false/LOW
      */
     bool updateAndRead(byte pin) {
-        return pcf.read(pin);
+        return pcf->read(pin);
     }
 
     /**
@@ -118,7 +117,7 @@ public:
 
 private:
 
-    PCF8575 pcf;
+    PCF8575* pcf;
     uint16_t pinStates = 0;
 };
 
