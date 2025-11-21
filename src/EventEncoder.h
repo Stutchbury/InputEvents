@@ -8,14 +8,12 @@
 
 #include "InputEvents.h"
 
-#ifndef EXCLUDE_EVENT_ENCODER
-
 #ifndef EVENT_ENCODER_H
 #define EVENT_ENCODER_H
 
 #include "Arduino.h"
 #include "EventInputBase.h"
-#include <EncoderAdapter.h>
+#include <EncoderAdapter/IEncoderAdapter.h>
 
 /**
  * @brief The EventEncoder class is for quadrature encoder inputs providing the position & encoder increment, event rate limiting without losing steps (eg for easy acceleration or to reduce events sent over Serial). 
@@ -62,15 +60,15 @@ public:
      */
 
     /**
-     * @brief Construct an EventEncoder input from an [EncoderAdapter](https://github.com/Stutchbury/EncoderAdapter)
+     * @brief Construct an EventEncoder input from an IEncoderAdapter
      * 
      * @details Please see [EncoderAdapter Notes](https://github.com/Stutchbury/InputEvents/blob/main/docs/README.md#encoder-adapter-notes)
      * 
      * > Note: The EncoderAdapter's begin() method will be called from the EventEncoder's begin() method.
      * 
-     * @param encoderAdapter Pass a previously created [EncoderAdapter](https://github.com/Stutchbury/EncoderAdapter) by reference.
+     * @param encoderAdapter Pass a previously created IEncoderAdapter by reference.
      */
-    EventEncoder(EncoderAdapter *encoderAdapter);
+    EventEncoder(IEncoderAdapter *encoderAdapter);
 
     /**
      * @brief Destroy the EventEncoder input
@@ -212,7 +210,7 @@ protected:
 
 private:
 
-    EncoderAdapter *encoder;
+    IEncoderAdapter *encoder;
 
     uint8_t positionDivider = 4;
     int32_t currentPosition  = 0;
@@ -222,7 +220,5 @@ private:
     int encoderIncrement  = 0;
 
 };
-
-#endif
 
 #endif

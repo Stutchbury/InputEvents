@@ -9,8 +9,6 @@
 #include "InputEvents.h"
 
 
-#ifndef EXCLUDE_EVENT_ENCODER
-
 #ifndef EVENT_ENCODER_BUTTON_H
 #define EVENT_ENCODER_BUTTON_H
 
@@ -72,24 +70,24 @@ public:
      * @name Constructors
      */
     /**
-     * @brief Construct an EventEncoderButton input from an [EncoderAdapter](https://github.com/Stutchbury/EncoderAdapter) and a pin.
+     * @brief Construct an EventEncoderButton input from an IEncoderAdapter and a pin.
      * 
      * @details Please see [EncoderAdapter Notes](https://github.com/Stutchbury/InputEvents/blob/main/docs/README.md#encoder-adapter-notes)
      * 
      * > Note: The EncoderAdapter's begin() method will be called from the EventEncoderButton's begin() method.
      * 
-     * @param encoderAdapter Pass a previously created [EncoderAdapter](https://github.com/Stutchbury/EncoderAdapter) by reference.
+     * @param encoderAdapter Pass a previously created IEncoderAdapter by reference.
      * @param buttonPin The pin for the button
      */
-    EventEncoderButton(EncoderAdapter *encoderAdapter, byte buttonPin, bool useDefaultDebouncer=true);
+    EventEncoderButton(IEncoderAdapter *encoderAdapter, byte buttonPin, bool useDefaultDebouncer=true);
 
     /**
      * @brief Construct a new EventButton with a PinAdapter and optionally use the default debouncer
      * 
-     * @param encoderAdapter Pass a previously created [EncoderAdapter](https://github.com/Stutchbury/EncoderAdapter) by reference.
+     * @param encoderAdapter Pass a previously created IEncoderAdapter by reference.
      * @param pinAdapter 
      */
-    EventEncoderButton(EncoderAdapter *encoderAdapter, PinAdapter* _pinAdapter, bool useDefaultDebouncer=true);
+    EventEncoderButton(IEncoderAdapter *encoderAdapter, PinAdapter* _pinAdapter, bool useDefaultDebouncer=true);
 
     /**
      * @brief Construct a new EventButton with a PinAdapter and a DebounceAdapter
@@ -98,7 +96,7 @@ public:
      * @param pinAdapter 
      * @param debounceAdapter 
      */
-    EventEncoderButton(EncoderAdapter *encoderAdapter, PinAdapter* _pinAdapter, DebounceAdapter* debounceAdapter);
+    EventEncoderButton(IEncoderAdapter *encoderAdapter, PinAdapter* _pinAdapter, DebounceAdapter* debounceAdapter);
 
     ///@}
 
@@ -477,6 +475,5 @@ private:
 };
 
 
-#endif
 #endif
 

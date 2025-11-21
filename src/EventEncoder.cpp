@@ -8,8 +8,6 @@
 
 #include "EventEncoder.h"
 
-#ifndef EXCLUDE_EVENT_ENCODER
-
 #ifdef FUNCTIONAL_SUPPORTED
     #include <functional>
 #endif
@@ -17,10 +15,7 @@
 /**
  * Construct a rotary encoder
  */
-// EventEncoder::EventEncoder(uint8_t pin1, uint8_t pin2) 
-//     : encoderPin1(pin1), encoderPin2(pin2) { }
-
-EventEncoder::EventEncoder(EncoderAdapter *encoderAdapter) {
+EventEncoder::EventEncoder(IEncoderAdapter *encoderAdapter) {
     encoder = encoderAdapter;
 }
 
@@ -74,8 +69,3 @@ void EventEncoder::readIncrement() {
     oldPosition = newPosition;
 }
 
-#else 
-
-#pragma message("Info: EventEncoder and EventEncoderButton excluded from your build. Install the EncoderAdapter library, an Encoder library and #include the required adapter class (eg <PjrcEncoderAdapter.h>) to resolve.")
-
-#endif

@@ -9,20 +9,17 @@
 
 #include "EventEncoderButton.h"
 
-#ifndef EXCLUDE_EVENT_ENCODER
-
-
-EventEncoderButton::EventEncoderButton(EncoderAdapter *encoderAdapter, byte buttonPin, bool useDefaultDebouncer /*=true*/)
+EventEncoderButton::EventEncoderButton(IEncoderAdapter *encoderAdapter, byte buttonPin, bool useDefaultDebouncer /*=true*/)
     : encoder(encoderAdapter), button(buttonPin, useDefaultDebouncer) {
         setCallbacks();
     }
 
-EventEncoderButton::EventEncoderButton(EncoderAdapter *encoderAdapter, PinAdapter* _pinAdapter, bool useDefaultDebouncer /*=true*/)
+EventEncoderButton::EventEncoderButton(IEncoderAdapter *encoderAdapter, PinAdapter* _pinAdapter, bool useDefaultDebouncer /*=true*/)
     : encoder(encoderAdapter), button(_pinAdapter, useDefaultDebouncer) {
         setCallbacks();
     }
 
-EventEncoderButton::EventEncoderButton(EncoderAdapter *encoderAdapter, PinAdapter* _pinAdapter, DebounceAdapter* debounceAdapter)
+EventEncoderButton::EventEncoderButton(IEncoderAdapter *encoderAdapter, PinAdapter* _pinAdapter, DebounceAdapter* debounceAdapter)
     : encoder(encoderAdapter), button(_pinAdapter, debounceAdapter) {
         setCallbacks();
     }
@@ -215,5 +212,3 @@ void EventEncoderButton::resetState() {
 }
 
 
-
-#endif
