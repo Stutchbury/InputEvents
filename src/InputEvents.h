@@ -21,15 +21,6 @@
     #endif
 #endif
 
-#if defined(__has_include) // Check if __has_include is supported
-    #if !__has_include(<EncoderAdapter.h>)
-        #ifndef EXCLUDE_EVENT_ENCODER //might be defined by build_flags
-            #define EXCLUDE_EVENT_ENCODER
-        #endif
-    #endif
-#endif
-
-
 /// \cond DO_NOT_DOCUMENT
 /*
  * Some platforms stupidly use #define for DISABLED (ahem, espressif), so replace it with a constexpr variable
@@ -71,8 +62,8 @@ enum class InputEventType : uint8_t {
     CHANGED_Y,          ///< 15 Fired Bby EventJoystick
     ON,                 ///< 16 Fired by EventSwitch
     OFF,                ///< 17 Fired by EventSwitch
-    DRAGGED,            ///< 18 Fired by [EventTouchScreen]() (experimental)
-    DRAGGED_RELEASED,   ///< 19 Fired by EventTouchScreen (experimental)
+    DRAGGED,            ///< 18 Fired by EventTouchScreen 
+    DRAGGED_RELEASED,   ///< 19 Fired by EventTouchScreen
     COUNT               ///< Not used - replaces NUM_EVENT_TYPE_ENUMS 
 };
 
