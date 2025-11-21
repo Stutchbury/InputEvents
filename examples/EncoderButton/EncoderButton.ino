@@ -4,7 +4,7 @@
 //First include your chosen encoder library
 #include <Encoder.h>  //PJRC's Encoder library
 //Then include the adapter for your chosen encoder library
-#include <PjrcEncoderAdapter.h> //Adapter for PJRC's Encoder
+#include <EncoderAdapter/PjrcEncoderAdapter.h> //Adapter for PJRC's Encoder
 //Then include EventEncoderButton
 #include <EventEncoderButton.h>
 
