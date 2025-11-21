@@ -16,7 +16,7 @@ class ExpanderPinAdapter : public PinAdapter {
      * @brief Construct a new ExpanderPinAdapter with a GpioExpanderAdapter and optional pin mode (default INPUT_PULLUP)
      * 
      * @param pin The pin number
-     * @param expander A reference to a GpioExpanderAdapter
+     * @param expander Passed by reference because the `GpioExpanderAdapter::update()` is always called from `loop()` or interrupt
      * @param mode The pin mode. Not all GpioExpanderAdapters support setting pinMode but should be set to reflect the physical wiring on the pin.
      */
     ExpanderPinAdapter(byte pin, GpioExpanderAdapter& expander, int mode = INPUT_PULLUP)
@@ -27,6 +27,8 @@ class ExpanderPinAdapter : public PinAdapter {
 
     /**
      * @brief Attach the pin to the GpioExpanderAdapter which will set the pinMode if required/possible
+     * 
+     * @details This has to be separate from instance creation because of Arduino timing requirements (pins may not be ready when instance is created)
      * 
      * @return * void 
      */
