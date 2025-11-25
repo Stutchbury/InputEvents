@@ -2,19 +2,21 @@
 
 
 ## Classes and Events
-#### [Common Events and Class Methods](Common.md)
-#### [EventAnalog](EventAnalog.md)
-#### [EventButton](EventButton.md)
-#### [EventEncoder](EventEncoder.md)
-#### [EventEncoderButton](EventEncoderButton.md)
-#### [EventJoystick](EventJoystick.md)
-#### [EventSwitch](EventSwitch.md)
-#### [All InputEventTypes](InputEventTypes.md)
+
+This is a list of the primary input classes. Please follow the links for further details.
+- [Common Events and Class Methods](Common.md)
+- [EventAnalog](EventAnalog.md)
+- [EventButton](EventButton.md)
+- [EventEncoder](EventEncoder.md)
+- [EventEncoderButton](EventEncoderButton.md)
+- [EventJoystick](EventJoystick.md)
+- [EventSwitch](EventSwitch.md)
+- [All InputEventTypes](InputEventTypes.md)
 
 ----
 
 ## [Event Programming 101](EventProgramming101.md)
-If you're new to the concept of event programming, [here is a short primer](EventProgramming101.md). It will make coding your project so much easier!
+If you're new to the concept of event programming, [here is a short primer](EventProgramming101.md). It will make coding your project *so* much easier!
 
 ----
 
@@ -22,13 +24,15 @@ If you're new to the concept of event programming, [here is a short primer](Even
 
 Adapters are a very thin layer of abstraction used by InputEvents to provide a common API for third party libraries and boards.
 
+There are currently adapter for encoders, input pins and GPIO expander boards.
+
 ### Encoder Adapters
 
-Since v1.2.1, you can use almost any encoder library via an [EncoderAdapter](https://github.com/Stutchbury/EncoderAdapter). At some point this library will merged into InputEvents.
+Since v1.6.0, the EncoderAdapter library (introduced in v1.2.1) has been merged into Input Events. You can use almose any adapter library via a very thin adapter class.
 
-Currently an adapter is provided for PJRC's Encoder but more will be added or you can write your own.
+Currently an encoder adapter is provided for PJRC's Encoder and for encoders or encoder buttons connected via a GPIO Expander. More will be added or you can write your own.
 
-See the [PJRC one](https://github.com/Stutchbury/EncoderAdapter/blob/main/src/PjrcEncoderAdapter.cpp) as an example of how simple it is! If you want to share your adapter, I will add it the the EncoderAdapter library. Pull requests are welcome!
+See the [PJRC one](https://github.com/Stutchbury/InputEvents/blob/main/src/EncoderAdapter/PjrcEncoderAdapter.h) as an example of how simple it is! If you want to share your adapter, I will add it the the EncoderAdapter library. Pull requests are welcome!
 
 These changes mean that rather than passing the encoder pins to the `EventEncoder` or `EventEncoderButton` constructors, we pass an EncoderAdapter that has been previously constructed from the pins.
 
@@ -38,7 +42,7 @@ eg:
 
 ```
 #include <Encoder.h> //PJRC's lib
-#include <PjrcEncoderAdapter.h>
+#include <EncoderAdapter/PjrcEncoderAdapter.h>
 ```
 and then:
 ```
@@ -50,30 +54,29 @@ EventEncoder myEncoder(&encoderAdapter);
 
 #### Notes on using Paul Stoffregen's Encoder Library
 
-> Since v1.2.1, Paul's Encoder Library remains the default but you can now use different encoder libraries with `InputEvents`. See Encoder Adapter Notes above.
+> Paul Stoffregen's Encoder Library remains the default but you can now use different encoder libraries with `InputEvents`. See Encoder Adapter Notes above.
 
-Please take care to read the pin requirements in the [official documantation page](https://www.pjrc.com/teensy/td_libs_Encoder.html) (TLDR; use interupt pins). The github repository is [here](https://github.com/paulstoffregen/Encoder).
+Please take care to read the pin requirements in the [official documantation page](https://www.pjrc.com/teensy/td_libs_Encoder.html) (TLDR; use interupt capable pins). The github repository is [here](https://github.com/paulstoffregen/Encoder).
 
 This library is very good (and very optimised) for the boards it supports, but it doesn't support all microcontrollers.
 
-I have tested with:
+> The latest formal release of the Encoder library is 1.4.4 from 11th Dec 2023. There have been a number of updates to the git repo since then without a formal release. If your board does not work with the 1.4.4 relese, it may work if you manually install the github source.
 
-- **Teensy** - 4.1, no issues
+Paul's Encoder library supports far more boards than I have available but I have tested with:
+
+- **Teensy** - 4.0 and 4.1.
 - **Arduino UNO** - the base line AVR type board, only 2 interrupt pins!
 - **ESP8266** - D1 Mini & Adafruit Feather 8266. Lots of compiler deprecation warnings for Encoder but compiles OK. Only one analog pin, so no joystick.
-- **ESP32** - D1 Mini32 & other random ones. No issues since v1.0.2.
+- **ESP32** - D1 Mini32, Adafruuit & other random ones. No issues since v1.0.2.
 
-Encoder supports far more boards than I have available for testing but if your board is not supported, the [`EventEncoder`](EventEncoder.md) and [`EventEncoderButton`](EventEncoderButton.md) classes will be excluded if you do not have PJRC's Encoder library installed in your project.
-
-> The latest formal release of the Encoder library is 1.4.4 from 11th Dec 2023. There have been a number of updates to the git repo since then without a formal release. If your borad does not work with the 1.4.4, it may work if you manually install the github source.
 
 ----
 
 ### GPIO Expander Adapters
 
-Since v1.5.0
+Since v1.5.0 (since v1.6.0 for encoders)
 
-Using a GPIO Expander Adapter and the `ExpanderPinAdapter`, you can connect `EventButton`, `EventSwitch` and the button part of `EventEncoderButton` to GPIO Expander boards.
+Using a GPIO Expander Adapter and the `ExpanderPinAdapter`, you can connect `EventButton`, `EventSwitch`, `EventEncoder` and `EventEncoderButton` to GPIO Expander boards.
 
 Most GPIO Expander Adapters use an underlying library so this will need to be installed but the `#include` is done by the adapter.
 

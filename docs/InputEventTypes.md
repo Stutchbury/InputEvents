@@ -28,6 +28,6 @@ The `InputEventType` is an [`enum class`](https://en.cppreference.com/w/cpp/lang
 - **`EventSwitch`** class
   - `ON` - fired when the switch is turned on.
   - `OFF` - fired when the switch is turned on.
-- **`EventTouchScreen`** class (currently a [separate experimental library](https://github.com/Stutchbury/EventTouchScreen))
+- **`EventTouchScreen`** class ([in the InputEventsTouchUI library](https://github.com/Stutchbury/InputEventsTouchUI))
   - `DRAGGED` - fired *while* touched and dragging.
   - `DRAGGED_RELEASED` - fired *after* drag is released (ie not touched).

@@ -1,14 +1,24 @@
 # The InputEvents Library
-An easy to use but comprehensive Arduino Event Library for both physical and logical Buttons, Encoders, Encoder Buttons, Analog Inputs, Joysticks and Switches. Tested on Arduino, ESP and Teensy.
 
 ![Picture of button, encoder, potentiometer, joystick and switch](images/all-inputs.png)
 
 
+**InputEvents** takes the hassle out of handling buttons, switches, encoders, joysticks, and more — whether you’re just starting out or building advanced projects. 
+
+Instead of writing your own debouncing, timing, or multi-click logic, InputEvents turns all those complex, messy details into simple, reliable [events](docs/InputEventTypes.md) like clicked, long press, double-clicked, or encoder turned. 
+
+You get clean, *maintainable* code, fewer bugs, and ***the freedom to focus on your actual project*** - just four lines of code and a function or class method gives you easy access to all events for an input. It works across Arduino, ESP32, ESP8266, Teensy or any microcontroller that is supported by the Arduino framework.
+
 Although this library is primarily for physical inputs, all it really cares about is the pin(s). So if you have a digital input, use an [`EventSwitch`](docs/EventSwitch.md) or [`EventButton`](docs/EventButton.md) and for an analog input, use an [`EventAnalog`](docs/EventAnalog.md). The [`EventEncoder`](docs/EventEncoder.md) could be connected to any encoder but I have not (yet) attached it to a motor...
 
-**Since v1.5.0**, buttons and switches can be attached to GPIO Expanders to be used with `EventButton` and `EventSwitch`. The button of the `EventEncoderButton` can also be connected via the GPIO Expander but the encoder itself will continue to rely on the underlying encoder library pin connections. Many thanks to [@leon-gh](https://github.com/leon-gh) for his contributon to this - much appreciated.
 
-**v1.5.2** added adapters for Adafruit's and Rob Tillaart's GPIO Expander libraries (MCP23017, PCF8574 & PCF8575). Thank you to [@HubertJH](https://github.com/hubertjh) for helping with the testing - much appreciated.
+**Since v1.6.0** ([Release Notes](https://github.com/Stutchbury/InputEvents/releases/tag/v1.6.0)), InputEvents includes the EncoderAdapter so there are no longer any explicit dependencies, ***however***, if you are using `EventEncoder` or `EventEncoderButton` directly attached to GPIO pins, by default, you will need to install Paul Stoffregen's [Encoder](https://github.com/paulstoffregen/Encoder) library. Other encoder libraries can be used via a simple encoder adapter.
+
+Encoders can now be connected to a GPIO expander but this should only be used if you really have to!
+
+**v1.5.2** ([Release Notes](https://github.com/Stutchbury/InputEvents/releases/tag/v1.5.2)) added adapters for Adafruit's and Rob Tillaart's GPIO Expander libraries (MCP23017, PCF8574 & PCF8575). Thank you to [@HubertJH](https://github.com/hubertjh) for helping with the testing - much appreciated.
+
+**Since v1.5.0** ([Release Notes](https://github.com/Stutchbury/InputEvents/releases/tag/v1.5.0)), buttons and switches can be attached to GPIO Expanders to be used with `EventButton` and `EventSwitch`. The button of the `EventEncoderButton` can also be connected via the GPIO Expander but the encoder itself will continue to rely on the underlying encoder library pin connections. Many thanks to [@leon-gh](https://github.com/leon-gh) for his contributon to this - much appreciated.
 
 Please see [GPIO Expander Adapter docs](docs/README.md#gpio-expander-adapter) for more details.
 
@@ -26,9 +36,16 @@ I am standing on the shoulders of giants.
 
 **Not heard of the term 'event' programming?** Here's a quick primer: [Event Programming 101](docs/EventProgramming101.md). It is by far the easiest way to get your project working with external controls.
 
+## Other InputEvents Libraries
+
+There are two other libraries in the InputEvents family:
+
+1. [InputEventsTouchUI](https://github.com/Stutchbury/InputEventsTouchUI) - allows a touch screen to fire button events plus DRAG and DRAGGED and also includes a UI abstraction layer for GUI elements like regions, widgets and icons.
+2. [SerialMessageEvents](https://github.com/Stutchbury/SerialMessageEvents) - takes character (char) input from any serial source via a serial adapter, creating a message from the stream, pass it to your message consumer class or method and optionally pass decoded key/value pairs to your key/value consumer.
+
 ## SUPPORT
 
-Feedback and [bug reports](https://github.com/Stutchbury/InputEvents/issues) are welcome or chat on [Discord](https://discord.gg/GDcEcWPKKm) if you have any questions.
+Feedback and [bug reports](https://github.com/Stutchbury/InputEvents/issues) are welcome or if you have any questions, drop by for a chat on [Discord](https://discord.gg/GDcEcWPKKm) ![Discord Logo](images/Discord-Symbol-Blurple-36x27.png) 
 
 > If you're in a hurry, please see the [full Doxygen generated API documentation](https://stutchbury.github.io/InputEvents/api/index.html).
 
@@ -36,8 +53,7 @@ Feedback and [bug reports](https://github.com/Stutchbury/InputEvents/issues) are
 ## INSTALLATION
 
 ### Arduino IDE
-Install the `InputEvents` and `Encoder` libraries via the Arduino IDE Libary Manager. ~~`Bounce2` and~~ `EncoderAdapter` should automatically install, but if they don't, install them too. 
-
+Install the `InputEvents` and `Encoder` (if you are using `EventEncoder` or `EventEncoderButton`) libraries via the Arduino IDE Libary Manager. 
 
 ### PlatformIO
 Add the following to your `platformio.ini` file:
@@ -48,9 +64,7 @@ lib_deps =
 	stutchbury/InputEvents@^1.5.2
 ```
 
-`EncoderAdapter` should automatically install as a dependency of `InputEvents`.
-
-Paul Stoffregen's Encoder library is the default for EventEncoder and EventEncoderButton but is not a hard dependency so will need to be installed separately.
+Paul Stoffregen's Encoder library is the default for `EventEncoder` and `EventEncoderButton` but is not an explicit dependency so needs to be installed separately.
 
 
 ## BASIC USAGE
@@ -113,7 +127,7 @@ The [`EventJoystick`](docs/EventJoystick.md) class contains two `EventAnalog(s)`
 
 The `InputEventType` is an [`enum class`](https://en.cppreference.com/w/cpp/language/enum) using a `uint8_t` to identify the type of event. Some are common to all inputs, others are specific to a type of input.
 
-Full details on event types are [here](docs/InputEventTypes.md).
+Full details about all event types are [here](docs/InputEventTypes.md).
 
 ----
 
