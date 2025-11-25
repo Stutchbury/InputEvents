@@ -1,7 +1,7 @@
 {
   "name": "InputEvents",
-  "version": "1.5.2",
-  "description": "A comprehensive library that makes working with Buttons, Encoders, Encoder Buttons, Analog Inputs, Joysticks & Switches very easy and efficient. Fires to a single callback for each input event. Callback can easily be shared across multiple inputs to create a HAL-like layer. Read input state (eg the position & encoder increment for pressed and non-pressed actions). Rate limit encoder, analog and joystick events without losing steps (eg easy acceleration or reduce events sent over Serial). Multi-click events (1-n). Long press repeat. Can also use GPIO Expanders.",
+  "version": "1.6.0",
+  "description": "Take the hassle out of handling buttons, switches, encoders, joysticks and more. Instead of writing your own debouncing, timing, or multi-click logic, InputEvents turns all those complex, messy details into reliable events for clean maintainable code",
   "keywords": "Arduino, ESP8266, ESP32, Teensy, button, encoder, analog, joystick, switch, momentary, event, debounce, GPIO expander",
   "repository":
   {
@@ -19,9 +19,7 @@
   ],
   "license": "GPL-2.0",
   "homepage": "https://github.com/Stutchbury/InputEvents/",
-  "dependencies": {
-    "stutchbury/EncoderAdapter": "^0.5.2"
-  },
+  "dependencies": { },
   "frameworks": "Arduino",
   "platforms": "*"
 }
