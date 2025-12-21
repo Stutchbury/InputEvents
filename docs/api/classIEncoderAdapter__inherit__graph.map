@@ -1,0 +1,7 @@
+<map id="IEncoderAdapter" name="IEncoderAdapter">
+<area shape="rect" id="node1" title="A lightweight adapter abstract class for encoders." alt="" coords="215,5,334,32"/>
+<area shape="rect" id="node2" href="$classBaseTableEncoderAdapter.html" title="A base class for encoder adapters that uses a quadrature encoder table to determine posion changes fr..." alt="" coords="5,80,181,107"/>
+<area shape="rect" id="node4" href="$classPjrcEncoderAdapter.html" title="An adapter for PJRC&#39;s Encoder." alt="" coords="205,80,344,107"/>
+<area shape="rect" id="node5" href="$classSlowExpanderEncoderAdapter.html" title="A very basic IEncoderAdapter for slow GPIO Expanders." alt="" coords="369,80,567,107"/>
+<area shape="rect" id="node3" href="$classExpanderEncoderAdapter.html" title=" " alt="" coords="8,155,179,181"/>
+</map>

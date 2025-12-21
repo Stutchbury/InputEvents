@@ -19,7 +19,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="fletch-logo64x64.png"/></td>
   <td id="projectalign">
-   <div id="projectname">InputEvents<span id="projectnumber">&#160;v1.5.2</span>
+   <div id="projectname">InputEvents<span id="projectnumber">&#160;v1.6.0</span>
    </div>
    <div id="projectbrief">An easy to use but comprehensive Event Library for Buttons, Encoders, Encoder Buttons, Analog Inputs, Joysticks and Switches.</div>
   </td>
@@ -64,9 +64,8 @@ Inheritance diagram for AdafruitMCP23017ExpanderAdapter:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a8a87ddcd8b9185c574a715dab4a09d93"><td class="memItemLeft" align="right" valign="top"><a id="a8a87ddcd8b9185c574a715dab4a09d93" name="a8a87ddcd8b9185c574a715dab4a09d93"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>AdafruitMCP23017ExpanderAdapter</b> ()</td></tr>
-<tr class="memdesc:a8a87ddcd8b9185c574a715dab4a09d93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="classAdafruitMCP23017ExpanderAdapter.html" title="An implementation of the GpioExpanderAdapter For Adafruit&#39;s MCP23017 library.">AdafruitMCP23017ExpanderAdapter</a>. An Adafruit_MCP23X17 instance will be created for you. <br /></td></tr>
+<tr class="memitem:a8a87ddcd8b9185c574a715dab4a09d93"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAdafruitMCP23017ExpanderAdapter.html#a8a87ddcd8b9185c574a715dab4a09d93">AdafruitMCP23017ExpanderAdapter</a> ()</td></tr>
+<tr class="memdesc:a8a87ddcd8b9185c574a715dab4a09d93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="classAdafruitMCP23017ExpanderAdapter.html" title="An implementation of the GpioExpanderAdapter For Adafruit&#39;s MCP23017 library.">AdafruitMCP23017ExpanderAdapter</a>. An Adafruit_MCP23X17 instance will be created for you.  <a href="classAdafruitMCP23017ExpanderAdapter.html#a8a87ddcd8b9185c574a715dab4a09d93">More...</a><br /></td></tr>
 <tr class="separator:a8a87ddcd8b9185c574a715dab4a09d93"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a5b5a4fa2e56cddcb6474737f070621"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAdafruitMCP23017ExpanderAdapter.html#a5a5b5a4fa2e56cddcb6474737f070621">AdafruitMCP23017ExpanderAdapter</a> (Adafruit_MCP23X17 &amp;_mcp)</td></tr>
 <tr class="memdesc:a5a5b5a4fa2e56cddcb6474737f070621"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="classAdafruitMCP23017ExpanderAdapter.html" title="An implementation of the GpioExpanderAdapter For Adafruit&#39;s MCP23017 library.">AdafruitMCP23017ExpanderAdapter</a> with an already created Adafruit_MCP23X17 instance.  <a href="classAdafruitMCP23017ExpanderAdapter.html#a5a5b5a4fa2e56cddcb6474737f070621">More...</a><br /></td></tr>
@@ -116,8 +115,36 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aa685d2e457651bfe0f7cac6ceb289759 inherit pub_methods_classGpioExpanderAdapter"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a8a87ddcd8b9185c574a715dab4a09d93" name="a8a87ddcd8b9185c574a715dab4a09d93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a87ddcd8b9185c574a715dab4a09d93">&#9670;&nbsp;</a></span>AdafruitMCP23017ExpanderAdapter() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">AdafruitMCP23017ExpanderAdapter::AdafruitMCP23017ExpanderAdapter </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construct a <a class="el" href="classAdafruitMCP23017ExpanderAdapter.html" title="An implementation of the GpioExpanderAdapter For Adafruit&#39;s MCP23017 library.">AdafruitMCP23017ExpanderAdapter</a>. An Adafruit_MCP23X17 instance will be created for you. </p>
+<p >This will create and Adafruit_MCP23017 on the stack - creating one on the heap causes a crash as the Adafruit lib tries to delete an object that doesn't yet exist for ESP32 in <code><a class="el" href="classAdafruitMCP23017ExpanderAdapter.html#a77d87f0ee4150311ad971e360fdf201e" title="The default begin for a GPIOExpanderAdapter will use the default I2C address for the MCP23017.">begin()</a></code>. </p>
+
+</div>
+</div>
 <a id="a5a5b5a4fa2e56cddcb6474737f070621" name="a5a5b5a4fa2e56cddcb6474737f070621"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5a5b5a4fa2e56cddcb6474737f070621">&#9670;&nbsp;</a></span>AdafruitMCP23017ExpanderAdapter()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a5b5a4fa2e56cddcb6474737f070621">&#9670;&nbsp;</a></span>AdafruitMCP23017ExpanderAdapter() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -210,6 +237,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">void AdafruitMCP23017ExpanderAdapter::begin </td>
           <td>(</td>
+          <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>

@@ -1,0 +1,4 @@
+<map id="SlowExpanderEncoderAdapter" name="SlowExpanderEncoderAdapter">
+<area shape="rect" id="node1" title="A very basic IEncoderAdapter for slow GPIO Expanders." alt="" coords="5,80,204,107"/>
+<area shape="rect" id="node2" href="$classIEncoderAdapter.html" title="A lightweight adapter abstract class for encoders." alt="" coords="45,5,164,32"/>
+</map>

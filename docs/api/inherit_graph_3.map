@@ -1,0 +1,10 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classPinAdapter.html" title="The interface specification for button, encoder button and switch pins." alt="" coords="5,132,92,159"/>
+<area shape="rect" id="node2" href="$classBounce2PinAdapter.html" title="A PinAdapter for the Bounce2 library. Note: this is not a DebounceAdapter as Bounce2 can only read th..." alt="" coords="142,5,279,32"/>
+<area shape="rect" id="node3" href="$classDebounceAdapter.html" title="This is the interface/base class for debounce adapters." alt="" coords="147,56,274,83"/>
+<area shape="rect" id="node5" href="$classExpanderPinAdapter.html" title="Implementation of a PinAdapter that reads from a GpioExpanderAdapter." alt="" coords="140,107,281,133"/>
+<area shape="rect" id="node6" href="$classGpioPinAdapter.html" title="This is the default PinAdapter for regular GPIO pins." alt="" coords="154,157,267,184"/>
+<area shape="rect" id="node7" href="$classPinMixerAdapter.html" title="This is the default PinAdapter for regular GPIO pins." alt="" coords="151,208,270,235"/>
+<area shape="rect" id="node8" href="$classVirtualPinAdapter.html" title="A PinAdapter that can set state programtically." alt="" coords="149,259,272,285"/>
+<area shape="rect" id="node4" href="$classFoltmanDebounceAdapter.html" title="This is the default InputEvents debouncer. Many thanks to @kfoltman." alt="" coords="329,56,503,83"/>
+</map>

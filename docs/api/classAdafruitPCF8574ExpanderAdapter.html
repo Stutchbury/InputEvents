@@ -19,7 +19,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="fletch-logo64x64.png"/></td>
   <td id="projectalign">
-   <div id="projectname">InputEvents<span id="projectnumber">&#160;v1.5.2</span>
+   <div id="projectname">InputEvents<span id="projectnumber">&#160;v1.6.0</span>
    </div>
    <div id="projectbrief">An easy to use but comprehensive Event Library for Buttons, Encoders, Encoder Buttons, Analog Inputs, Joysticks and Switches.</div>
   </td>
@@ -64,9 +64,8 @@ Inheritance diagram for AdafruitPCF8574ExpanderAdapter:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a908fe7a108f02d02fdef61957d065d20"><td class="memItemLeft" align="right" valign="top"><a id="a908fe7a108f02d02fdef61957d065d20" name="a908fe7a108f02d02fdef61957d065d20"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>AdafruitPCF8574ExpanderAdapter</b> ()</td></tr>
-<tr class="memdesc:a908fe7a108f02d02fdef61957d065d20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="classAdafruitPCF8574ExpanderAdapter.html" title="An implementation of the GpioExpanderAdapter For Adafruit&#39;s PCF8574 library.">AdafruitPCF8574ExpanderAdapter</a>. An Adafruit_PCF8574 instance will be created for you. <br /></td></tr>
+<tr class="memitem:a908fe7a108f02d02fdef61957d065d20"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAdafruitPCF8574ExpanderAdapter.html#a908fe7a108f02d02fdef61957d065d20">AdafruitPCF8574ExpanderAdapter</a> ()</td></tr>
+<tr class="memdesc:a908fe7a108f02d02fdef61957d065d20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="classAdafruitPCF8574ExpanderAdapter.html" title="An implementation of the GpioExpanderAdapter For Adafruit&#39;s PCF8574 library.">AdafruitPCF8574ExpanderAdapter</a>. An Adafruit_PCF8574 instance will be created for you.  <a href="classAdafruitPCF8574ExpanderAdapter.html#a908fe7a108f02d02fdef61957d065d20">More...</a><br /></td></tr>
 <tr class="separator:a908fe7a108f02d02fdef61957d065d20"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae42e0f729a22a402bff1ec4daf09a764"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAdafruitPCF8574ExpanderAdapter.html#ae42e0f729a22a402bff1ec4daf09a764">AdafruitPCF8574ExpanderAdapter</a> (Adafruit_PCF8574 &amp;_pcf)</td></tr>
 <tr class="memdesc:ae42e0f729a22a402bff1ec4daf09a764"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="classAdafruitPCF8574ExpanderAdapter.html" title="An implementation of the GpioExpanderAdapter For Adafruit&#39;s PCF8574 library.">AdafruitPCF8574ExpanderAdapter</a> with an already created Adafruit_PCF8574 instance.  <a href="classAdafruitPCF8574ExpanderAdapter.html#ae42e0f729a22a402bff1ec4daf09a764">More...</a><br /></td></tr>
@@ -116,8 +115,36 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aa685d2e457651bfe0f7cac6ceb289759 inherit pub_methods_classGpioExpanderAdapter"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a908fe7a108f02d02fdef61957d065d20" name="a908fe7a108f02d02fdef61957d065d20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a908fe7a108f02d02fdef61957d065d20">&#9670;&nbsp;</a></span>AdafruitPCF8574ExpanderAdapter() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">AdafruitPCF8574ExpanderAdapter::AdafruitPCF8574ExpanderAdapter </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construct a <a class="el" href="classAdafruitPCF8574ExpanderAdapter.html" title="An implementation of the GpioExpanderAdapter For Adafruit&#39;s PCF8574 library.">AdafruitPCF8574ExpanderAdapter</a>. An Adafruit_PCF8574 instance will be created for you. </p>
+<p >This will create and Adafruit_PCF8574 on the stack - creating one on the heap causes a crash as the Adafruit lib tries to delete an object that doesn't yet exist for ESP32 in the <a class="el" href="classAdafruitPCF8574ExpanderAdapter.html#a5c976ecff5b7fce582a6bd866f33f7cc" title="The default begin for a GPIOExpanderAdapter will use the default I2C address for the PCF8574.">begin()</a>. </p>
+
+</div>
+</div>
 <a id="ae42e0f729a22a402bff1ec4daf09a764" name="ae42e0f729a22a402bff1ec4daf09a764"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae42e0f729a22a402bff1ec4daf09a764">&#9670;&nbsp;</a></span>AdafruitPCF8574ExpanderAdapter()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae42e0f729a22a402bff1ec4daf09a764">&#9670;&nbsp;</a></span>AdafruitPCF8574ExpanderAdapter() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -210,6 +237,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">void AdafruitPCF8574ExpanderAdapter::begin </td>
           <td>(</td>
+          <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>

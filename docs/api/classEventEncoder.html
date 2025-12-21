@@ -19,7 +19,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="fletch-logo64x64.png"/></td>
   <td id="projectalign">
-   <div id="projectname">InputEvents<span id="projectnumber">&#160;v1.5.2</span>
+   <div id="projectname">InputEvents<span id="projectnumber">&#160;v1.6.0</span>
    </div>
    <div id="projectbrief">An easy to use but comprehensive Event Library for Buttons, Encoders, Encoder Buttons, Analog Inputs, Joysticks and Switches.</div>
   </td>
@@ -73,9 +73,9 @@ Inheritance diagram for EventEncoder:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td colspan="2"><div class="groupHeader">Constructor and Destructor</div></td></tr>
-<tr class="memitem:adda35f598a80ca8ef38097e218cf99a7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventEncoder.html#adda35f598a80ca8ef38097e218cf99a7">EventEncoder</a> (EncoderAdapter *encoderAdapter)</td></tr>
-<tr class="memdesc:adda35f598a80ca8ef38097e218cf99a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct an <a class="el" href="classEventEncoder.html" title="The EventEncoder class is for quadrature encoder inputs providing the position &amp; encoder increment,...">EventEncoder</a> input from an <a href="https://github.com/Stutchbury/EncoderAdapter">EncoderAdapter</a>  <a href="classEventEncoder.html#adda35f598a80ca8ef38097e218cf99a7">More...</a><br /></td></tr>
-<tr class="separator:adda35f598a80ca8ef38097e218cf99a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28b378abe88286fbb76b1e2026592c60"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventEncoder.html#a28b378abe88286fbb76b1e2026592c60">EventEncoder</a> (<a class="el" href="classIEncoderAdapter.html">IEncoderAdapter</a> *encoderAdapter)</td></tr>
+<tr class="memdesc:a28b378abe88286fbb76b1e2026592c60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct an <a class="el" href="classEventEncoder.html" title="The EventEncoder class is for quadrature encoder inputs providing the position &amp; encoder increment,...">EventEncoder</a> input from an <a class="el" href="classIEncoderAdapter.html" title="A lightweight adapter abstract class for encoders.">IEncoderAdapter</a>.  <a href="classEventEncoder.html#a28b378abe88286fbb76b1e2026592c60">More...</a><br /></td></tr>
+<tr class="separator:a28b378abe88286fbb76b1e2026592c60"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf58dc461a9089ad02c5832478f7976f"><td class="memItemLeft" align="right" valign="top"><a id="adf58dc461a9089ad02c5832478f7976f" name="adf58dc461a9089ad02c5832478f7976f"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>~EventEncoder</b> ()</td></tr>
 <tr class="memdesc:adf58dc461a9089ad02c5832478f7976f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the <a class="el" href="classEventEncoder.html" title="The EventEncoder class is for quadrature encoder inputs providing the position &amp; encoder increment,...">EventEncoder</a> input. <br /></td></tr>
@@ -264,8 +264,8 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>callbackIsSet</b> = f
 <tr class="separator:a4c27051ea63c3fe9a4731d073af13397 inherit pro_attribs_classEventInputBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="adda35f598a80ca8ef38097e218cf99a7" name="adda35f598a80ca8ef38097e218cf99a7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adda35f598a80ca8ef38097e218cf99a7">&#9670;&nbsp;</a></span>EventEncoder()</h2>
+<a id="a28b378abe88286fbb76b1e2026592c60" name="a28b378abe88286fbb76b1e2026592c60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28b378abe88286fbb76b1e2026592c60">&#9670;&nbsp;</a></span>EventEncoder()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -273,21 +273,21 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>callbackIsSet</b> = f
         <tr>
           <td class="memname">EventEncoder::EventEncoder </td>
           <td>(</td>
-          <td class="paramtype">EncoderAdapter *&#160;</td>
+          <td class="paramtype"><a class="el" href="classIEncoderAdapter.html">IEncoderAdapter</a> *&#160;</td>
           <td class="paramname"><em>encoderAdapter</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Construct an <a class="el" href="classEventEncoder.html" title="The EventEncoder class is for quadrature encoder inputs providing the position &amp; encoder increment,...">EventEncoder</a> input from an <a href="https://github.com/Stutchbury/EncoderAdapter">EncoderAdapter</a> </p>
+<p>Construct an <a class="el" href="classEventEncoder.html" title="The EventEncoder class is for quadrature encoder inputs providing the position &amp; encoder increment,...">EventEncoder</a> input from an <a class="el" href="classIEncoderAdapter.html" title="A lightweight adapter abstract class for encoders.">IEncoderAdapter</a>. </p>
 <p >Please see <a href="https://github.com/Stutchbury/InputEvents/blob/main/docs/README.md#encoder-adapter-notes">EncoderAdapter Notes</a></p>
 <blockquote class="doxtable">
 <p >&zwj;Note: The EncoderAdapter's <a class="el" href="classEventEncoder.html#aa7a0287a950e7ae548987e4a2b6c4438" title="Initialise the EventEncoder.">begin()</a> method will be called from the <a class="el" href="classEventEncoder.html" title="The EventEncoder class is for quadrature encoder inputs providing the position &amp; encoder increment,...">EventEncoder</a>'s <a class="el" href="classEventEncoder.html#aa7a0287a950e7ae548987e4a2b6c4438" title="Initialise the EventEncoder.">begin()</a> method. </p>
 </blockquote>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">encoderAdapter</td><td>Pass a previously created <a href="https://github.com/Stutchbury/EncoderAdapter">EncoderAdapter</a> by reference.</td></tr>
+    <tr><td class="paramname">encoderAdapter</td><td>Pass a previously created <a class="el" href="classIEncoderAdapter.html" title="A lightweight adapter abstract class for encoders.">IEncoderAdapter</a> by reference.</td></tr>
   </table>
   </dd>
 </dl>
@@ -309,6 +309,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>callbackIsSet</b> = f
         <tr>
           <td class="memname">void EventEncoder::begin </td>
           <td>(</td>
+          <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
